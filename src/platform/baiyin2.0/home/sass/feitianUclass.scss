@@ -1,0 +1,135 @@
+
+@import "reset";
+@import "common.scss";
+
+@import url("../../../../public/header/css/header.css");
+@import url("../../../../public/footer/css/footer.css");
+/* banner */
+.notice-banner-content{
+    height: 200px;
+    position: relative;
+}
+.notice-banner-box{
+    width: 1920px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -960px;
+}
+.notice-banner-img{
+    width: 100%;
+    height: 100%;
+}
+/* banner end */
+/* content */
+.message{
+    height: 270px;
+    color: #383838;
+}
+.mes-left{
+    padding: 20px 0 0 10px;
+}
+.mes-pic{
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 26px;
+}
+.mes-left-right{
+    float: left;
+}
+.title{
+    line-height: 48px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    background: none;
+    border:none;
+}
+.mes-text{
+    width: 235px;
+    font-size: 12px;
+    color: #828282;
+}
+.mes-right{
+    float: right;
+    width: 140px;
+    height: 60px;
+    background: #3598d9;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    margin: 8px 11px 0 0;
+    line-height: 60px;
+}
+.mes-bottom{
+    float: left;
+    width: 980px;
+    padding:0 10px;
+}
+.bot-title{
+    font-size: 16px;
+    line-height: 38px;
+}
+.bot-text{
+    font-size: 14px;
+    line-height: 30px;
+}
+.header-title{
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    color: #383838;
+    /*background: url(../images/feitian/line.png) repeat-x 0 bottom;*/
+}
+.one-pic{
+    float: left;
+    width: 416px;
+    height: 312px;
+    background: url(../images/feitian/01.png);
+}
+.one-text{
+    float:left;
+    width: 584px;
+
+}
+.min-title{
+    margin-top: 66px;
+    line-height: 70px;
+    font-size: 16px;
+    color: #383838;
+}
+.min-text{
+    font-size: 14px;
+    color: #383838;
+    line-height: 24px;
+}
+.two-text{
+    float: left;
+    width: 430px;
+    padding: 0 35px;
+}
+.two-pic{
+    width: 500px;
+    height: 312px;
+    float: left;
+    background: url(../images/feitian/02.png);
+}
+.three-pic{
+    width: 500px;
+    height: 312px;
+    float: left;
+    background: url(../images/feitian/03.png)  no-repeat;
+}
+.three-text{
+    float: left;
+    width: 430px;
+    padding: 0 35px;
+}
+.four-pic{
+    float: left;
+    height: 332px;
+    background: url(../images/feitian/04.png);
+}
+/* content end */

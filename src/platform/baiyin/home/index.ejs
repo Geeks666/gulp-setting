@@ -1,0 +1,375 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+  <title>白银区智慧教育云中心</title>
+  <link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer.css" />
+  <link rel="stylesheet" href="../home/css/common.css">
+  <link rel="stylesheet" href="../home/css/index.css">
+  <script>
+    if(top.location != self.location){
+      top.location = self.location;//防止页面被框架包含
+    }
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <%- include('../../../public/baiyin/header/view/_header.ejs') %>
+    <%- include('../home/view/_index_banner.ejs') %>
+    <div id="spaceNav" class="wrap">
+      <%- include('view/_second_nav.ejs', {currentPage : 'index'}) %>
+    </div>
+    <div class="ann clearfix wrap">
+      <ul class="notice_list"></ul>
+      <script id="noticeList" type="text/html">
+        {{each data}}
+          <li>
+            <span class="msgIcon"></span>
+            <a class="annLink" href="../notice/noticeDetail.html?id={{$value.id}}&index={{$index}}">{{$value.title}}</a>
+            <a class="more" href="../notice/noticeList.html?currentPage=1" target="_blank">更多</a>
+          </li>
+        {{/each}}
+      </script>
+    </div>
+    <div class="news clearfix wrap">
+      <div class="showBox" id="newsPic"></div>
+      <script id="newsPic_" type="text/html">
+        <div class="showPic">
+          <img src="{{data[0].img}}" alt="">
+        </div>
+        <ul class="clearfix">
+          {{each data}}
+            {{if $index<3}}
+              {{if $index==0}}
+                <li class="listPic active">
+              {{else}}
+                <li class="listPic">
+              {{/if}}
+              <img src="{{$value.img}}" alt="{{$value.title}}">
+            </li>
+            {{/if}}
+          {{/each}}
+        </ul>
+      </script>
+      <div class="showMsg">
+        <div id="newscontent_box"></div>
+        <script id="newscontent_box_" type="text/html">
+          <h3 class="news_title" title="{{data[0].title}}">{{data[0].showTitle}}</h3>
+          <p class="text">
+            {{data[0].showBrief}}
+            【 <a class="detail" href="../news/sitenewsDetail.html?id={{data[0].id}}&index=0&category={{data[0].category}}&isComm=1">详情</a>】
+          </p>
+          <ul class="listcontent">
+            {{each data}}
+            {{if $index>0 && $index<6}}
+            <li class="newList clearfix">
+              <span class="icon"></span>
+              <a class="newLInk" href="../news/sitenewsDetail.html?id={{$value.id}}&index={{$index}}&category={{category}}&isComm=1" title="{{$value.title}}" target="_blank">{{$value.showTitle}}</a>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </script>
+        <div class="btns clearfix">
+          <a id="activityRegister" class="apply"  href="javascript:void(0);"></a>
+          <a id="reviewEnter" class="entrance" href="javascript:;" data-href="/activity/www/background/"></a>
+        </div>
+      </div>
+    </div>
+    <div class="search clearfix wrap">
+       <input class="searchText" placeholder="他们正在搜：一元二次方程" type="text">
+       <div class="searchBtn_wrap">
+         <span>搜一下</span>
+         <a class="searchBtn" target="_blank" href="javascript:void(0)"></a>
+       </div>
+    </div>
+    <div class="option clearfix wrap">
+      <a id="findResource" class="optionDiv" href="javascript:void(0)">
+        <div class="findresourcesleft">
+        </div>
+        <div class="findresources">
+          找资源
+        </div>
+      </a>
+      <a id="watchTeachingResearch" class="optionDiv" href="javascript:void(0)">
+        <div class="teachingresearchleft">
+        </div>
+        <div class="teachingresearch verify_app_enter"  type="teachingresearch_appId" >
+          看教研
+        </div>
+      </a>
+      <a id="watchLive" class="optionDiv hanbo_enter" href="javascript:void(0)" type="hanbovideo_appId" >
+        <div class="watchliveleft">
+        </div>
+        <div class="watchlive">
+          看直播
+        </div>
+      </a>
+      <a id="OAWork" class="optionDiv verify_app_enter" href="javascript:void(0)" type="OA_appId">
+        <div class="oAleft">
+        </div>
+        <div class="oA">
+          OA办公
+        </div>
+      </a>
+    </div>
+    <div id="videoClass" class="wrap">
+      <div class="videContent clearfix">
+        <div class="menu" id="subject_section"></div>
+        <script type="text/html" id="subjectSection">
+          {{each data as phase i}}
+            <div class="{{gradeClass[phase.name]}}">
+              <h3 class="schoolTitle">{{phase.name}}</h3>
+              <div class="schoolMenu" style="{{i==0 ? 'display: block' : ''}}">
+                <div class="menuList">
+                  {{each phase.subjects }}
+                        <a class="list" href="{{msg}}/syncTeaching/index/?subjectId={{$value.id}}&gradeId={{phase.phaseId}}&requireLogin=false">{{$value.name}}</a>
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </script>
+        <div class="videoListWrap">
+          <h2 class="title">
+            课堂实录
+            <a class="more verify_app_enter" type="hanbovideo_appId" href="javascript:;">更多</a>
+          </h2>
+          <div class="videoListCont">
+            <ul id="videoList" class="videoList"></ul>
+            <script type="text/html" id="videoList_">
+              {{each data.result.data}}
+                <li class="list">
+                  <a class="videoPic" href="{{$value.redirectUrl}}" target="_blank">
+                    <img src="{{$value.imageUrl}}" alt="">
+                    {{if false}}
+                    <span class="icon"></span>
+                    {{/if}}
+                  </a>
+                  <p><a class="videoTitle" href="{{$value.redirectUrl}}" title="{{$value.title}}">{{$value.title}}</a></p>
+                  <p class="clearfix">
+                    <span class="author">{{$value.user_name}}</span>
+                    <span class="showNum"><span>{{$value.count}}</span>浏览</span>
+                  </p>
+                </li>
+              {{/each}}
+            </script>
+          </div>
+        </div>
+        <div class="adImageWrap">
+          <div id="thematic_pavilion"></div>
+          <script type="text/html" id="thematicPavilion">
+            {{each data}}
+              <a href="{{$value.website}}" target="_blank"><img src="{{$value.pic}}"/></a>
+            {{/each}}
+          </script>
+          <a target="_blank" href="javascript:void(0)" id="teacherStudio" class="teacherStudio"></a>
+          <a target="_blank" href="http://www.feitianedu.com/portal/html/teaching.jsp" id="teachingSystem" class="teachingSystem"></a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap apps_Wrap">
+      <div id="apps">
+        <ul class="clearfix">
+          <li class="applist" id="jxds">
+            <a target="_blank" href="javascript:void(0)" data-href="http://zl.feitianedu.com:8088/">
+               <span class="icon icon-jxds">
+               </span>
+              <span class="appName" style="color: #0dd1bc;">教学大师</span>
+            </a>
+          </li>
+          <li class="applist" id="ftyk">
+            <a target="_blank" href="javascript:void(0)">
+               <span class="icon icon-ftyk">
+               </span>
+              <span class="appName" style="color: #ffae00;">飞天优课</span>
+            </a>
+          </li>
+          <li class="applist" id="hdjy" >
+            <a href="javascript:void(0)" type="teachingresearch_appId" class="verify_app_enter">
+               <span class="icon icon-hdjy">
+               </span>
+              <span class="appName" style="color: #ac33f7;">互动教研</span>
+            </a>
+          </li>
+          <li class="applist" id="zygl">
+            <a href="javascript:void(0)" type="resource_appId" class="verify_app_enter">
+               <span class="icon icon-zygl">
+               </span>
+              <span class="appName" style="color: #fecc05;">资源管理</span>
+            </a>
+          </li>
+          <li class="applist" id="sztsg">
+            <a href="javascript:void(0)" type="ebook_appId" class="verify_app_enter">
+               <span class="icon icon-sztsg">
+               </span>
+              <span class="appName" style="color: #ff4352;">数字图书馆</span>
+            </a>
+          </li>
+          <li class="applist" id="applistMore">
+            <a href="javascript:void(0)">
+               <span class="icon icon-gd">
+               </span>
+              <span class="appName" style="color: #217be6;">更多</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="banner2">
+      <a href="http://www.eduyun.cn/" target="_blank"><img src="./images/bannner2.jpg" alt=""></a>
+    </div>
+    <div id="hotSpace" class="wrap clearfix">
+      <div class="hotSpace">
+        <h2 class="spaceTitle clearfix">
+          <span class="hotTitle"><b></b>热门空间</span>
+          <ul class="hotNav clearfix">
+            <li class="spaceType active" type="2">教师</li>
+            <li class="spaceType" type="school">学校</li>
+            <li class="spaceType" type="6">教研员</li>
+          </ul>
+          <a class="more" href="javascript:;">更多</a>
+        </h2>
+        <div id="goodspace_content"></div>
+        <a class="prev tabBtn" href="javascript:;"></a>
+        <a class="next tabBtn" href="javascript:;"></a>
+        <script id="goodspaceContent" type="text/html">
+          {{each data}}
+            {{ if $index == 0 || $index%6 == 0 }}
+              <div class="spaceList" >
+              <ul class="clearfix">
+
+            {{/if}}
+            <li class="aSpace">
+              <a class="spacePic" href="{{$value.spaceUrl}}"><img src="{{$value.icon}}" alt=""></a>
+              <p class="spaceName"><a href="{{$value.spaceUrl}}">{{$value.name}}</a></p>
+              <p>{{$value.label}}</p>
+            </li>
+            {{ if ($index != 0 && ($index+1)%6 == 0) || $index == data.length-1 }}
+              </ul>
+              </div>
+            {{/if}}
+          {{/each}}
+        </script>
+
+      </div>
+      <div class="dyn">
+        <h2 class="spaceTitle"><b></b>动态</h2>
+        <div class="dynListUl" id="dynamic_list">
+
+          <script type="text/html" id="dynamicList">
+            <ul class="dynList">
+            {{each data}}
+            <li class="list clearfix">
+              <span class="icon"></span>
+              <p class="dynTime clearfix">{{$value.memberInfo.createTime}}</p>
+              <div class="msg clearfix">
+                <a class="userPic" href="{{$value.memberInfo.spaceUrl}}"><img src="{{$value.memberInfo.picurl}}" alt=""></a>
+                <p class="userName"><a href="{{$value.memberInfo.spaceUrl}}">{{$value.memberInfo.username}}</a></p>
+                <p class="dynMsg"><span>{{$value.memberInfo.action}}</span>：<a href="{{$value.memberInfo.spaceUrl}}">{{$value.memberInfo.resourceType}}</a></p>
+              </div>
+            </li>
+            {{/each}}
+            </ul>
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="banner3">
+      <a href="http://www.gsres.cn/" target="_blank"><img src="./images/bannner1.jpg" alt=""></a>
+    </div>
+    <div id="teacherRank" class="wrap teacher_rank">
+      <div class="content clearFix">
+        <div class="tabList">
+          <h3 class="clearFix">
+            <div class="teacherNum titleMsg">登录人数：<span class="num">0</span></div>
+            <div class="loginNum titleMsg share_resource_num">分享资源数：<span class="num">0</span></div>
+          </h3>
+          <div class="box">
+            <div class="listContent" id="teaSort">
+              <div></div>
+            </div>
+            <script type="text/html" id="teaSort_">
+              {{each data}}
+                {{ if $index == 0 || $index%6 == 0 }}
+                  <ul class="listPage clearfix">
+                {{/if}}
+                <li class="list">
+                  <div class="number">{{$index+1}}</div>
+                  <p class="schoolName">
+                    <a href="javascript:;">{{$value.name}}</a>
+                    <span class="num">{{$value.longTimes}}</span>
+                  </p>
+                  <p class="msg clearFix"><span class="num">{{$value.value}}</span>资源</p>
+                  <p class="msg clearFix"><span class="num">{{$value.vedioCounts}}</span>视频</p>
+                </li>
+                {{ if ($index != 0 && ($index+1)%6 == 0) || $index == data.length-1 }}
+                    </ul>
+                {{/if}}
+              {{/each}}
+            </script>
+            <a class="prev tabBtn" href="javascript:;"></a>
+            <a class="next tabBtn" href="javascript:;"></a>
+          </div>
+        </div>
+        <div class="schoolShow">
+          <div class="showPic"></div>
+          <ul class="schoolList clearFix"></ul>
+
+          <script type="text/html" id="schoolList_">
+            {{each data}}
+              <li class="list">
+                <a href="{{$value.url}}" target="_blank">
+                  <img src="{{msg == 'school' ? $value.image : $value.photo }}" alt="">
+                  <span class="bj"></span>
+                  <span class="schoolName">{{$value.shortName ? $value.shortName : $value.name}}</span>
+                </a>
+              </li>
+            {{/each}}
+          </script>
+        </div>
+      </div>
+    </div>
+    <div id="library" class="wrap">
+      <h2><b></b>数字图书馆 <a id="morebook" class="more verify_app_enter" type="ebook_appId" href="javascript:;">更多</a></h2>
+      <ul class="bookList clearFix"></ul>
+      <script type="text/html" id="library_">
+        {{each data}}
+        {{if $index<6 }}
+        <li bookId="{{$value.bookid}}" ebookReadUrl="{{host}}">
+          <div class="bookLink">
+            <img class="pic" src="{{$value.bookimage}}middle.jpg"/>
+            <span class="name" title="bookname">{{$value.showBookname}}</span>
+            <span class="mark"></span>
+            <a href="{{host}}read/online?bookId={{$value.bookid}}" class="into startreading" target="_blank">开始阅读</a>
+          </div>
+        </li>
+        {{/if}}
+        {{/each}}
+      </script>
+    </div>
+    <div class="wrap friends" >
+      <div>
+        <h2><b></b>友情链接</h2>
+        <ul id="link_content" class="list"></ul>
+        <script type="text/html" id="linkContent">
+          {{each data}}
+            <li><a href="{{$value.website}}" target="_blank"><img src="{{$value.pic}}"/></a></li>
+          {{/each}}
+        </script>
+      </div>
+    </div>
+    <ul id="others">
+      <li id="goTop">
+        <span class="icon"></span>
+        返回顶部
+      </li>
+    </ul>
+    <%- include('../../../public/baiyin/footer/view/_footer.ejs') %>
+  </div>
+  <script src="../../../lib/requires/requires.js" data-main="../home/js/index.js"></script>
+</body>
+</html>

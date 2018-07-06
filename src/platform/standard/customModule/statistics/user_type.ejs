@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'user'}) %>
+    <div class="content">
+      <%- include('view/_user_top.ejs', {currentPage : 'usertype'}) %>
+      <div class="row row2-user-type echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="role-city echart-title">平台用户类型分布</div>
+        <div class="role-county echart-title">区域用户类型分布</div>
+        <div class="role-school echart-title">学校用户类型分布</div>
+        <div class="label">用户总数<span id="total"></span></div>
+        <div id="usertype"></div>
+      </div>
+      <div class="row row3-user-type echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">使用平台的用户类型统计</div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-fun="0" data-id="usertype_nofirst" data-value="yesterday">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>
+            </ol>
+          </div>
+        </div>
+        <div class="label">使用平台的用户数<span id="abc2"></span></div>
+        <div id="usertype_nofirst"></div>
+      </div>
+      <div class="row row3-user-type echart no-margin">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">首次使用平台的用户类型统计</div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-fun="1" data-id="usertype_isfirst" data-value="yesterday">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>
+            </ol>
+          </div>
+        </div>
+        <div class="label">首次使用平台的用户数<span id="abc3"></span></div>
+        <div id="usertype_isfirst"></div>
+      </div>
+    </div>
+    <%- include('view/_footer.ejs') %>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js" data-main="../../customModule/statistics/js/user_type.js"></script>
+</body>
+</html>

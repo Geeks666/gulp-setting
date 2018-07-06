@@ -1,0 +1,216 @@
+<div class="persCenter clearFix">
+  <div class="perCenSelect">
+    <div class="userLogo">
+      <div class="userLogoCen">
+        <img class="logoImg" src="images/teacherPic.png" alt="">
+      </div>
+      <p class="userName"></p>
+    </div>
+    <p class="userInfoText">个人信息</p>
+    <ul class="selLists">
+      <li class="selList select" data_type="basicInfor"><p>基本资料</p></li>
+      <li class="selList" data_type="setUserLogo"><p>头像设置</p></li>
+      <li class="selList" data_type="passWord"><p>密码修改</p></li>
+      <li class="selList" data_type="inforChange"><p>绑定信息</p></li>
+    </ul>
+  </div>
+  <div class="perCenCon clearFix">
+    <div class="titleWrap">
+      <div class="cenConTitle curr">基本资料</div>
+      <div class="subTitle" style="display: none;">
+        <span>手机号绑定</span>
+      </div>
+    </div>
+    <!--基本资料-->
+    <div class="basicInfor eMailCodeHide">
+      <div id="userName" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">姓名</span>
+        </div>
+        <input maxlength="10" class="conCen cenMark" readonly unselectable="on" type="text" data-old="" value="">
+        <span class="clues"></span>
+      </div>
+      <div id="userNum" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">帐号</span>
+        </div>
+        <input class="conCen" readonly unselectable="on" type="text" value="">
+      </div>
+      <div id="sexEdit" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">性别</span>
+        </div>
+        <div class="mbSelect" style="display: none">
+          <p class="selShow">男</p>
+          <ul class="mbSel">
+            <li><p class="select">男</p></li>
+            <li><p class="select">女</p></li>
+          </ul>
+        </div>
+        <input class="conCen" readonly unselectable="on" type="text" value="">
+      </div>
+      <div id="userUnit" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">所在单位</span>
+        </div>
+        <input class="conCen" readonly unselectable="on" type="text" value="">
+        <span class="clues"></span>
+      </div>
+      <div id="stuSchNum" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">学籍号</span>
+        </div>
+        <input class="conCen" readonly unselectable="on" type="text" value="">
+      </div>
+      <div id="userPhone" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">联系电话</span>
+        </div>
+        <input class="conCen cenMark" readonly unselectable="on" type="text" data-old=""
+               value="">
+        <span class="clues"></span>
+      </div>
+      <div id="userEmail" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">电子邮箱</span>
+        </div>
+        <input class="conCen cenMark" readonly unselectable="on" type="text" data-old=""
+               value="">
+        <span class="clues"></span>
+      </div>
+
+      <div id="userSubject" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">职务信息</span>
+        </div>
+        <ul class="classInfo"></ul>
+        <ul class="classInfoSelect" style="display: none;"></ul>
+      </div>
+
+
+      <div id="perName" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">家长姓名</span>
+        </div>
+        <input class="conCen" readonly unselectable="on" type="text" value="">
+      </div>
+      <div id="perPhone" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">家长联系方式</span>
+        </div>
+        <input class="conCen cenMark" readonly unselectable="on" type="text" data-old=""
+               value="">
+        <span class="clues"></span>
+      </div>
+
+      <div class="perCenBtn">
+        <div class="btn editBtn">编辑</div>
+        <div class="btn saveBtn">保存</div>
+        <div class="btn cancelBtn">取消</div>
+      </div>
+    </div>
+
+    <!--头像设置-->
+    <div class="setUserLogo" style="display: none">
+      <div id="userLogo" class="inforList clearFix">
+        <div class="setUserPic">
+          <div class="UserPicImg">
+            <img data-old=""
+                 src="" alt="">
+          </div>
+          <div class="upLoading"></div>
+          <div id="editImg2" class="editImg" style="display: none"><span>编辑头像</span></div>
+        </div>
+        <p class="fileSizeTip">支持JPG、JPEG、PNG格式，大小限制2M以内</p>
+      </div>
+
+      <div class="perCenBtn">
+        <div class="btn editBtn">编辑</div>
+        <div class="btn saveBtn">保存</div>
+        <div class="btn cancelBtn">取消</div>
+      </div>
+    </div>
+
+    <!--密码修改-->
+    <div class="passWord" style="display: none">
+      <div id="priCode" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="icon-star-pseudo text">原始密码</span>
+        </div>
+        <input maxlength="20" class="conCen conChange" type="password" value="">
+        <span class="clues">请输入您的原始密码</span>
+      </div>
+      <div id="newPwd" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="icon-star-pseudo text">新密码</span>
+        </div>
+        <input maxlength="20" class="conCen conChange" type="password" value="">
+        <span class="clues">6-20位字符，建议数字、字母、标点符号组合</span>
+      </div>
+      <div id="againNewPwd" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="icon-star-pseudo text">确认密码</span>
+        </div>
+        <input maxlength="20" class="conCen conChange" type="password" value="">
+        <span class="clues">6-20位字符，建议数字、字母、标点符号组合</span>
+      </div>
+
+      <div class="perCenBtn">
+        <div class="btn pwdSaveBtn">保存</div>
+      </div>
+    </div>
+
+    <!--绑定信息-->
+    <div class="inforChange" style="display: none">
+      <p class="inforChangeTip">绑定邮箱后可直接用邮箱地址进行登录</p>
+      <div id="userLoginEmail" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">电子邮箱</span>
+        </div>
+        <input class="conCen cenMark" readonly unselectable="on" type="text" data-old="" value="">
+        <span class="binded" data-show="false">（已绑定）</span>
+        <p class="eMailCode">发送验证码</p>
+        <span class="clues"></span>
+      </div>
+      <div id="LoginEmailCode" class="inforList clearFix">
+        <div class="conLeft">
+          <span class="text">请输入校验码</span>
+        </div>
+        <input maxlength="10" class="conCen cenMark" readonly unselectable="on" type="text">
+        <span class="clues"></span>
+      </div>
+      <div class="perCenBtn">
+        <div class="btn editBtn">更换邮箱</div>
+        <div class="btn saveBtn">确定</div>
+        <div class="btn cancelBtn">取消</div>
+      </div>
+    </div>
+
+    <!--安全验证-->
+    <div class="securityVerification" style="display: none;">
+      <p class="inforChangeTip">绑定后可直接使用手机号码进行登录</p>
+      <div class="inforList clearFix" id="securityPhone">
+        <div class="conLeft">
+          <span class="text">手机号码</span>
+        </div>
+        <input class="conCen cenMark" readonly unselectable="on" type="text" data-old="" value="">
+        <span class="binded" data-show="false">（已绑定）</span>
+        <p class="eMailCode">发送验证码</p>
+        <span class="clues"></span>
+      </div>
+      <div class="inforList clearFix" id="securityCode">
+        <div class="conLeft">
+          <span class="text">请输入校验码</span>
+        </div>
+        <input maxlength="10" class="conCen cenMark" readonly unselectable="on" type="text">
+        <span class="clues"></span>
+      </div>
+      <div class="perCenBtn">
+        <div class="btn editBtn">更换手机号</div>
+        <div class="btn saveBtn">保存</div>
+        <div class="btn cancelBtn">取消</div>
+      </div>
+    </div>
+
+  </div>
+</div>

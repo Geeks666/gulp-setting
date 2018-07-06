@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main-76f12792b7.css">
+</head>
+<body data-module="jy" data-table="activity" data-tableList="_activity_join">
+<div class="bg-gradient">
+  <div class="header">
+  <div class="header-center">
+    <div class="position">
+      <span class="icon icon-location"></span><strong></strong>
+      <div class="exit"><span class="icon icon-exit"></span><span>退出</span></div>
+    </div>
+    <div class="logo"></div>
+  </div>
+</div>
+  <div class="wrap">
+    <div class="sidebar left">
+  <div class="item-wrap" data-href="index.html">
+    <div class="item no-border ">
+      <span class="icon icon-index"></span>
+      <span class="label">平台概况</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="user_type.html">
+    <div class="item ">
+      <span class="icon icon-user-sidebar"></span>
+      <span class="label">用户统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="space_echart.html">
+    <div class="item ">
+      <span class="icon icon-space"></span>
+      <span class="label">空间统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="app_echart.html">
+    <div class="item ">
+      <span class="icon icon-app"></span>
+      <span class="label">应用统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="resource_total.html">
+    <div class="item ">
+      <span class="icon icon-resource"></span>
+      <span class="label">资源统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="teaching_overview.html">
+    <div class="item active">
+      <span class="icon icon-teaching"></span>
+      <span class="label">教研分析</span>
+    </div>
+  </div>
+</div>
+    <div class="content contentP">
+      <div class="row row1 row1-teaching row1-app">
+  <div class="item-wrap" data-href="teaching_overview.html">
+    <div class="item ">
+      <span class="icon icon-overview"></span>
+      教研总览
+    </div>
+  </div>
+  <div class="item-wrap areatotal" data-href="teaching_activity_statistics.html">
+    <div class="item active">
+      <span class="icon icon-activity"></span>
+      区域教研活动统计
+    </div>
+  </div>
+  <div class="item-wrap schooltotal" data-href="teaching_situation_statistics.html">
+    <div class="item ">
+      <span class="icon icon-situation"></span>
+      学校教研情况统计
+    </div>
+  </div>
+</div>
+<div class="divider row1-user-type" style="margin: 0;"></div>
+<div class="row row1 rowSelect">
+  <div class="selectWrap" id="schoolYear">
+    <div class="label">学年：</div>
+    <div class="selectTop selectTopAct" data-value="">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom">
+      <ol></ol>
+    </div>
+  </div>
+  <div class="selectWrap" id="studySection">
+    <div class="label">学段：</div>
+    <div class="selectTop selectTopAct" data-value="">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom" >
+      <ol></ol>
+    </div>
+  </div>
+  <div class="selectWrap" id="subject">
+    <div class="label">学科：</div>
+    <div class="selectTop selectTopAct">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom">
+      <ol>
+        <li data-value="">全部</li>
+      </ol>
+    </div>
+  </div>
+  <div class="role-school selectWrap" id="grade">
+    <div class="label">年级：</div>
+    <div class="selectTop selectTopAct">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom">
+      <ol>
+        <li data-value="">全部</li>
+      </ol>
+    </div>
+  </div>
+  <div class="selectWrap">
+    <input type="button" value="搜索" class="dateConfirmBtn searchBtn" id="searchBtn">
+  </div>
+</div>
+      <div class="row echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="role-city echart-title">区域活动参与情况一览</div>
+        <div class="role-county echart-title">活动参与情况一览</div>
+        <div class="wrapTable clearfix" id="spaceTable">
+          <div class="wrapTableTop">
+            <div class="role-city wrapTableTopExport" style="margin-left: 68px;">
+              <span></span>
+              <strong>导出数据</strong>
+            </div>
+            <div class="role-county wrapTableTopExport" style="margin-left: 35px;">
+              <span></span>
+              <strong>导出数据</strong>
+            </div>
+            <div class="row">
+              <div class="selectRight" style="right: -20px;">
+                <div class="selectWrap">
+                  <div class="label">统计时段：</div>
+                  <div class="selectTop selectTopAct" data-value="" id="cyList">
+                    <span>全学年</span>
+                    <strong></strong>
+                  </div>
+                  <div class="selectBottom">
+                    <ol>
+                      <li data-value="">全学年</li>
+                      <li data-value="yesterday">昨天</li>
+                      <li data-value="lastseven">最近七天</li>
+                      <li data-value="lastthirty">最近30天</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="role-city activityFqTable" id="activityFqTableCity">
+            <table>
+              <thead>
+              <tr>
+                <th style="width:15%;">区域</th>
+                <th style="width:10%;">参与数</th>
+                <th style="width:15%;">
+                  <span>教学研讨</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>在线观课</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>专家指导</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>课堂评价</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;border-right:0;">
+                  <span>校际教研</span>
+                  <span>（参与数）</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody id="activityFqTableCity1">
+              </tbody>
+            </table>
+          </div>
+          <div class="role-county activityFqTable" id="activityFqTableCounty">
+            <table>
+              <thead>
+              <tr>
+                <th style="width:15%;">学校</th>
+                <th style="width:10%;">参与数</th>
+                <th style="width:15%;">
+                  <span>教学研讨</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>在线观课</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>专家指导</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>课堂评价</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;border-right:0;">
+                  <span>校际教研</span>
+                  <span>（参与数）</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody id="activityFqTableCounty1">
+              </tbody>
+            </table>
+          </div>
+          <div id="pageTool1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires-4aa88d7e5f.js"
+        data-main="../../customModule/statistics/js/activity_cy-492d9100d5.js"></script>
+</body>
+</html>

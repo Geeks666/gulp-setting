@@ -1,0 +1,8 @@
+#mainbo-top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9tZS9zYXNzL3RlYWNoaW5nLmNzcyIsInNvdXJjZXMiOlsiaG9tZS9zYXNzL3RlYWNoaW5nLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiXHJcbkBjaGFyc2V0IFwiVVRGLThcIjtcclxuI21haW5iby10b3AtbmF2IHtcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgdG9wOiAwO1xyXG4gIGxlZnQ6IDA7XHJcbiAgei1pbmRleDogMTAwMDA7XHJcbn1cclxuXHJcbiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQSxBQUFBLGVBQWUsQ0FBQztFQUNkLFFBQVEsRUFBRSxLQUFLO0VBQ2YsR0FBRyxFQUFFLENBQUM7RUFDTixJQUFJLEVBQUUsQ0FBQztFQUNQLE9BQU8sRUFBRSxLQUFLO0NBQ2YifQ== */

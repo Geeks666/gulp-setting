@@ -1,0 +1,17 @@
+
+@import "../../rank/sass/common";
+
+.content_right .content_title>a i{
+  background: url(../../rank/images/icon.png) no-repeat;
+  background-position: 2px 2px;
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  left: -21px;
+}
+
+.content_right .content_nav .content_nav_title .login_num{}
+.content_right .content_nav .content_nav_title .resource_upload_num{}
+.content_right .content_nav .content_nav_title .resource_download_num{}

@@ -1,0 +1,185 @@
+
+@charset "UTF-8";
+.wrap, .img-1, .img-2, .img-3, .img-4, .img-5, .img-6, .img-7, .img-8, .section-top .youke, .section-top .into-app, .section-top .app-pics, .first .section-title, .second .section-title, #menu a {
+  display: block;
+  margin: 0 auto; }
+
+/* 整体内容设置 */
+.wrap {
+  width: 1000px;
+  height: auto;
+  font-size: 12px;
+  color: #828282; }
+
+/* 清除浮动 */
+img {
+  vertical-align: top; }
+
+.clearFix {
+  zoom: 1; }
+.clearFix:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+/* 生成8个图片 */
+.img-1 {
+  width: 76px;
+  height: 76px;
+  background: url("../images/evaluation/icon.png") no-repeat 0 0px; }
+
+.img-2 {
+  width: 76px;
+  height: 76px;
+  background: url("../images/evaluation/icon.png") no-repeat 0 -76px; }
+
+.img-3 {
+  width: 76px;
+  height: 76px;
+  background: url("../images/evaluation/icon.png") no-repeat 0 -152px; }
+
+.img-4 {
+  width: 76px;
+  height: 76px;
+  background: url("../images/evaluation/icon.png") no-repeat 0 -228px; }
+
+.img-5 {
+  width: 76px;
+  height: 76px;
+  background: url("../images/evaluation/icon.png") no-repeat -76px 0px; }
+
+.img-6 {
+  width: 76px;
+  height: 76px;
+  background: url("../images/evaluation/icon.png") no-repeat -76px -76px; }
+
+.img-7 {
+  width: 76px;
+  height: 76px;
+  background: url("../images/evaluation/icon.png") no-repeat -76px -152px; }
+
+.img-8 {
+  width: 76px;
+  height: 76px;
+  background: url("../images/evaluation/icon.png") no-repeat -76px -228px; }
+
+.section-top {
+  overflow: auto;
+  height: 588px;
+  background: url("../images/evaluation/1.jpg") no-repeat 0 0;
+}
+.section-top .youke {
+  width: 106px;
+  height: 42px;
+  background: url("../images/evaluation/youke.png") no-repeat 0 0;
+  display: none;
+}
+.section-top .into-app {
+  width: 143px;
+  height: 45px;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #fff;
+  background: #3576d0;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 45px;
+}
+.section-top .app-pics {
+  width: 802px;
+  height: 142px;
+  background: url("../images/evaluation/3.png") no-repeat 0 0;
+  margin-bottom: 34px;
+  display: none;
+}
+
+.first .section-title {
+  display: none;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  width: 383px;
+  height: 48px;
+  background: url("../images/evaluation/title1.png") no-repeat 0 0;
+}
+.first .youke {
+  margin-top: 188px;
+}
+
+.second .section-top {
+  background: url("../images/evaluation/2.jpg") no-repeat 0 0;
+}
+.second .section-title {
+  display: none;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  width: 190px;
+  height: 45px;
+  background: url("../images/evaluation/title2.png") no-repeat 0 0;
+}
+.second .youke {
+  margin-top: 84px;
+}
+
+.first-message-list {
+  margin-top: 90px;
+  display: none;
+}
+.first-message-list p {
+  padding: 0 28px;
+  line-height: 22px;
+}
+.first-message-list span {
+  margin-bottom: 34px;
+}
+.first-message-list li {
+  float: left;
+  width: 25%;
+}
+
+.second-message-list {
+  margin-top: 25px;
+  display: none;
+}
+.second-message-list span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.second-message-list li {
+  box-sizing: border-box;
+  width: 50%;
+  position: relative;
+  float: left;
+  margin-top: 58px;
+  padding: 10px 75px 0 110px;
+  line-height: 24px;
+  height: 76px;
+}
+
+#menu {
+  position: fixed;
+  right: 100px;
+  top: 50%;
+  z-index: 10;
+}
+#menu a {
+  width: 14px;
+  height: 14px;
+  background: #bab9b9;
+  margin-bottom: 10px;
+  border-radius: 7px;
+}
+#menu .active a{
+  background-color: #656363;
+}
+
+/*# sourceMappingURL=evaluation.css.map */
+
+#mainbo-top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+

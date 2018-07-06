@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit|ie-stand" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="Expires" content="0" />
+    <title>应用</title>
+    <link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer-03c29ce29a.css" />
+    <link href="../home/css/style-710afe21cb.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../app/css/app_detail-3014e3627e.css">
+
+  </head>
+  <body>
+    <div class="application_wrap">
+      
+      <link rel="stylesheet" href="../../../public/header/css/header-daf1d87f97.css">
+<div id="mainbo-top-nav" class="mainbo-top-nav">
+  <div class="mainbo-top-nav-box">
+    <div class="logo"><img src="" alt=""></div>
+    <ul class="nav" id="nav"></ul>
+    <script type="text/html" id="navList">
+      
+      {{each navList}}
+      <li>
+        <a class="{{$value.class}}{{$index == 2 ? ' t-active ' : ''}}" href="{{$value.url}}" {{
+           $value.newOpen ? 'target=_blank' : ''}}>{{$value.name}}</a>
+      </li>
+      {{/each}}
+    </script>
+    <div class="mainbo-search" id="login_message"></div>
+
+    <script type="text/html" id="loginMessage">
+      {{if data.code !='success' }}
+        <a {{ 2 == 4 ? 'href=#' : '' }} id="mainbo-login" class="loginButton">登录</a>
+      {{else}}
+      {{if data.data.userType == 1 }}
+      <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+      {{/if}}
+      <!--<div class="message-warn"><a href="javascript:;" class="link">消息-->
+        <!--</a><i></i></div>-->
+      <div class="noread_wrapper">
+        <div class="h_msg message-warn">
+          <span></span>
+        </div>
+        <span></span>
+      </div>
+      <div class="login_user">
+        <div class="login_username">
+          {{data.data.userInfo.name}}<span class="arrow"></span>
+        </div>
+        {{if data.data.userType == 1 }}
+        {{if (data.data.account != "admin" && data.data.account != "test")}}
+        <ul class="admin_bg">
+          <li><a href="{{data.userJumpHref.spaceManager}}">机构空间</a></li>
+          <li><a href="{{data.userJumpHref.myApp}}">我的应用</a></li>
+          <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{else}}
+        <ul class="admin_sm">
+          <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{/if}}
+        {{else}}
+        <ul class="person_bg">
+          {{if 2 == 4}}
+            {{if data.data.userRole=='3002' & data.data.userType =='200' || data.data.userRole=='3003'}}
+              <li class="data-href" data-href="../background/index.html" data-target="_blank"><a href="#"  style=""  >管理入口</a></li>
+            {{/if}}
+            <li class="data-href" data-href="../protected/my_works.html" ><a href="#">我的作品</a></li>
+          {{/if}}
+          <li><a href="{{data.userJumpHref.mySpace}}">我的空间</a></li>
+          <li><a href="{{data.userJumpHref.myApp}}">我的应用</a></li>
+          <li><a href="{{data.userJumpHref.personCenter}}">个人中心</a></li>
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{/if}}
+      </div>
+      {{/if}}
+    </script>
+  </div>
+  <script type="text/html" id="navList">
+  {{each navList}}
+  <li>
+    <a class="{{$value.class}}{{$index == 3 ? 't-active' : ''}}" href="{{$value.url}}" {{ $value.newOpen ?
+      'target=_blank' : ''}}>{{$value.name}}</a>
+  </li>
+  {{/each}}
+</script>
+  <script type="text/html" id="loginMessage">
+  {{if data.code == "login_error" }}
+  <a id="mainbo-login" class="loginButton">登录</a>
+  {{else}} {{if data.data.userType == 1 }}
+  <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+  {{/if}}
+  <!--<div class="message-warn"><a href="javascript:;" class="link">消息-->
+  <!--</a><i></i></div>-->
+  <div class="noread_wrapper">
+    <div class="h_msg message-warn">
+      <span></span>
+    </div>
+    <span></span>
+  </div>
+  <div class="login_user">
+    <div class="login_username">
+      {{data.data.userInfo.name}}
+      <span class="arrow"></span>
+    </div>
+    {{if data.data.userType == 1 }} {{if (data.data.account != "admin" && data.data.account != "test")}}
+    <ul class="admin_bg">
+      <li>
+        <a href="{{data.userJumpHref.spaceManager}}">机构空间</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+      </li>
+      <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{else}}
+    <ul class="admin_sm">
+      <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{/if}} {{else}}
+    <ul class="person_bg">
+      <li>
+        <a href="{{data.userJumpHref.mySpace}}">我的空间</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.personCenter}}">个人中心</a>
+      </li>
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{/if}}
+  </div>
+  {{/if}}
+</script>
+</div>
+      <!--banner-->
+      <div class="application_banner">
+  <div class="application_banner_box">
+    <img src="../home/images/application_banner_img-1a6fbdcd5d.png" class="banner_img"/>
+    <div class="recommended">
+      <h4>推荐应用</h4>
+      <ul id="recommended_list" class="recommended_list">
+        推荐应用内容
+      </ul>
+      <script type="text/html" id="recommended_list_">
+        {{each data}}
+        {{if $index < 3 }}
+        <li isDetail="{{$value.isDetail ? 'true' : 'false'}}" appid="{{$value.id}}">
+          <dl class="recommended_type">
+            <dt class="recommended_img1"><img src="{{$value.logo}}"></dt>
+            <dd class="type_title">
+              <a class="app_url_notneedLogin appName" isLogin="2" appid="{{$value.id}}" isopen="{{$value.isDetail}}" appUrl="{{$value.appUrl}}" href="javascript:void(0);">{{$value.name}}</a>
+            </dd>
+            <dd class="praise_text">
+              {{if $value.isLike }}
+              <span type="1" class="praised"></span>
+              {{else}}
+              <span type="0" appid="{{$value.id}}" class="unpraise_{{$value.id}} praise-icon2"></span>
+              {{/if}}
+              <span class="like_num_{{$value.id}}">{{$value.likeNum}}</span>
+            </dd>
+          </dl>
+          <span class="attribution type_{{$value.id}}">{{$value.category}}</span>
+          {{/if}}
+          {{/each}}
+      </script>
+    </div>
+  </div>
+</div>
+
+
+      <!--content-->
+      <div class="application_content">
+  <div class="application_content_header">
+    <ul class="application_content_type" id="application_content_type"></ul>
+    <script type="text/html" id="applicationContentType">
+      <li class="application_active"><span>全部</span></li>
+      {{each data}}
+      <li type="{{$value.value}}" {{$index== data.length-1 ? "class=application_noborder" : ""}} >
+      <span>{{$value.name}}</span></li>
+      {{/each}}
+    </script>
+  </div>
+
+  <div class="application_content_box" id="application_content_box">
+    <ul id="application_list" style="position: relative;" class="application_content_list show"></ul>
+
+    <script type="text/html" id="application_list_">
+      {{each data}}
+      <li isDetail="{{$value.isDetail ? 'true' : 'false'}}" appid="{{$value.id}}">
+        <dl>
+          <dt class="recommended_img1"><img src="{{$value.logo}}"></dt>
+          <dd class="type_title">
+            <a class="app_url_notneedLogin appName" isLogin="2" appid="{{$value.id}}" isopen="{{$value.isDetail}}"
+               appUrl="{{$value.appUrl}}" href="javascript:void(0);">{{$value.name}}</a>
+          </dd>
+          <dd class="praise_text">
+            {{if $value.isLike }}
+            <span type="1" class="praised"></span>
+            {{else}}
+            <span type="0" appid="{{$value.id}}" class="unpraise_{{$value.id}} praise-icon2"></span>
+            {{/if}}
+            <span class="like_num_{{$value.id}}">{{$value.likeNum}}</span>
+          </dd>
+        </dl>
+        <span class="attribution type_{{$value.id}}">{{$value.category}}</span>
+        {{/each}}
+    </script>
+
+  </div>
+  <div id="app-details">
+    <div class="a-detail">
+      <h3 class="box-title">应用详情</h3>
+      <div class="detail-cont clearFix">
+        <div class="detail-msg clearFix"></div>
+        <script type="text/html" id="detailMsg">
+          <img class="app-pic" src="{{data.logo}}" alt="">
+          <div class="msg-top clearFix">
+            <span class="app-title"><!-- 备课大师 --> {{data.name}}</span>
+            <span class="praise">
+                    <strong class="praise-icon praise-icon2 {{ data.isLike  ? 'praise-icon-active' : '' }}"
+                            appid="{{data.id}}"></strong>
+                    <strong class="praise-num"><!-- 4546 -->{{data.likeNum}}</strong>
+                  </span>
+            <span class="type"><!-- 教学 -->{{data.category}}</span>
+          </div>
+          <p class="app-introduction">{{data.introduction}}</p>
+          {{ if data.kindCode == 3 }}
+          <div class="app-btns clearFix" style="right: 123px;">
+            {{ else }}
+            <div class="app-btns clearFix">
+              {{ /if }}
+              &nbsp;
+              {{if data.downUrl }}
+              <a class="abtn down-app" href="javascript:void(0);" appid="{{data.id}}">下载应用</a>
+              {{ if data.kindCode == 3 }}
+              <img class="qr" src="{{data.qrUrl}}" alt="">
+              {{ else }}
+              <a class="abtn into-app" href="javascript:void(0);" appid="{{data.id}}" title="请先下载安装应用，否则无法进入应用"
+                 kindCode="{{data.kindCode}}">进入应用</a>
+              {{/if}}
+              {{else}}
+              <a class="abtn into-app" href="javascript:void(0);" appid="{{data.id}}"
+                 kindCode="{{data.kindCode}}">进入应用</a>
+              {{/if}}
+            </div>
+        </script>
+      </div>
+      <div class="show-pic">
+        <div class="pic-box">
+          <ul class="pic-list clearFix"></ul>
+        </div>
+        <div class="shadow left-shadow"></div>
+        <div class="shadow right-shadow"></div>
+        <a class="picbtn prev-btn" href="javascript:;"></a>
+        <a class="picbtn next-btn" href="javascript:;"></a>
+      </div>
+    </div>
+  </div>
+</div>
+      <link rel="stylesheet" href="../../../public/footer/css/footer-c4b8cdbee1.css">
+<div id="mainbo_footer" >
+  <!--
+  <div id="mainbo_footer" class="mainbo_footer">
+    <div>
+      <ul>
+        <li><p>版权所有：明博教育科技股份有限公司</p><p>版本号：1.5</p></li>
+        <li><p>客服热线：400-898-5166</p><p>每天9：00-17：30(法定节假日除外)</p></li>
+        <li><img src="http://192.168.0.48/portal/images/code.png"><p>扫一扫,关注我们获得更多教育咨询</p></li>
+        <li class="main_last_msg"><p>网站技术支持：明博教育科技股份有限公司</p></li>
+      </ul>
+    </div>
+  </div>-->
+</div>
+    </div>
+
+    <script src="../../../lib/requires/requires-4aa88d7e5f.js" data-main="../app/js/app-detail-23603a5e5b.js"></script>
+  </body>
+</html>

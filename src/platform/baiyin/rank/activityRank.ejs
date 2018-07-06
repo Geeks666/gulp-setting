@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+  <title>白银区智慧教育云中心</title>
+  <link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer.css" />
+  <link rel="stylesheet" href="../home/css/index.css">
+  <link rel="stylesheet" href="../rank/css/videoRank.css">
+</head>
+<body>
+  <div class="wrapper">
+    <%- include('../../../public/baiyin/header/view/_header.ejs') %>
+    <%- include('../home/view/_index_banner.ejs') %>
+    <div id="spaceNav" class="wrap">
+      <%- include('../home/view/_second_nav.ejs', {currentPage : 'rank'}) %>
+    </div>
+    <div class="content clearfix">
+        <%- include('../rank/view/_nav.ejs', {currentPage : 'activity'}) %>
+      <div class="content_right fl">
+        <div class="teacher_rank">
+          <div class="content_title">
+            <ul class="clearfix">
+              <li class="active fl" data-value="activityRank">
+                <a href="javascript:void(0)">活动热度排行榜</a>
+              </li>
+              <li class="fl" data-value="schoolRank">
+                <a href="javascript:void(0)">参与学校排行榜</a>
+              </li>
+              <li class="fl" data-value="worksRank">
+                <a href="javascript:void(0)">作品热度排行榜</a>
+              </li>
+            </ul>
+          </div>
+          <div class="content_nav" style="display: none;">
+            <span class="content_nav_title">排序方式：</span>
+            <a href="javascript:void(0)" class="page_view active" data-value="1">浏览量</a>
+            <a href="javascript:void(0)" class="comments_num" data-value="2">评论数</a>
+          </div>
+          <div class="content_table"></div>
+          <script id="activityRank" type="text/html">
+            <table>
+              <thead>
+                <tr>
+                  <td>排名</td>
+                  <td>活动名称</td>
+                  <td>活动开始时间</td>
+                  <td>参与教师人数</td>
+                  <td>上传作品数</td>
+                </tr>
+              </thead>
+              <tbody>
+                {{each data}}
+                  {{if ($index+1)%2 == 0 }}<tr class="odd">{{else}}<tr>{{/if}}
+                    <td>
+                      {{if currentPage*pageSize+$index == 0 }}<span class="first">{{/if}}
+                      {{if currentPage*pageSize+$index == 1 }}<span class="second">{{/if}}
+                      {{if currentPage*pageSize+$index == 2 }}<span class="three">{{/if}}
+                        {{currentPage*pageSize+$index+1}}
+                      </span>
+                    </td>
+                    <td>{{$value.activityName}}</td>
+                    <td>{{$value.enrollStart.substring(0,$value.enrollStart.indexOf(" "))}}</td>
+                    <td>{{$value.teacherCount}}</td>
+                    <td>{{$value.workCount}}</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </script>
+          <script id="schoolRank" type="text/html">
+            <table>
+              <thead>
+              <tr>
+                <td>排名</td>
+                <td>学校名称</td>
+                <td>累计参与教师人数</td>
+                <td>累计上传作品数</td>
+                <td>人均上传作品数</td>
+              </tr>
+              </thead>
+              <tbody>
+                {{each data}}
+                  {{if ($index+1)%2 == 0 }}<tr class="odd">{{else}}<tr>{{/if}}
+                    <td>
+                      {{if currentPage*pageSize+$index == 0 }}<span class="first">{{/if}}
+                      {{if currentPage*pageSize+$index == 1 }}<span class="second">{{/if}}
+                      {{if currentPage*pageSize+$index == 2 }}<span class="three">{{/if}}
+                        {{currentPage*pageSize+$index+1}}
+                      </span>
+                    </td>
+                    <td>{{$value.schoolName}}</td>
+                    <td>{{$value.teacherCount}}</td>
+                    <td>{{$value.worksCount}}</td>
+                    <td>{{$value.avgWorks | dateRound}}</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </script>
+          <script id="worksRank" type="text/html">
+            <table>
+              <thead>
+              <tr>
+                <td>排名</td>
+                <td>作品名称</td>
+                <td>教师姓名</td>
+                <td>评论数</td>
+                <td>浏览量</td>
+              </tr>
+              </thead>
+              <tbody>
+                {{each data}}
+                  {{if ($index+1)%2 == 0 }}<tr class="odd">{{else}}<tr>{{/if}}
+                    <td>
+                      {{if currentPage*pageSize+$index == 0 }}<span class="first">{{/if}}
+                      {{if currentPage*pageSize+$index == 1 }}<span class="second">{{/if}}
+                      {{if currentPage*pageSize+$index == 2 }}<span class="three">{{/if}}
+                        {{currentPage*pageSize+$index+1}}
+                      </span>
+                    </td>
+                    <td>{{$value.worksName}}</td>
+                    <td>{{$value.teacherName}}</td>
+                    <td>{{$value.commentCount}}</td>
+                    <td>{{$value.viewCount}}</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+
+          </script>
+          <div id="pageTool"></div>
+        </div>
+      </div>
+    </div>
+    <ul id="others">
+      <li id="goTop">
+        <span class="icon"></span>
+        返回顶部
+      </li>
+    </ul>
+    <%- include('../../../public/baiyin/footer/view/_footer.ejs') %>
+  </div>
+  <script src="../../../lib/requires/requires.js" data-main="../rank/js/activityRank.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+@import "../../home/sass/_reset";
+@import "../../home/sass/common";
+@import url("../../../../public/header/css/header.css");
+@import url("../../../../public/footer/css/footer.css");
+
+/* banner */
+#notice-banner{
+  min-width: 1000px;
+  overflow: hidden;
+  position: relative;
+}
+.notice-banner-content{
+  height: 200px;
+  position: relative;
+}
+.notice-banner-box{
+  width: 1920px;
+  height: 100%;
+  position: absolute;
+  left: -460px;
+  top: 0;
+  text-align: center;
+  overflow: hidden;
+}
+.notice-banner-img{
+  width: 1920px;
+  height: 100%;
+}
+/* banner end */
+/* message */
+.content{
+  padding: 0px 0 20px 0;
+
+}
+.content-link{
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+}
+.message-content{
+  float: left;
+  padding:0 12px 30px 12px;
+  width: 708px;
+  background: #fff;
+  position: relative;
+}
+.content-link{
+  border-bottom: 1px dashed #eee;
+}
+.content-link-bottom{
+  position: absolute;
+  bottom: 0px;
+  left: 12px;
+  width: 700px;
+  border-bottom:none;
+  border-top: 1px dashed #eee;
+}
+.prev{
+  float: left;
+  padding-left:10px;
+  color: #828282;
+}
+.next{
+  float: right;
+  padding-right:10px;
+  color: #828282;
+}
+.content-box{
+  padding:15px 10px ;
+  position: relative;
+}
+.content-text{
+  text-indent: 2em;
+  color: #383838;
+  font-size: 12px;
+  line-height: 24px;
+}
+.title{
+  line-height: 66px;
+  text-align: center;
+  font-size: 18px;
+  color: #383838;
+  margin-bottom: 30px;
+}
+.content-img{
+  display: block;
+  width: 500px;
+  height: 320px;
+  margin:20px auto;
+}
+.text-time{
+  position: absolute;
+  font-size: 12px;
+  color: #828282;
+  line-height: 14px;
+  top: 80px;
+  right: 10px;
+}
+
+/* message end */
+
+/* importent message */
+.important-message{
+  float: right;
+  width: 238px;
+  min-height: 350px;
+  padding: 7px 10px 0;
+  background: #fff;
+  position: relative;
+}
+.imp-title{
+  line-height: 42px;
+  text-indent: 8px;
+  border-bottom:1px solid #eee;
+  font-size: 16px;
+  color: #383838;
+}
+.imp-message{
+  padding-top: 4px;
+}
+.imp-list{
+  font-size: 14px;
+  padding-left: 30px;
+  line-height: 40px;
+  background: url(../../home/images/list-pic.png) no-repeat 8px 15px;
+}
+.imp-text{
+  color:#383838;
+  display: inline-block;
+  max-width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  height: 40px;
+}
+#cur p img{
+  width:100%;
+  height:100%;
+  
+}

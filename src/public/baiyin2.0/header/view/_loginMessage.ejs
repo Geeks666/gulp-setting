@@ -1,0 +1,46 @@
+<script type="text/html" id="loginMessage">
+  <li>|</li>
+  <li class="userName">
+    {{if data.code == "login_error" }}
+    <span class="loginButton">登录</span>
+    {{else}}
+    <span>{{data.data.userInfo.name}}&nbsp;
+      <span class="arrow arrowDown"></span>
+    </span>
+
+    <div class="chooseList myChoose clearfix">
+      <ul class="clearfix">
+        {{if data.data.userType == 1 }}
+        <li>
+          <a href="{{data.userJumpHref.spaceManager}}">机构空间</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{data.userJumpHref.mySpace}}">我的空间</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.personCenter}}">个人中心</a>
+        </li>
+        {{/if}}
+        <li>
+          <a class="logout" href="javascript:void(0)">退出</a>
+        </li>
+      </ul>
+    </div>
+    {{/if}}
+  </li>
+  {{if data.code != "login_error" && data.data.userType == 1 }}
+  <li>|</li>
+  <li>
+    <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+  </li>
+  {{/if}}
+  <!-- <li>|</li>
+     <li>消息(<b>5</b>)</li>-->
+</script>

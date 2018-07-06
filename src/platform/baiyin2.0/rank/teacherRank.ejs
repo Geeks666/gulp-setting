@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+  <title>白银区智慧教育云中心</title>
+  <link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer.css" />
+  <link rel="stylesheet" href="../home/css/index.css">
+  <link rel="stylesheet" href="../rank/css/videoRank.css">
+</head>
+<body>
+  <div class="wrapper">
+    <%- include('../../../public/baiyin2.0/header/view/_header.ejs') %>
+    <%- include('../home/view/_index_banner.ejs') %>
+    <!--<div id="spaceNav" class="wrap">
+       include('../home/view/_second_nav.ejs', {currentPage : 'rank'})
+    </div>-->
+    <div class="content clearfix">
+      <%- include('../rank/view/_nav.ejs', {currentPage : 'teacher'}) %>
+      <div class="content_right fl">
+        <div class="teacher_rank">
+          <div class="content_title">
+            <!--<span>教师排行</span>
+            <a href="javascript:void(0)" class="export_data"><i></i>导出数据</a>-->
+
+            <ul class="clearfix">
+              <li class="active fl" data-value="1">
+                <a href="javascript:void(0)">登录次数</a>
+              </li>
+              <li class="fl" data-value="2">
+                <a href="javascript:void(0)">资源上传数</a>
+              </li>
+              <li class="fl" data-value="3">
+                <a href="javascript:void(0)">资源下载数</a>
+              </li>
+            </ul>
+          </div>
+          <div class="content_table"></div>
+          <script id="teacherRank" type="text/html">
+            <table>
+              <thead>
+              <tr>
+                <td>排名</td>
+                <td>教师名称</td>
+                <td>登录次数</td>
+                <td>资源上传数</td>
+                <td>资源下载数</td>
+                <td>上传视频数</td>
+              </tr>
+              </thead>
+              <tbody>
+                {{each data}}
+                  {{if ($index+1)%2 == 0 }}<tr class="odd">{{else}}<tr>{{/if}}
+                    <td>
+                      {{if currentPage*pageSize+$index == 0 }}<span class="first">{{/if}}
+                              {{if currentPage*pageSize+$index == 1 }}<span class="second">{{/if}}
+                              {{if currentPage*pageSize+$index == 2 }}<span class="three">{{/if}}
+                                {{currentPage*pageSize+$index+1}}
+                              </span>
+                    </td>
+                    <td>{{$value.name}}</td>
+                    <td>{{$value.lgCounts}}</td>
+                    <td>{{$value.resUpCount}}</td>
+                    <td>{{$value.resDownCount}}</td>
+                    <td>{{$value.videoCount}}</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </script>
+          <div id="pageTool"></div>
+        </div>
+
+      </div>
+    </div>
+    <ul id="others">
+      <li id="goTop">
+        <span class="icon"></span>
+        返回顶部
+      </li>
+    </ul>
+    <%- include('../../../public/baiyin/footer/view/_footer.ejs') %>
+  </div>
+  <script src="../../../lib/requires/requires.js" data-main="../rank/js/teacherRank.js"></script>
+</body>
+</html>

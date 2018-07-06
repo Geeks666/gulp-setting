@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+  <title>白银区智慧教育云中心</title>
+  <link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer.css" />
+  <link rel="stylesheet" href="../home/css/index.css">
+  <link rel="stylesheet" href="../rank/css/allRank.css">
+</head>
+<body>
+  <div class="wrapper">
+    <%- include('../../../public/baiyin2.0/header/view/_header.ejs') %>
+    <%- include('../home/view/_index_banner.ejs') %>
+    <!--<div id="spaceNav" class="wrap">
+       include('../home/view/_second_nav.ejs', {currentPage : 'rank'})
+    </div>-->
+    <div class="content clearfix">
+      <%- include('../rank/view/_nav.ejs', {currentPage : 'all'}) %>
+      <div class="content_right fl">
+        <div class="teacher_rank fl">
+          <div class="content_title">
+            <span>教师数量排行</span>
+          </div>
+          <div class="total_num">
+            <i></i>
+            教师总数：
+            <span></span>
+          </div>
+          <ul class="teacher_list"></ul>
+        </div>
+        <script id="teacherRank" type="text/html">
+          {{each data}}
+            <li>
+              {{if $index<3 }}<i class="active fl">{{else}}
+                <i class="fl">{{/if}}
+                {{$index+1}}
+              </i>
+              <span class="school_name fl" title="{{$value.name}}">{{$value.showName}}</span>
+              <span class="teacher_num fl">{{$value.value}}</span>
+            </li>
+          {{/each}}
+        </script>
+        <div class="user_rank fl">
+          <div class="content_title">
+            <span>教师活跃度</span>
+          </div>
+          <div class="total_num">
+            <i></i>
+            使用人数：
+            <span></span>
+          </div>
+          <div id="userRankEchart" class="user_rank_echart"></div>
+        </div>
+        <div class="resource_rank fl">
+          <div class="content_title">
+            <span>资源贡献排行</span>
+            <div class="grade_select">
+              学段：
+              <span data-value="140"><strong>小学</strong><i></i></span>
+              <div>
+                <ul>
+                  <li data-value="140">小学</li>
+                  <li data-value="141">初中</li>
+                  <li data-value="142">高中</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="resourceRankEchart" class="resource_rank_echart"></div>
+        </div>
+        <div class="activity_rank fl">
+          <div class="content_title">
+            <span>活动参与度排行</span>
+          </div>
+          <div class="total_num">
+            <i></i>
+            参与人数：
+            <span>0</span>
+          </div>
+          <div id="activityRankEchart" class="activity_rank_echart"></div>
+        </div>
+        <div class="activity_works_rank fl">
+          <div class="content_title">
+            <span>活动作品数排行</span>
+          </div>
+          <div class="total_num">
+            <i></i>
+            作品总数：
+            <span>0</span>
+          </div>
+          <div id="activityWorksRankEchart" class="activity_works_rank_echart"></div>
+        </div>
+      </div>
+    </div>
+    <ul id="others">
+      <li id="goTop">
+        <span class="icon"></span>
+        返回顶部
+      </li>
+    </ul>
+    <%- include('../../../public/baiyin/footer/view/_footer.ejs') %>
+  </div>
+  <script src="../../../lib/requires/requires.js" data-main="../rank/js/allRank.js"></script>
+</body>
+</html>

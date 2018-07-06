@@ -1,0 +1,19 @@
+<ul class="spaceNavul clearfix">
+  <li><a class="spaceLink <%- currentPage === 'index'?'active':'' %>" href="javascript:void(0)" data-href="/dist/platform/www/home/index.html">首页</a></li>
+  <li><a class="ktsl spaceLink hanbo_enter" href="javascript:void(0)" type="hanbovideo_appId" >课堂实录</a></li>
+  <li><a class="spaceLink <%- currentPage === 'rank'?'active':'' %>" href="javascript:void(0)" data-href="/dist/platform/www/rank/allRank.html">排行榜</a></li>
+  <li class="application"><a class="spaceLink <%- currentPage === 'app'?'active':'' %>" data-href="/dist/platform/www/app/app.html">应用</a></li>
+</ul>
+
+<ul class="spaceNavul1 msg">
+  <li class="share_resource_num">生成资源：<span class="num"></span></li>
+  <li class="total_user">注册用户：<span class="num"></span></li>
+  <li class="total_ktsl">课堂实录：<span class="num1"> </span></li>
+</ul>
+<!--
+<ul class="spaceNavul clearfix" ></ul>
+<script type="text/html" id="secondNavList">
+  {{each navList}}
+  <li><a class="spaceLink{{$index==0 ? ' active' : ''}}" {{$value.newOpen=='true' ? 'target=_blank' : ''}} href="{{$value.url}}">{{$value.name}}</a></li>
+  {{/each}}
+</script>-->

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../statistics/css/main.css">
+</head>
+<body data-module="app">
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'app'}) %>
+    <div class="content">
+      <%- include('view/_app_top.ejs', {currentPage : 'detail'}) %>
+      <div class="row echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">应用统计明细</div>
+        <div class="wrapTable clearfix">
+          <div class="wrapTableTop">
+            <div class="wrapTableTopExport">
+              <span></span>
+              <strong>导出数据</strong>
+            </div>
+            <div class="dataWrap">
+              <input placeholder="请输入日期" class="laydate-icon" id="date">
+              <input placeholder="请输入应用关键字" type="text" class="input-serarch">
+              <input type="button" value="搜索" class="dateConfirmBtn dateAppBtn">
+            </div>
+          </div>
+          <div class="tableWrap clearfix" id="spaceTableApp">
+            <table>
+              <thead>
+              <th style="width:474px;text-align: left;padding-left: 25px;">应用名称</th>
+              <th style="width:171px;">访问人数</th>
+              <th style="width:162px;">访问次数</th>
+              <th style="width:168px;">访问次数占比</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <div id="pageTool1App"></div>
+          </div>
+        </div>
+      </div>
+      <%- include('view/_footer.ejs') %>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="../../../../lib/component/laydate/js/laydate.js"></script>
+<script src="../../../../lib/requires/requires.js" data-main="../statistics/js/module_detail.js"></script>
+<script type="text/javascript">
+  laydate.skin('shenlan'); //切换皮肤
+</script>
+</body>
+</html>

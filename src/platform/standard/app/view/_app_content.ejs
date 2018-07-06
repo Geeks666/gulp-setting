@@ -1,0 +1,88 @@
+<div class="application_content">
+  <div class="application_content_header">
+    <ul class="application_content_type" id="application_content_type"></ul>
+    <script type="text/html" id="applicationContentType">
+      <li class="application_active"><span>全部</span></li>
+      {{each data}}
+      <li type="{{$value.value}}" {{$index== data.length-1 ? "class=application_noborder" : ""}} >
+      <span>{{$value.name}}</span></li>
+      {{/each}}
+    </script>
+  </div>
+
+  <div class="application_content_box" id="application_content_box">
+    <ul id="application_list" style="position: relative;" class="application_content_list show"></ul>
+
+    <script type="text/html" id="application_list_">
+      {{each data}}
+      <li isDetail="{{$value.isDetail ? 'true' : 'false'}}" appid="{{$value.id}}">
+        <dl>
+          <dt class="recommended_img1"><img src="{{$value.logo}}"></dt>
+          <dd class="type_title">
+            <a class="app_url_notneedLogin appName" isLogin="2" appid="{{$value.id}}" isopen="{{$value.isDetail}}"
+               appUrl="{{$value.appUrl}}" href="javascript:void(0);">{{$value.name}}</a>
+          </dd>
+          <dd class="praise_text">
+            {{if $value.isLike }}
+            <span type="1" class="praised"></span>
+            {{else}}
+            <span type="0" appid="{{$value.id}}" class="unpraise_{{$value.id}} praise-icon2"></span>
+            {{/if}}
+            <span class="like_num_{{$value.id}}">{{$value.likeNum}}</span>
+          </dd>
+        </dl>
+        <span class="attribution type_{{$value.id}}">{{$value.category}}</span>
+        {{/each}}
+    </script>
+
+  </div>
+  <div id="app-details">
+    <div class="a-detail">
+      <h3 class="box-title">应用详情</h3>
+      <div class="detail-cont clearFix">
+        <div class="detail-msg clearFix"></div>
+        <script type="text/html" id="detailMsg">
+          <img class="app-pic" src="{{data.logo}}" alt="">
+          <div class="msg-top clearFix">
+            <span class="app-title"><!-- 备课大师 --> {{data.name}}</span>
+            <span class="praise">
+                    <strong class="praise-icon praise-icon2 {{ data.isLike  ? 'praise-icon-active' : '' }}"
+                            appid="{{data.id}}"></strong>
+                    <strong class="praise-num"><!-- 4546 -->{{data.likeNum}}</strong>
+                  </span>
+            <span class="type"><!-- 教学 -->{{data.category}}</span>
+          </div>
+          <p class="app-introduction">{{data.introduction}}</p>
+          {{ if data.kindCode == 3 }}
+          <div class="app-btns clearFix" style="right: 123px;">
+            {{ else }}
+            <div class="app-btns clearFix">
+              {{ /if }}
+              &nbsp;
+              {{if data.downUrl }}
+              <a class="abtn down-app" href="javascript:void(0);" appid="{{data.id}}">下载应用</a>
+              {{ if data.kindCode == 3 }}
+              <img class="qr" src="{{data.qrUrl}}" alt="">
+              {{ else }}
+              <a class="abtn into-app" href="javascript:void(0);" appid="{{data.id}}" title="请先下载安装应用，否则无法进入应用"
+                 kindCode="{{data.kindCode}}">进入应用</a>
+              {{/if}}
+              {{else}}
+              <a class="abtn into-app" href="javascript:void(0);" appid="{{data.id}}"
+                 kindCode="{{data.kindCode}}">进入应用</a>
+              {{/if}}
+            </div>
+        </script>
+      </div>
+      <div class="show-pic">
+        <div class="pic-box">
+          <ul class="pic-list clearFix"></ul>
+        </div>
+        <div class="shadow left-shadow"></div>
+        <div class="shadow right-shadow"></div>
+        <a class="picbtn prev-btn" href="javascript:;"></a>
+        <a class="picbtn next-btn" href="javascript:;"></a>
+      </div>
+    </div>
+  </div>
+</div>

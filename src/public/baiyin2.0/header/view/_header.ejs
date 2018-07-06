@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="../../../public/header/css/header.css">
+<div class="wrap_top_bg baiyin">
+  <div class="wrap_top">
+    <div class="logo">
+      <a href="javascript:void(0)">
+        <img src="" alt="">
+      </a>
+    </div>
+    <div class="chooseArea tabchoose">
+      <a class="area" href="javascript:;">
+        <span class="kh">[</span>
+        <span class="scholl_name">白银区</span>
+        <span class="arrow arrowDown"></span>
+        <span class="kh">]</span>
+      </a>
+      <div class="chooseList schoolChoose">
+        <ul id="schoolList"></ul>
+      </div>
+    </div>
+    <div id="nav" class="nav clearfix">
+      <div class="nav_top">
+        <div class="msg tabchoose">
+          <div class="msgT clearfix">
+            <ul id="login_message" class="nav_top_ul">
+              <li class="favorite_button">添加收藏</li>
+              <li>|</li>
+              <li class="home_button">设为首页</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav_bottom">
+        <ul class="clearfix"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../view/_schoolList.ejs', {curIndex:5}) %>
+<%- include('../view/_loginMessage.ejs', {curIndex:5}) %>
+<%- include('../view/_navList.ejs', {curIndex:5}) %>

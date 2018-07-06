@@ -1,0 +1,29 @@
+
+@import "../../rank/sass/common";
+
+.content_right .content_title ul{
+  display: inline-block;
+}
+.content_right .content_title ul li{
+  padding:0 8px;
+}
+.content_right .content_title ul li a{
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  color: #666;
+}
+.content_right .content_title ul li.active a{
+  border-bottom: 4px solid $navSelectedColor;
+  color: #303030;
+}
+.content_right .content_title>a i{
+  background: url(../../rank/images/icon.png) no-repeat;
+  background-position: 2px 2px;
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  left: -21px;
+}

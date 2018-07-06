@@ -1,0 +1,11 @@
+<script type="text/html" id="school_list">
+    {{each data}}
+      {{if $index%4 == 0 }}
+      <li class="list clearfix">
+      {{/if}}
+        <span data-id="{{$value.id}}"><a href="javascript:;" title="{{$value.name}}">{{$value.showName}}</a></span>
+      {{if ($index+1)%4 == 0}}
+      </li>
+      {{/if}}
+    {{/each}}
+  </script>

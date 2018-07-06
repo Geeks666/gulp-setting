@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main.css">
+</head>
+<body data-module="jy" data-table="research">
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'teaching'}) %>
+    <div class="content contentP">
+      <%- include('view/_teaching_top.ejs', {currentPage : 'situation'}) %>
+      <div class="row echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">学校教研情况详情</div>
+        <div class="wrapTable clearfix" id="spaceTable">
+          <div class="wrapTableTop">
+            <div class="wrapTableTopExport" style="margin-left: 30px;">
+              <span></span>
+              <strong>导出数据</strong>
+            </div>
+            <div class="row">
+              <div class="selectRight" style="right: -20px;">
+                <div class="selectWrap">
+                  <div class="label">统计时段：</div>
+                  <div class="selectTop selectTopAct" data-value="" id="schoolTeaching">
+                    <span>全学年</span>
+                    <strong></strong>
+                  </div>
+                  <div class="selectBottom">
+                    <ol>
+                      <li data-value="">全学年</li>
+                      <li data-value="yesterday">昨天</li>
+                      <li data-value="lastseven">最近七天</li>
+                      <li data-value="lastthirty">最近30天</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="tab wrapTab" data-value="1">
+            <li class="ulli liAct" data-value="1">教师教研情况一览</li>
+            <li class="ulli" data-value="2">教学管理情况一览</li>
+          </ul>
+          <div id="activityFqWrap">
+            <div class="role-city activityFqTableWrap">
+                <div class="activityFqTable schoolTeachingDetail1" id="schoolTeachingDetail1">
+                  <table>
+                    <thead>
+                    <tr>
+                      <th style="width:13%;">区域名称</th>
+                      <th style="width:7%;">教师人数</th>
+                      <th style="width:7%;">资源总数</th>
+                      <th style="width:8%;">
+                        <span>撰写教案</span>
+                        <span>（篇数）</span>
+                      </th>
+                      <th style="width:8%;">
+                        <span>上传课件</span>
+                        <span>（篇数）</span>
+                      </th>
+                      <th style="width:8%;">
+                        <span>教学反思</span>
+                        <span>（篇数）</span>
+                      </th>
+                      <th style="width:8%;">
+                        <span>听课记录</span>
+                        <span>（节数）</span>
+                      </th>
+                      <th style="width:8%;">
+                        <span>计划总结</span>
+                        <span>（篇数）</span>
+                      </th>
+                      <th style="width:8%;">
+                        <span>教学文章</span>
+                        <span>（篇数）</span>
+                      </th>
+                      <th style="width:8%;">
+                        <span>集体备课</span>
+                        <span>（参与数）</span>
+                      </th>
+                      <th style="width:8%;">
+                        <span>校际教研</span>
+                        <span>（参与数）</span>
+                      </th>
+                      <th style="width:9%;border-right:0;">
+                        <span>成长档案袋</span>
+                        <span>（精选数）</span>
+                      </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="activityFqTable schoolTeachingDetail2" style="display: none;" id="schoolTeachingDetail2">
+                  <table>
+                    <thead>
+                    <tr>
+                      <th style="width:12%;">区域名称</th>
+                      <th style="width:9%;">管理者人数</th>
+                      <th style="width:7%;">资源总数</th>
+                      <th style="width:7%;">
+                        <span>查阅教案</span>
+                        <span>（篇数）</span>
+                      </th>
+                      <th style="width:7%;">
+                        <span>查阅课件</span>
+                        <span>（篇数）</span>
+                      </th>
+                      <th style="width:8%;">
+                        <span>查阅反思</span>
+                        <span>（篇数）</span>
+                      </th>
+                      <th style="width:10%;">
+                        <span>查阅听课记录</span>
+                        <span>（节数）</span>
+                      </th>
+                      <th style="width:10%;">
+                        <span>查阅计划总结</span>
+                        <span>（篇数）</span>
+                      </th>
+                      <th style="width:10%;">
+                        <span>查阅教学文章</span>
+                        <span>（篇数）</span>
+                      </th>
+                      <th style="width:9%;">
+                        <span>集体备课</span>
+                        <span>（活动数/</span>
+                        <span>查阅数）</span>
+                      </th>
+                      <th style="width:11%;border-right:0;">
+                        <span>校际教研</span>
+                        <span>（教研圈数/</span>
+                        <span>活动数）</span>
+                      </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="role-county activityFqTableWrap">
+              <div class="activityFqTable schoolTeachingDetail1" id="schoolTeachingDetail5">
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="width:13%;">学校名称</th>
+                    <th style="width:7%;">教师人数</th>
+                    <th style="width:7%;">资源总数</th>
+                    <th style="width:8%;">
+                      <span>撰写教案</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>上传课件</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>教学反思</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>听课记录</span>
+                      <span>（节数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>计划总结</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>教学文章</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>集体备课</span>
+                      <span>（参与数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>校际教研</span>
+                      <span>（参与数）</span>
+                    </th>
+                    <th style="width:9%;border-right:0;">
+                      <span>成长档案袋</span>
+                      <span>（精选数）</span>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+              <div class="activityFqTable schoolTeachingDetail2" style="display: none;" id="schoolTeachingDetail6">
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="width:12%;">学校名称</th>
+                    <th style="width:9%;">管理者人数</th>
+                    <th style="width:7%;">资源总数</th>
+                    <th style="width:7%;">
+                      <span>查阅教案</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:7%;">
+                      <span>查阅课件</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:7%;">
+                      <span>查阅反思</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:11%;">
+                      <span>查阅听课记录</span>
+                      <span>（节数）</span>
+                    </th>
+                    <th style="width:10%;">
+                      <span>查阅计划总结</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:10%;">
+                      <span>查阅教学文章</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:9%;">
+                      <span>集体备课</span>
+                      <span>（活动数/</span>
+                      <span>查阅数）</span>
+                    </th>
+                    <th style="width:11%;border-right:0;">
+                      <span>校际教研</span>
+                      <span>（教研圈数/</span>
+                      <span>活动数）</span>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div >
+            </div>
+            <div class="role-school activityFqTableWrap">
+              <div class="activityFqTable schoolTeachingDetail1" id="schoolTeachingDetail3">
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="width:12%;">姓名</th>
+                    <th style="width:8%;">资源总数</th>
+                    <th style="width:7%;">
+                      <span>撰写教案</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:7%;">
+                      <span>上传课件</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>教学反思</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>听课记录</span>
+                      <span>（节数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>计划总结</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>教学文章</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>集体备课</span>
+                      <span>（参与数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>校际教研</span>
+                      <span>（参与数）</span>
+                    </th>
+                    <th style="width:9%;border-right:0;">
+                      <span>成长档案袋</span>
+                      <span>（精选数）</span>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+              <div class="activityFqTable schoolTeachingDetail2" style="display: none;"  id="schoolTeachingDetail4">
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="width:14%;">教师姓名</th>
+                    <th style="width:8%;">资源总数</th>
+                    <th style="width:8%;">
+                      <span>查阅教案</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>查阅课件</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:8%;">
+                      <span>查阅反思</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:11%;">
+                      <span>查阅听课记录</span>
+                      <span>（节数）</span>
+                    </th>
+                    <th style="width:11%;">
+                      <span>查阅计划总结</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:11%;">
+                      <span>查阅教学文章</span>
+                      <span>（篇数）</span>
+                    </th>
+                    <th style="width:10%;">
+                      <span>集体备课</span>
+                      <span>（活动数/</span>
+                      <span>查阅数）</span>
+                    </th>
+                    <th style="width:11%;border-right:0;">
+                      <span>校际教研</span>
+                      <span>（活动数）</span>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="pageTool1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js"
+        data-main="../../customModule/statistics/js/school_teaching_detail.js"></script>
+</body>
+</html>

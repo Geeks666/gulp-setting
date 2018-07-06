@@ -1,0 +1,1 @@
+"use strict";require.config({baseUrl:"../",paths:{platformConf:"public/js/platformConf-6e48d40e05.js"}}),define(["jquery","template","layer","../../home/js/tab","service","tools","banner","ajaxBanner","secondNav","appDetail","footer","header"],function(e,a,r,o,t,n,s,f,i,l,p,c){});

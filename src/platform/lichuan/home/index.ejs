@@ -1,0 +1,311 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit|ie-stand" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="Expires" content="0" />
+    <title>优课智慧教育云平台</title>
+    </head>
+    <link href="../home/css/style.css" rel="stylesheet"/>
+    <link href="../../../lib/jquery/css/jquery.fullPage.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer.css" />
+    <script>
+      if(top.location != self.location){
+        top.location = self.location;//防止页面被框架包含
+      }
+    </script>
+  <body>
+    <div class="wrap">
+      <%- include('../../../public/standard/header/view/_header.ejs') %>
+      <!--banner-->
+      <div class="banner">
+        <div class="slides">
+          <%- include('../../standard/home/view/_index_banner.ejs') %>
+        </div>
+      </div>
+      <!--notice-->
+      <div class="notice">
+        <div class="notice_content">
+          <span></span>
+          <ul class="notice_list"></ul>
+          <script id="noticeList" type="text/html">
+            {{each data}}
+              <li>
+                <a href="../notice/noticeDetail.html?id={{$value.id}}&index={{$index}}" target="_blank">{{$value.title}}</a> &nbsp;&nbsp;
+                <a href="../notice/noticeList.html?currentPage=1" target="_blank">更多&gt;&gt;</a>
+              </li>
+            {{/each}}
+          </script>
+
+        </div>
+      </div>
+      <!--main_content-->
+      <div class="main_content">
+        <div class="main_box">
+          <!--应用-->
+          <div class="application">
+            <input type="button" class="left_button" id="left_button"/>
+            <div class="small_banner" id="application_list">
+              <ul class="small_banner_list"></ul>
+              <script type="text/html" id="applicationList">
+                {{each data }}
+                  <li class="small01">
+                    <a href="../app/application.html?targetApp={{$value.id}}" target="_blank" isDetail="true" appid="{{$value.id}}">
+                      <span class="small_icon">
+                        <img src="{{$value.logo}}" alt="">
+                      </span>
+                      <span class="samll_text">{{$value.name}}</span>
+                    </a>
+                  </li>
+                {{/each}}
+              </script>
+            </div>
+            <input type="button" class="right_button" id="right_button"/>
+          </div>
+
+          <div class="main_type clearFix">
+            <div class="main_left_type">
+              <!--学科资源-->
+              <div class="discipline pad-19" id="subject_section" >
+                <p class="title"><strong>学科资源</strong><a href="#" target="_blank">更多>></a></p>
+              </div>
+              <script type="text/html" id="subjectSection">
+                {{each data as phase}}
+                  <div class="discipline_list"><span>{{phase.name}}</span><ul class="discipline_type">
+                      {{each phase.subjects}}        <!-- gradeId参数是学段、学段、学段 -->
+                        <li><a href="{{msg}}/syncTeaching/index/?subjectId={{$value.id}}&gradeId={{phase.phaseId}}&requireLogin=false" target="_blank">{{$value.name}}</a></li>
+                      {{/each}}
+                  </ul></div>
+                {{/each}}
+              </script>
+              <!--教育新闻-->
+              <div class="news pad-19">
+                <div class="title">
+                  <ul class="tab_type" id="tab_type">
+                    <li class="tab_active" >教育新闻</li>
+                  </ul>
+                  <a href="../news/sitenewsListInCategory.html?currentPage=1&tab=1" target="_blank">更多>></a>
+                </div>
+                <div class="newscontent_box clearFix" >
+                  <img src="./images/news1.jpg"/>
+                  <ul class="tab show clearFix" id="newscontent_box"></ul>
+                  <script id="newscontent_box_" type="text/html">
+                    {{each data}}
+                    <li class="clearFix">
+                      <span></span>
+                      <a href="../news/sitenewsDetail.html?id={{$value.id}}&index={{$index}}&category={{category}}&isComm=1" target="_blank" class="news_type">{{$value.title}}</a>
+                      <time>{{$value.crtDttm.split(" ")[0]}}</time>
+                    </li>
+                    {{/each}}
+                  </script>
+                </div>
+              </div>
+              <!--热门空间-->
+              <div class="goodspace pad-19">
+                <h3 class="title">
+                  <strong>热门空间</strong>
+                  <ul class="goodspace_type" id="goodspace_type">
+                    <li class="goodspace_active" type="6"><span>教研员</span></li>
+                    <li type="2"><span>教师</span></li>
+                    <li type="3"><span>学生</span></li>
+                    <li type="5"><span>家长</span></li>
+                  </ul>
+                </h3>
+                <div class="goodspace_content" id="goodspace_content">
+                  <ul class="clearFix"></ul>
+                  <script id="goodspaceContent" type="text/html">
+                    {{each data}}
+                      <li>
+                        <a href="{{$value.spaceUrl}}" target="_blank">
+                          <dl class="people_news">
+                            <dt><img src="{{$value.icon}}"/></dt>
+                            <dd class="name">{{$value.name}}</dd>
+                            <dd>{{$value.label}}</dd>
+                          </dl>
+                        </a>
+                      </li>
+                    {{/each}}
+                  </script>
+                </div>
+              </div>
+              <!--热门名师工作室-->
+              <div class="hot-studio pad-19">
+                <h3 class="title">
+                  <strong>热门名师工作室</strong>
+                  <a target="_blank" href="#">更多>></a>
+                </h3>
+                <ul class="studio-list"></ul>
+                <script type="text/html" id="studioList">
+                  {{each datalist}}
+                    <li class="studio-li">
+                      <a class="studio-pic" target="_blank"  href="{{$value.studioUrl}}">
+                        <img src="{{$value.icon}}" alt="">
+                      </a>
+                      <div>
+                        <a class="studio-name"  target="_blank" href="{{$value.studioUrl}}">{{$value.name}}</a>
+                        <p class="message">
+                          <span>{{$value.periodName}}{{$value.subjectName}}</span>&nbsp;&nbsp;<span>{{$value.sysUser.username}}</span>
+                        </p>
+                      </div>
+                    </li>
+                  {{/each}}
+                </script>
+              </div>
+            </div>
+            <div class="main_right_type">
+              <!--热门资源-->
+              <div class="resources pad-15">
+                <h3 class="title">
+                  <strong>热门资源</strong>
+                  <ul class="min-nav">
+                    <li class="active" id="140">小学</li>
+                    <li id="141">初中</li>
+                    <li id="142">高中</li>
+                  </ul>
+                  <a href="#" target="_blank">更多>></a>
+                </h3>
+                <ul id="resource_list"></ul>
+                <script type="text/html" id="resourceList">
+                  {{each data.data}}
+                  <li class="file">
+                    <span class="file-icon"></span>
+                    <a class="file-name" target="_blank" href="{{msg+$value.url}}">{{$value.filename}}</a>
+                    <p class="message clearFix">
+                      <span>{{$value.gradeLevel}}</span>
+                      <span>{{$value.subject}}</span>
+                      <time></time>
+                    </p>
+                  </li>
+                  {{/each}}
+                </script>
+              </div>
+              <!--成果展示-->
+              <div class="result pad-15">
+                <h3 class="title">
+                  <strong>成果展示</strong>
+                  <a href="sitenewsListInCategory.html?currentPage=1&tab=2" target="_blank">更多>></a>
+                </h3>
+                <ul class="result-list" id="result_list"></ul>
+                <script id="result_list_" type="text/html">
+                  {{each data}}
+                  <li class="result-li clearFix">
+                    <span class="dian"></span>
+                    <a class="name" href="sitenewsDetail.html?id={{$value.id}}&index={{$index}}&category={{category}}&isComm=1" target="_blank">{{$value.title}}</a>
+                    <time>{{$value.crtDttm.split(" ")[0]}}</time>
+                  </li>
+                  {{/each}}
+                </script>
+
+              </div>
+              <!--个人空间动态-->
+              <div class="member-dyn pad-15">
+                <h3 class="title">
+                  <strong>个人空间动态</strong>
+                </h3>
+                <ul class="dyn-list" id="dynamic_list"></ul>
+
+                <script type="text/html" id="dynamicList">
+                  {{each data}}
+                    <li class="dyn-li">
+                      <a class="member-pic" target="_blank" href="{{$value.memberInfo.spaceUrl}}">
+                        <img src="{{$value.memberInfo.picurl}}" alt="">
+                      </a>
+                      <div>
+                        <a class="dyn-name" target="_blank" href="{{$value.memberInfo.spaceUrl}}">
+                          {{$value.title}}
+                        </a>
+                        <p class="message clearFix"><span>{{$value.memberInfo.username}}</span><time>{{$value.memberInfo.createTime}}</time></p>
+                      </div>
+                    </li>
+                  {{/each}}
+                </script>
+              </div>
+              <!--名师工作室动态-->
+              <div class="member-dyn pad-15">
+                <h3 class="title">
+                  <strong>名师工作室动态</strong>
+                </h3>
+                <ul class="dyn-list" id="studio_dynamic_list"></ul>
+                <script type="text/html" id="studioDynamicList">
+                  {{each data}}
+                    <li class="dyn-li">
+                      <a class="member-pic" target="_blank" href="{{$value.detailUrl}}">
+                        <img src="{{$value.sysUser.avatar}}" alt="">
+                      </a>
+                      <div>
+                        <a class="dyn-name" target="_blank" href="{{$value.detailUrl}}">{{$value.type}}{{$value.title}}</a>
+                        <p class="message clearFix"><span>{{$value.sysUser.username}}</span><time>{{$value.createTime.split(" ")[0]}}</time></p>
+                      </div>
+                    </li>
+                  {{/each}}
+                </script>
+              </div>
+            </div>
+          </div>
+          <!--热门学科空间-->
+          <div class="school">
+            <p class="school_title">
+              <strong>热门学科空间</strong>
+            </p>
+            <div class="schoolimgs_box">
+              <div class="slider_schoolimg">
+                <ul id="subject_space"></ul>
+                <script type="text/html" id="subjectSpace">
+                  {{each data}}
+                    <li>
+                      <a class="space-pic" target="_blank" href="{{$value.spaceUrl}}"><img src="{{$value.icon}}"/></a>
+                      <p class="space-name">
+                        <a target="_blank" href="{{$value.spaceUrl}}">{{$value.name}}</a>
+                      </p>
+                    </li>
+                  {{/each}}
+                </script>
+              </div>
+            </div>
+          </div>
+          <!--热门学校空间-->
+          <div class="school">
+            <p class="school_title">
+              <strong>热门学校空间</strong>
+            </p>
+            <div class="schoolimgs_box">
+              <div class="hot-school">
+                <ul class="clearFix" id = "school_space"></ul>
+                <script type="text/html" id="schoolSpace">
+                  {{each data}}
+                    <li>
+                    <a target="_blank" href="{{$value.spaceUrl}}">
+                      <img src="{{$value.icon}}">
+                      <span>{{$value.name}}</span>
+                      </a>
+                    </li>
+                  {{/each}}
+                </script>
+              </div>
+            </div>
+          </div>
+          <!--友情链接-->
+          <div class="link_content">
+            <p class="link_title">
+              <strong>友情链接</strong>
+            </p>
+            <ul class="clearFix"></ul>
+            <script type="text/html" id="linkContent">
+              {{each data}}
+                <li><a href="{{$value.website}}" target="_blank"><img src="{{$value.pic}}"/></a></li>
+              {{/each}}
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="backToTop">返回顶部</div>
+    <%- include('../../../public/standard/footer/view/_footer.ejs') %>
+    <script src="../../../lib/requires/requires.js" data-main="../home/js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'app'}) %>
+    <div class="content">
+      <%- include('view/_app_top.ejs', {currentPage : 'echart'}) %>
+      <div class="row row2-app-echart echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台应用访问量统计</div>
+        <div class="selectWrap">
+          <div class="label">应用名称：</div>
+          <div class="selectTop selectTopAct" id="select_app_name">
+            <span>数据加载中</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol></ol>
+          </div>
+        </div>
+        <div class="role-city role-county selectWrap">
+          <div class="role-city label">区域：</div>
+          <div class="role-county label">学校：</div>
+          <div class="selectTop selectTopAct" id="select_area">
+            <span>数据加载中</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol></ol>
+          </div>
+        </div>
+        <div class="dataWrap">
+          <input placeholder="请选择开始日期" readonly class="laydate-icon" id="date_start_traffic"/>
+          <input placeholder="请选择结束日期" readonly class="laydate-icon" id="date_end_traffic"/>
+          <input type="button" value="确定" class="dateConfirmBtn" id="btn_app_traffic">
+        </div>
+        <div id="app_traffic"></div>
+      </div>
+      <div class="row row3-app-echart echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台应用访问量统计排行top10</div>
+        <div class="dataWrap">
+          <input placeholder="请选择开始日期" readonly class="laydate-icon" id="date_start_traffic10"/>
+          <input placeholder="请选择结束日期" readonly class="laydate-icon" id="date_end_traffic10"/>
+          <input type="button" value="确定" class="dateConfirmBtn" id="btn_app_traffic10">
+        </div>
+        <div id="app_traffic10_wrap">
+          <div id="app_traffic10"></div>
+          <div id="app_traffic10_pie"></div>
+        </div>
+      </div>
+      <div class="row row4-app-echart echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台应用使用情况统计</div>
+        <ul class="tab1 ulli-wrap" data-value="person" id="tab_app_use">
+          <li class="ulli liAct" data-value="person">按使用人数排名</li>
+          <li class="ulli" data-value="count">按使用次数排名</li>
+        </ul>
+        <div class="dataWrap">
+          <input placeholder="请选择开始日期" readonly class="laydate-icon" id="date_start_use"/>
+          <input placeholder="请选择结束日期" readonly class="laydate-icon" id="date_end_use"/>
+          <input type="button" value="确定" class="dateConfirmBtn" id="btn_app_use">
+        </div>
+        <div id="app_use"></div>
+      </div>
+    </div>
+    <%- include('view/_footer.ejs') %>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js" data-main="../../customModule/statistics/js/app_echart.js"></script>
+<script type="text/javascript" src="../../../../lib/component/laydate/js/laydate.js"></script>
+<script>
+  laydate.skin('shenlan');
+</script>
+</body>
+</html>

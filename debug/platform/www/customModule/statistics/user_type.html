@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main-76f12792b7.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <div class="header">
+  <div class="header-center">
+    <div class="position">
+      <span class="icon icon-location"></span><strong></strong>
+      <div class="exit"><span class="icon icon-exit"></span><span>退出</span></div>
+    </div>
+    <div class="logo"></div>
+  </div>
+</div>
+  <div class="wrap">
+    <div class="sidebar left">
+  <div class="item-wrap" data-href="index.html">
+    <div class="item no-border ">
+      <span class="icon icon-index"></span>
+      <span class="label">平台概况</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="user_type.html">
+    <div class="item active">
+      <span class="icon icon-user-sidebar"></span>
+      <span class="label">用户统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="space_echart.html">
+    <div class="item ">
+      <span class="icon icon-space"></span>
+      <span class="label">空间统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="app_echart.html">
+    <div class="item ">
+      <span class="icon icon-app"></span>
+      <span class="label">应用统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="resource_total.html">
+    <div class="item ">
+      <span class="icon icon-resource"></span>
+      <span class="label">资源统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="teaching_overview.html">
+    <div class="item ">
+      <span class="icon icon-teaching"></span>
+      <span class="label">教研分析</span>
+    </div>
+  </div>
+</div>
+    <div class="content">
+      <div class="row row1 row1-user-type">
+  <div class="item-wrap" data-href="user_type.html">
+    <div class="item active">
+      <span class="icon icon-user"></span>
+      用户类型
+    </div>
+  </div>
+  <div class="role-city role-county item-wrap" data-href="user_area.html">
+    <div class="item ">
+      <span class="icon icon-map"></span>
+      用户地域分布
+    </div>
+  </div>
+  <div class="item-wrap" data-href="user_participation.html">
+    <div class="item ">
+      <span class="icon icon-airplane"></span>
+      用户参与度
+    </div>
+  </div>
+  <div class="item-wrap" data-href="user_detail.html">
+    <div class="item ">
+      <span class="icon icon-detail"></span>
+      数据明细
+    </div>
+  </div>
+</div>
+<div class="divider row1-user-type"></div>
+
+      <div class="row row2-user-type echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="role-city echart-title">平台用户类型分布</div>
+        <div class="role-county echart-title">区域用户类型分布</div>
+        <div class="role-school echart-title">学校用户类型分布</div>
+        <div class="label">用户总数<span id="total"></span></div>
+        <div id="usertype"></div>
+      </div>
+      <div class="row row3-user-type echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">使用平台的用户类型统计</div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-fun="0" data-id="usertype_nofirst" data-value="yesterday">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>
+            </ol>
+          </div>
+        </div>
+        <div class="label">使用平台的用户数<span id="abc2"></span></div>
+        <div id="usertype_nofirst"></div>
+      </div>
+      <div class="row row3-user-type echart no-margin">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">首次使用平台的用户类型统计</div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-fun="1" data-id="usertype_isfirst" data-value="yesterday">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>
+            </ol>
+          </div>
+        </div>
+        <div class="label">首次使用平台的用户数<span id="abc3"></span></div>
+        <div id="usertype_isfirst"></div>
+      </div>
+    </div>
+    <div class="footer cf">
+  <p>技术运营支持：明博教育科技股份有限公司&nbsp;&nbsp;&nbsp;&nbsp; 客户服务热线：400-898-5166</p>
+  <p>Copyright&copy; mainbojiaoyu.cn All rights reserved&nbsp;&nbsp;&nbsp;&nbsp;鄂 ICP 备 0235635 号 -2</p>
+</div>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires-4aa88d7e5f.js" data-main="../../customModule/statistics/js/user_type-31ba38b231.js"></script>
+</body>
+</html>

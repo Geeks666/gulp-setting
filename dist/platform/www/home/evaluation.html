@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="renderer" content="webkit|ie-stand"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta http-equiv="Expires" content="0"><title>评价</title><link href="../../../lib/jquery/css/jquery-27fca2fa0a.fullPage.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer-03c29ce29a.css"><link rel="stylesheet" type="text/css" href="../home/css/evaluation-43c75854b2.css"></head><body><link rel="stylesheet" href="../../../public/header/css/header-306a9b3fa0.css"><div id="mainbo-top-nav" class="mainbo-top-nav"><div class="mainbo-top-nav-box"><div class="logo"><img src="" alt=""></div><ul class="nav" id="nav"></ul><script type="text/html" id="navList">{{each navList}}
+      <li>
+        <a class="{{$value.class}}{{$index == 0 ? ' t-active ' : ''}}" href="{{$value.url}}" {{
+           $value.newOpen ? 'target=_blank' : ''}}>{{$value.name}}</a>
+      </li>
+      {{/each}}</script><div class="mainbo-search" id="login_message"></div><script type="text/html" id="loginMessage">{{if data.code !='success' }}
+        <a {{ 0 == 4 ? 'href=#' : '' }} id="mainbo-login" class="loginButton">登录</a>
+      {{else}}
+      {{if data.data.userType == 1 }}
+      <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+      {{/if}}
+      <!--<div class="message-warn"><a href="javascript:;" class="link">消息-->
+        <!--</a><i></i></div>-->
+      <div class="noread_wrapper">
+        <div class="h_msg message-warn">
+          <span></span>
+        </div>
+        <span></span>
+      </div>
+      <div class="login_user">
+        <div class="login_username">
+          {{data.data.userInfo.name}}<span class="arrow"></span>
+        </div>
+        {{if data.data.userType == 1 }}
+        {{if (data.data.account != "admin" && data.data.account != "test")}}
+        <ul class="admin_bg">
+          <li><a href="{{data.userJumpHref.spaceManager}}">机构空间</a></li>
+          <li><a href="{{data.userJumpHref.myApp}}">我的应用</a></li>
+          <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{else}}
+        <ul class="admin_sm">
+          <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{/if}}
+        {{else}}
+        <ul class="person_bg">
+          {{if 0 == 4}}
+            {{if data.data.userRole=='3002' & data.data.userType =='200' || data.data.userRole=='3003'}}
+              <li class="data-href" data-href="../background/index.html" data-target="_blank"><a href="#"  style=""  >管理入口</a></li>
+            {{/if}}
+            <li class="data-href" data-href="../protected/my_works.html" ><a href="#">我的作品</a></li>
+          {{/if}}
+          <li><a href="{{data.userJumpHref.mySpace}}">我的空间</a></li>
+          <li><a href="{{data.userJumpHref.myApp}}">我的应用</a></li>
+          <li><a href="{{data.userJumpHref.personCenter}}">个人中心</a></li>
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{/if}}
+      </div>
+      {{/if}}</script></div><script type="text/html" id="navList">{{each navList}}
+  <li>
+    <a class="{{$value.class}}{{$index == 3 ? 't-active' : ''}}" href="{{$value.url}}" {{ $value.newOpen ?
+      'target=_blank' : ''}}>{{$value.name}}</a>
+  </li>
+  {{/each}}</script><script type="text/html" id="loginMessage">{{if data.code == "login_error" }}
+  <a id="mainbo-login" class="loginButton">登录</a>
+  {{else}} {{if data.data.userType == 1 }}
+  <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+  {{/if}}
+  <!--<div class="message-warn"><a href="javascript:;" class="link">消息-->
+  <!--</a><i></i></div>-->
+  <div class="noread_wrapper">
+    <div class="h_msg message-warn">
+      <span></span>
+    </div>
+    <span></span>
+  </div>
+  <div class="login_user">
+    <div class="login_username">
+      {{data.data.userInfo.name}}
+      <span class="arrow"></span>
+    </div>
+    {{if data.data.userType == 1 }} {{if (data.data.account != "admin" && data.data.account != "test")}}
+    <ul class="admin_bg">
+      <li>
+        <a href="{{data.userJumpHref.spaceManager}}">机构空间</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+      </li>
+      <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{else}}
+    <ul class="admin_sm">
+      <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{/if}} {{else}}
+    <ul class="person_bg">
+      <li>
+        <a href="{{data.userJumpHref.mySpace}}">我的空间</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.personCenter}}">个人中心</a>
+      </li>
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{/if}}
+  </div>
+  {{/if}}</script></div><div id="fullpage" class="content"><ul id="menu"><li data-menuanchor="page1" class="active"><a href="#page1"></a></li><li data-menuanchor="page2"><a href="#page2"></a></li></ul><div class="first section1 section"><div class="section-top"><div class="wrap"><div class="youke"></div><div class="section-title"></div><a class="into-app" href="javascript:;" id="jspj" type="jspj_appId" kindcode="2">进入应用</a></div></div><div class="wrap"><ul class="first-message-list clearFix"><li><p><span class="img-1"></span></p><p>学校可以选择系统预置的考核方案，也可以根据个性化需求自主设定考核方案，破解了当前学校教师工作评价的复杂性与特殊性，使考核更全面、更精准、更便捷。</p></li><li><p><span class="img-2"></span></p><p>考核采点覆盖教师岗位全部职责要求和实际工作项，各考核要点总分值设定更侧重教师履行岗位职业情况和工作实绩，使考核更客观，突出重点工作和实绩。</p></li><li><p><span class="img-3"></span></p><p>系统特有的数学建模公式，将常态工作实绩量化成基础分，进步率、优秀率等计算分析时，只需导入相关成绩即可量化排名，减轻材料分析整理的繁琐和麻烦。</p></li><li><p><span class="img-4"></span></p><p>基础定量考核与定性等级评价相结合，通过系统特有的数学建模公式，将常态工作实绩量化成基础分。基础分使繁杂数据得以量化，等级分对工作质量做定性评价。</p></li></ul></div></div><div class="second section2 section"><div class="section-top"><div class="wrap"><div class="youke"></div><div class="section-title"></div><div class="app-pics"></div><a class="into-app" href="javascript:;" id="pingjiao" type="pjxt_appId" kindcode="2">进入应用</a></div></div><div class="wrap"><ul class="second-message-list clearFix"><li><span class="img-5"></span> 流程简约，操作简单，解决学校评教操作流程复杂、分析统计困难的问题；</li><li><span class="img-6"></span> 学校可以自主设定评教指标，高度关注学校个性化评教需求；</li><li><span class="img-7"></span> 学生、家长通过系统可随时反馈对学校管理及教师工作的评价和建议；</li><li><span class="img-8"></span> 自动生成多维度的综合分析报告，为学校改进工作调整管理提供重要依据；</li></ul></div></div></div><script src="../../../lib/requires/requires-4aa88d7e5f.js" data-main="../home/js/evaluation-ab2ea11ad6.js"></script></body></html>

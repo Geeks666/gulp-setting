@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">	
+		<title>Document</title>
+
+	    <link rel="stylesheet" href="./css/image.css">
+	    <script src="./js/jquery.v1.9.1.min.js"></script>
+	    <script src="./js/webuploader.js"></script>
+	    <script src="./image-js/upload.js"></script>
+	    <script>
+	    	//提示信息
+		    function tip(value){
+		        var adiv = document.createElement('div');
+		        adiv.id = 'hint-window';
+		        adiv.innerHTML = value;
+		        document.body.appendChild(adiv);
+
+		        setTimeout(function(){
+		            $(adiv).fadeOut(function(){
+		                document.body.removeChild(adiv);
+		            })
+
+		        },1500)
+		    }
+	    </script>
+	</head>
+	<body>
+		
+	
+
+		
+	   
+	    <div id="wrapper">
+	        <div id="container">
+	            <!--头部，相册选择和格式选择-->
+
+	            <div id="uploader">
+	                <div class="queueList">
+	                    <div id="dndArea" class="placeholder">
+	                        <div id="filePicker"></div>
+	                        <p>单次最多可选50张（支持格式：jpg、png、gif）</p>
+	                    </div>
+	                </div>
+	                <div class="statusBar" style="display:none;">
+	                    <div class="progress">
+	                        <span class="text">0%</span>
+	                        <span class="percentage"></span>
+	                    </div><div class="info"></div>
+	                    <div class="btns">
+	                        <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+
+
+	</body>
+</html>

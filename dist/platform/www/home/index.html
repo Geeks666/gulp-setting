@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="renderer" content="webkit|ie-comp|ie-stand"><title>白银区智慧教育云中心</title><link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer-03c29ce29a.css"><link rel="stylesheet" href="../home/css/common-fd48710bdb.css"><link rel="stylesheet" href="../home/css/index-68baf9b418.css"><link rel="stylesheet" href="../home/css/album-7c4044f501.css"><script>if(top.location != self.location){
+      top.location = self.location;//防止页面被框架包含
+    }</script></head><body><div class="wrapper"><link rel="stylesheet" href="../../../public/header/css/header-306a9b3fa0.css"><div class="wrap_top_bg baiyin"><div class="wrap_top"><div class="logo"><a href="javascript:void(0)"><img src="" alt=""></a></div><div class="chooseArea tabchoose"><a class="area" href="javascript:;"><span class="kh">[</span> <span class="scholl_name">白银区</span> <span class="arrow arrowDown"></span> <span class="kh">]</span></a><div class="chooseList schoolChoose"><ul id="schoolList"></ul></div></div><div id="nav" class="nav clearfix"><div class="nav_top"><div class="msg tabchoose"><div class="msgT clearfix"><ul id="login_message" class="nav_top_ul"><li class="favorite_button">添加收藏</li><li>|</li><li class="home_button">设为首页</li></ul></div></div></div><div class="nav_bottom"><ul class="clearfix"></ul></div></div></div></div><script type="text/html" id="school_list">{{each data}}
+      {{if $index%4 == 0 }}
+      <li class="list clearfix">
+      {{/if}}
+        <span data-id="{{$value.id}}"><a href="javascript:;" title="{{$value.name}}">{{$value.showName}}</a></span>
+      {{if ($index+1)%4 == 0}}
+      </li>
+      {{/if}}
+    {{/each}}</script><script type="text/html" id="loginMessage"><li>|</li>
+  <li class="userName">
+    {{if data.code == "login_error" }}
+    <span class="loginButton">登录</span>
+    {{else}}
+    <span>{{data.data.userInfo.name}}&nbsp;
+      <span class="arrow arrowDown"></span>
+    </span>
+
+    <div class="chooseList myChoose clearfix">
+      <ul class="clearfix">
+        {{if data.data.userType == 1 }}
+        <li>
+          <a href="{{data.userJumpHref.spaceManager}}">机构空间</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{data.userJumpHref.mySpace}}">我的空间</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.personCenter}}">个人中心</a>
+        </li>
+        {{/if}}
+        <li>
+          <a class="logout" href="javascript:void(0)">退出</a>
+        </li>
+      </ul>
+    </div>
+    {{/if}}
+  </li>
+  {{if data.code != "login_error" && data.data.userType == 1 }}
+  <li>|</li>
+  <li>
+    <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+  </li>
+  {{/if}}
+  <!-- <li>|</li>
+     <li>消息(<b>5</b>)</li>--></script><script type="text/html" id="navList">{{each navList}}
+      {{if $value.childNav}}
+        <li class="resourceNav{{$index == 5 ? ' nav_act' : ''}}">
+          <a href="javascript:void(0)" class="nav_li">{{$value.name}}<span class="arrow"></span></a>
+          <div class="chooseList resource clearfix">
+            <ul class="clearfix">
+              {{each $value.childNav}}
+                <li class="list"><a href="{{$value.url}}">{{$value.name}}</a></li>
+              {{/each}}
+            </ul>
+          </div>
+      {{else}}
+        <li>
+          <a href="{{$value.url}}" class="nav_li{{$index == 5 ? ' nav_act' : ''}}{{ $value.type ? ' verify_app_enter' : ''}}"  type="{{$value.type}}"  {{$value.newOpen=='true' ? 'target=_blank' : ''}}>{{$value.name}}</a>
+      {{/if}}
+      </li>
+    {{/each}}</script><div class="banner"><div class="slides"><ul class="slide-pic"></ul><script type="text/html" id="slidePic">{{each data}}
+      <li class="banner_bigimg{{$index+1}}">
+        <div class="banner-text-box banner_img" style="background: url('{{$value.pic}}') no-repeat center;background-size:cover;">
+          <!--<img src="{{$value.pic}}" class="banner_smallimg"/>-->
+        </div>
+      </li>
+      {{/each}}</script><ul class="slide-li"></ul><script type="text/html" id="slideLi">{{each data}}
+      <li></li>
+      {{/each}}</script></div></div><div class="ann clearfix wrap" style="margin-top: 17px"><ul class="notice_list"></ul><script id="noticeList" type="text/html">{{each data}}
+          <li>
+            <span class="msgIcon"></span>
+            <a class="annLink" href="../notice/noticeDetail.html?id={{$value.id}}&index={{$index}}">{{$value.title}}</a>
+            <a class="more" href="../notice/noticeList.html?currentPage=1" target="_blank">更多</a>
+          </li>
+        {{/each}}</script></div><div class="newsAndResult"><div class="pictureBlock"><a href="javascript:void(0);"><img src="images/default_news.jpg" alt=""></a><p class="imgTitle"></p><ul class="imgtab"></ul></div><div class="newsAndResultBlock"><h2 class="tabNewsAndResult"><a href="javascript:void(0);" class="active">教育新闻</a><a href="javascript:void(0);">新闻纵横</a> <a class="overMore" href="../news/sitenewsListInCategory.html">更多</a></h2><ul class="news" id="newsShowBox"></ul><script id="newsShowBox_" type="text/html">{{each data}}
+          <li class="news-item"><a class="con" href="../news/sitenewsDetail.html?id={{$value
+          .id}}&index={{$index}}&category={{category}}{{$value.orgid}}" title="{{$value.title}}">{{$value.title}}</a><span class="time">{{$value
+              .crtDttm.substring(0,10)}}</span></li>
+          {{/each}}</script><ul class="news" id="resultShowBox"></ul><script id="resultShowBox_" type="text/html">{{each data}}
+          <li class="news-item"><a class="con" href="../news/sitenewsDetail.html?id={{$value
+          .id}}&index={{$index}}&category={{category}}{{$value.orgid}}" title="{{$value.title}}">{{$value.title}}</a><span class="time">{{$value.crtDttm.substring(0,10)}}</span></li>
+          {{/each}}</script></div></div><div class="searchBox"><div class="clearfix wrap"><div class="search"><input class="searchText" placeholder="他们正在搜：一元二次方程" type="text"><div class="searchBtn_wrap"><span>资源搜索</span> <a class="searchBtn" target="_blank" href="javascript:void(0)"></a></div></div><a id="activityRegister" class="apply" href="javascript:void(0);"></a> <a id="reviewEnter" class="entrance" href="javascript:;" data-href="/activity/www/background/"></a></div></div><div id="videoClass"><div class="videContent wrap clearfix"><script type="text/html" id="subjectSection">{{each data as phase i}}
+            <div class="{{gradeClass[phase.name]}}">
+              <h3 class="schoolTitle">{{phase.name}}</h3>
+              <div class="schoolMenu" style="{{i==0 ? 'display: block' : ''}}">
+                <div class="menuList">
+                  {{each phase.subjects }}
+                        <a class="list" href="{{msg}}/syncTeaching/index/?subjectId={{$value.id}}&gradeId={{phase.phaseId}}&requireLogin=false">{{$value.name}}</a>
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+          {{/each}}</script><div class="videoListWrap"><h2 class="title">课堂实录 <a class="more verify_app_enter" type="hanbovideo_appId" href="javascript:;">更多</a></h2><div class="videoListCont"><ul id="videoList" class="videoList"></ul><script type="text/html" id="videoList_">{{each data.result.data}}
+                <li class="list">
+                  <a class="videoPic" href="{{$value.redirectUrl}}" target="_blank">
+                    <img src="{{$value.imageUrl}}" alt="">
+                    {{if false}}
+                    <span class="icon"></span>
+                    {{/if}}
+                  </a>
+                  <p><a class="videoTitle" href="{{$value.redirectUrl}}" title="{{$value.title}}">{{$value.title}}</a></p>
+                  <p class="clearfix">
+                    <span class="author">{{$value.user_name}}</span>
+                    <span class="showNum"><span>{{$value.count}}</span>浏览</span>
+                  </p>
+                </li>
+              {{/each}}</script></div></div><div class="adImageWrap"><a href="javascript:;" class="gotoApps icon-resource" target="_blank"></a> <a href="javascript:;" class="gotoApps icon-yk" target="_blank"></a> <a href="javascript:;" class="gotoApps icon-activity" target="_blank"></a> <a href="javascript:;" class="gotoApps icon-studio" target="_blank"></a> <a href="javascript:;" class="gotoApps icon-ep" target="_blank"></a> <a href="javascript:;" class="gotoApps icon-volunteer" target="_blank"></a> <a href="javascript:;" class="gotoApps icon-rank" target="_blank"></a></div></div></div><div class="wrap apps_Wrap"><div id="apps"><ul class="clearfix"><li class="applist" id="jxds"><a target="_blank" href="javascript:void(0)" data-href="http://zl.feitianedu.com:8088/"><span class="icon icon-jxds"></span> <span class="appName" style="color: #0dd1bc">教学大师</span></a></li><li class="applist" id="ktsl"><a target="_blank" href="javascript:void(0)" type="hanbovideo_appId" class="verify_app_enter"><span class="icon icon-ktsl"></span> <span class="appName" style="color: #ffae00">课堂实录</span></a></li><li class="applist" id="hdjy"><a target="_blank" href="javascript:void(0)" type="teachingresearch_appId" class="verify_app_enter"><span class="icon icon-hdjy"></span> <span class="appName" style="color: #11b75d">互动教研</span></a></li><li class="applist" id="zygl"><a target="_blank" href="javascript:void(0)" type="resource_appId" class="verify_app_enter"><span class="icon icon-zygl"></span> <span class="appName" style="color: #2ea4ff">资源管理</span></a></li><li class="applist" id="sztsg"><a target="_blank" href="javascript:void(0)" type="ebook_appId" class="verify_app_enter"><span class="icon icon-sztsg"></span> <span class="appName" style="color: #f15e4c">数字图书馆</span></a></li><li class="applist" id="applistMore"><a target="_blank" href="javascript:void(0)"><span class="icon icon-gd"></span> <span class="appName" style="color: #5078fa">更多</span></a></li></ul></div></div><!--校园风采--><div class="schoolBlock"><h2 class="news-title wrap">校园风采</h2><div class="schoolBlockBox"><div class="schoolList" id="schoolShow"><ul class="schoolListBox"><li class="schoolList-item"><a href="javascript:void(0);" class="schoolPic"><img src="images/default_news.jpg" alt=""></a><p class="desc">nihaola</p></li></ul></div><script id="schoolShow_" type="text/html">{{each data}}
+          <li class="schoolList-item" data-num="{{$value.num}}">
+            <a href="javascript:void(0);" class="schoolPic"><img src="{{$value.picture_src}}" alt=""></a>
+            <p class="desc">{{$value.org_name}}</p>
+          </li>
+          {{/each}}</script><a class="prev tabBtn" href="javascript:;"></a> <a class="next tabBtn" href="javascript:;"></a></div></div><div id="teacherRank" class="teacher_ranked"><div class="wrap content clearFix"><div class="tabList"><h3 class="clearFix"><div class="teacherNum titleMsg">登录人数：<span class="num">0</span></div><div class="loginNum titleMsg share_resource_num">分享资源数：<span class="num">0</span></div><a href="javascript:;" id="teacherRanked" class="gotoRank" target="_blank">进入排行榜</a></h3><div class="box"><div class="listContent" id="teaSort"><div></div></div><script type="text/html" id="teaSort_">{{each data}}
+                {{ if $index == 0 || $index%10 == 0 }}
+                  <ul class="listPage clearfix">
+                {{/if}}
+                <li class="list">
+                  <div class="number">{{$index+1}}</div>
+                  <p class="schoolName">
+                    <a href="javascript:;">{{$value.flago}}</a>
+                    <span class="num">{{$value.flags}}</span>
+                  </p>
+                  <p class="msg clearFix"><span class="num">{{$value.resUpCount}}</span>资源</p>
+                  <p class="msg clearFix"><span class="num">{{$value.videoCount}}</span>视频</p>
+                </li>
+                {{ if ($index != 0 && ($index+1)%10 == 0) || $index == data.length-1 }}
+                    </ul>
+                {{/if}}
+              {{/each}}</script><a class="prev tabBtn" href="javascript:;"></a> <a class="next tabBtn" href="javascript:;"></a></div></div></div></div><!--教师的照片墙--><div id="pic_show" class="clearfix"><ul id="Album"><li class="album_big"><span href="javascript:;" id="you_logo">教师空间</span></li></ul><script id="Album_" type="text/html">{{each data}}
+        <li>
+          <a href="{{$value.spaceUrl}}" target="_blank"><em></em><img src="{{$value.icon}}" /></a>
+          <div class="Album_info"><strong>{{$value.name}}</strong><span>{{$value.label}}</span></div>
+        </li>
+        {{/each}}</script><!--<li>
+          <a href="http://www.17sucai.com/"><em></em><img src="images/teacher_default.jpg" /></a>
+          <div class="Album_info"><strong>颜经理</strong><span>销售/贸易经理</span></div>
+        </li>--></div><div class="wrap friends"><div><h2><b></b>友情链接</h2><ul id="link_content" class="list"></ul><script type="text/html" id="linkContent">{{each data}}
+            <li><a href="{{$value.website}}" target="_blank"><img src="{{$value.pic}}"/></a></li>
+          {{/each}}</script></div></div><ul id="others"><li id="goTop"><span class="icon"></span> 返回顶部</li></ul><link rel="stylesheet" href="../../../public/footer/css/footer-c7529391f4.css"><div id="mainbo_footer"><!--<div>
+    <ul>
+      <li><p>版权所有：白银区教育局</p><p>版本号：1.2</p></li>
+      <li><p>客服热线：400-898-5166</p><p>每天9：00-17：30(法定节假日除外)</p></li>
+      <li><img src="images/code.png" /><p>扫一扫,关注我们获得更多教育咨询</p></li>
+      <li class="main_last_msg"><p>网站技术支持：明博教育科技股份有限公司</p></li>
+    </ul>
+  </div>--></div></div><div class="mask"></div><div class="picDialog"><div class="closeDialog"></div><div class="picImgWrap"><div class="picImgLeft"><span></span></div><div class="picImgRight"><span></span></div><div class="picImg"><ul id="picImg" class="pictureList1"></ul><script type="text/html" id="pictureList1">{{each data}}
+          <li data-num="{{$value.num}}">
+            <img src="{{$value.picture_src ? $value.picture_src : 'images/2.gif'}}" alt="">
+            <span title="{{$value.name}}">{{$value.org_name}}</span>
+          </li>
+          {{/each}}</script></div></div></div><script>function imgError(obj,src) {
+      obj.onerror=null;
+      obj.src=src;
+    }</script><script src="../../../lib/requires/requires-4aa88d7e5f.js" data-main="../home/js/index-b6c046f88d.js"></script></body></html>

@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'index'}) %>
+    <div class="content">
+      <div class="row row1-index">
+        <div class="item">
+          <span class="icon icon-user-circle"></span>
+          <div class="text">
+            <span class="title">平台用户总数</span>
+            <span class="count" id="total"></span>
+            <span class="sup"></span>
+          </div>
+        </div>
+        <div class="item">
+          <span class="icon icon-yesterday"></span>
+          <div class="text">
+            <span class="title">平台昨日使用用户数</span>
+            <span class="count" id="yesterday"></span>
+            <span class="sup" id="yesterdayratio"></span>
+          </div>
+        </div>
+        <div class="item">
+          <span class="icon icon-lastseven"></span>
+          <div class="text">
+            <span class="title">过去7天使用平台用户数</span>
+            <span class="count" id="lastseven"></span>
+            <span class="sup" id="lastsevenratio"></span>
+          </div>
+        </div>
+        <div class="item">
+          <span class="icon icon-lastthirty"></span>
+          <div class="text">
+            <span class="title">过去30天平台使用用户数</span>
+            <span class="count" id="lastthirty"></span>
+            <span class="sup " id="lastthirtyratio"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row row2-index echart main">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台用户统计</div>
+        <div class="echart-area left">
+          <div class="label">用户类型分布</div>
+          <div id="usertype"></div>
+        </div>
+        <div class="divider left"></div>
+        <div class="data-area left">
+          <div class="label">各区域用户数量排名及占比</div>
+          <div class="table-page tableWrapIndex" id="table_county">
+            <table id="rank_percent"></table>
+            <div class="pageTool" id="pageTool"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row row3-index echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台使用趋势统计</div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-value="yesterday">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>
+            </ol>
+          </div>
+        </div>
+        <div id="platform_trend"></div>
+      </div>
+      <div class="row row4-index no-margin">
+        <div class="echart small left item-tab">
+          <div class="echart-mark-top-right"></div>
+          <div class="echart-title">空间开设情况统计</div>
+          <div class="radio">
+            <div class="item-wrap active" data-value="person_space">
+              <span class="icon icon-radio"></span>
+              <span class="item">个人空间</span>
+            </div>
+            <div class="item-wrap" data-value="group_space">
+              <span class="icon icon-radio"></span>
+              <span class="item">群组空间</span>
+            </div>
+          </div>
+          <!--个人空间-->
+          <div class="space" id="person_space">
+            <div class="label">个人空间数<span class="count" id="persontootal"></span></div>
+            <table>
+              <tr class="thead">
+                <td>教育局职工</td>
+                <td>教师</td>
+                <td>学生</td>
+                <td>家长</td>
+              </tr>
+              <tr>
+                <td id="researcher"></td>
+                <td id="teacher"></td>
+                <td id="student"></td>
+                <td id="parent"></td>
+              </tr>
+            </table>
+            <!--空间开通率-->
+            <div class="space2 space3 left">
+              <div class="title">空间开通率</div>
+              <div class="mainbo-echart">
+                <div class="mainbo-item" id="mainbo_echart_county"><span class="mainbo-label"></span></div>
+              </div>
+
+            </div>
+            <!--空间月活跃度-->
+            <div class="space2 space3 left">
+              <div class="title">空间月活跃度</div>
+              <div class="space2-item" id="pvitality"></div>
+            </div>
+            <!--日访问量-->
+            <div class="space2 space3 left">
+              <div class="title">日访问量</div>
+              <div class="space2-item" id="paveragevisit"></div>
+            </div>
+          </div>
+          <!--群组空间-->
+          <div class="space group" id="group_space" style="display: none">
+            <div class="label">群组空间数<span class="count" id="grouptotal"></span></div>
+            <table>
+              <tr class="thead">
+                <td>区域</td>
+                <td>学校</td>
+                <td>班级</td>
+                <td>学科</td>
+              </tr>
+              <tr>
+                <td id="area"></td>
+                <td id="school"></td>
+                <td id="class"></td>
+                <td id="subject"></td>
+              </tr>
+            </table>
+            <!--空间月活跃度-->
+            <div class="space2 left">
+              <div class="title">空间月活跃度</div>
+              <div class="space2-item" id="gvitality"></div>
+            </div>
+            <!--日访问量-->
+            <div class="space2 left">
+              <div class="title">日访问量</div>
+              <div class="space2-item" id="gaveragevisit"></div>
+            </div>
+          </div>
+        </div>
+        <div class="echart small right">
+          <div class="echart-mark-top-right"></div>
+          <div class="echart-title">平台资源统计</div>
+          <div class="label">资源总量<span class="count" id="groupcount1"></span></div>
+          <!--资源总量-->
+          <div class="resource_total" id="resource_total"></div>
+        </div>
+      </div>
+    </div>
+    <%- include('view/_footer.ejs') %>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js" data-main="../../customModule/statistics/js/index.js"></script>
+</body>
+</html>

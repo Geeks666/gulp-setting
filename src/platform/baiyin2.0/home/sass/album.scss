@@ -1,0 +1,21 @@
+
+/* album */
+#pic_show{width:1200px;margin:25px auto;}
+#Album li,#Album{list-style:none;}
+#Album{ position:relative;height:203px;background:url(../images/loader.gif) no-repeat center;}
+#Album li{float:left;margin:1px 1px 0px 0px;display:inline;}
+#Album li img{width:119px;height:119px;}
+/*#Album .album_big span{width:43px;height:31px;background:url(../images/you_s.png);position:absolute;right:0px;bottom:0px;margin:0px;padding:0px;text-indent:-999px;overflow:hidden;}*/
+.album_big{background:#29c06e;width:239px!important;height:239px!important;margin:0px 1px 0 0 !important;}
+#Album .album_big span{width:239px!important;height:239px!important;line-height: 239px;text-align: center;
+  font-size:36px;
+  color: #ffffff;text-decoration: none;
+  cursor: default;padding:0px;margin-top:0px}
+#Album li strong{display:block;color:#FFFFFF;font-size:18px;font-weight:bold;line-height:50px;padding:0px 10px;margin-top:18px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+#Album li span{display:block;color:#FFFFFF;font-size:16px;line-height:20px;padding:0px 10px;margin-top:5px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+#Album li a{position:absolute;z-index:100;visibility:hidden;}
+#Album li a em{ width:100%;position:absolute;top:0px;left:0px;display:none;opacity:0.5;filter:alpha(opacity=50);background:#000000;}
+#Album img{border:0px;border:none;}
+#Album .Album_info{display:none;position:absolute;background:#29c06e;z-index:101;-moz-box-shadow:0 0 6px #000000;-webkit-box-shadow:0 0 6px #000000;box-shadow:0 0 6px #000000;}
+
+

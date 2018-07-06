@@ -1,0 +1,946 @@
+/*all*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dd,
+ul,
+ol,
+form,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+em {
+  /*font-style: normal;*/
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: top;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+body,
+a,
+button,
+input,
+select,
+textarea {
+  font-family: Microsoft YaHei;
+  color: #383838;
+}
+
+body {
+  background-color: #f4f6f9;
+  font-size: 12px;
+}
+
+/* 清浮动 */
+
+.clearFix {
+  zoom: 1;
+}
+
+.clearFix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 用于宽度限制主体内容宽度 */
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 文字超出显示隐藏 */
+
+.hide-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 蓝色字体 */
+
+.blue-text {
+  color: #2c87ce;
+}
+
+/* 灰色字体 */
+
+.gray-text {
+  color: #828282;
+}
+
+/* 灰色字体 */
+
+.black-text {
+  color: #383838;
+}
+
+.red {
+  color: red;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.breadcrumbNav {
+  padding: 10px 10px 10px 18px;
+  font-size: 14px;
+}
+
+.breadcrumbNav a {
+  color: #828282;
+}
+
+#paging {
+  height: 74px;
+  border-top: 1px solid #eee;
+}
+
+/* 按钮 (基础按钮 比较大的按钮建议重新定义宽高以及行高) */
+
+/* 蓝色按钮 */
+
+.btn {
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+  line-height: 25px;
+  text-align: center;
+  color: #fff;
+  background-color: #3999e3;
+  box-sizing: border-box;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+/* 白色按钮 */
+
+.btn-active {
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+  line-height: 25px;
+  text-align: center;
+  color: #828282;
+  background-color: #f6f6f6;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+/* 按钮 end */
+
+/* 模块头部 (单个标题) */
+
+.box-header {
+  line-height: 40px;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+}
+
+.header-title {
+  display: inline-block;
+  padding: 0 4px;
+  position: relative;
+  margin-bottom: -1px;
+  border-bottom: 2px solid #3498d8;
+  font-weight: bold;
+}
+
+.go-back {
+  float: right;
+  color: #828282;
+  line-height: 30px;
+  margin-right: 8px;
+}
+
+/* 模块头部end */
+
+/* 详情页begin */
+
+.details-title {
+  font-size: 20px;
+  color: #383838;
+  font-weight: bold;
+  padding-top: 22px;
+  padding-left: 18px;
+}
+
+.details-prop {
+  padding-top: 18px;
+  padding-left: 18px;
+}
+
+.details-prop dt {
+  float: left;
+  display: inline-block;
+  font-size: 14px;
+  color: #383838;
+}
+
+.details-prop dd {
+  float: left;
+  display: inline-block;
+  color: #828282;
+  font-size: 14px;
+  padding-right: 20px;
+}
+
+.details-content {
+  padding: 26px;
+  text-indent: 2em;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+/* 图标being */
+
+/* 发布文章 */
+
+.icon-send {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat 0 -20px;
+}
+
+.icon-send-active {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat -20px -20px;
+}
+
+/*删除*/
+
+.icon-delete {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat 0 -60px;
+}
+
+.icon-delete-active,
+.icon-delete:hover {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat -20px -60px;
+}
+
+/* 回复小图标 */
+
+.icon-reply {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat 0 -40px;
+}
+
+.icon-reply-active,
+.icon-reply:hover {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat -20px -40px;
+}
+/* 鼠标移入恢复图标时显示的回复背景 */
+
+.reply-bj {
+  display: inline-block;
+  vertical-align: top;
+  width: 38px;
+  height: 36px;
+  line-height: 28px;
+  color: #fff;
+  text-align: center;
+  background: url(../../base/images/sprite.png) no-repeat right -60px;
+}
+
+/* 多人会话 */
+
+.icon-talk {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat 0 0;
+}
+
+.icon-talk-active,
+.icon-talk:hover {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat -20px 0;
+}
+
+/* 上传 */
+
+/*.icon-upload {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	background: url(../../base/images/sprite.png) no-repeat 0 -80px;
+}
+
+.icon-upload-active,
+.icon-upload:hover {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	background: url(../../base/images/sprite.png) no-repeat -20px -80px;
+}*/
+
+/* 上传立体按钮 */
+
+.upload-btn {
+  display: inline-block;
+  vertical-align: top;
+  width: 90px;
+  height: 38px;
+  text-align: center;
+  line-height: 38px;
+  background: url(../../base/images/sprite.png) no-repeat -60px -60px;
+}
+
+.upload-btn-active {
+  display: inline-block;
+  vertical-align: top;
+  width: 90px;
+  height: 38px;
+  background: url(../../base/images/sprite.png) no-repeat -60px -100px;
+}
+
+/* 下载 */
+
+.icon-down {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 38px;
+  background: url(../../base/images/sprite.png) no-repeat 0 -100px;
+}
+
+.icon-down-active,
+.icon-down:hover {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat -20px -100px;
+}
+
+/* 下载立体按钮 */
+
+.down-btn {
+  display: inline-block;
+  vertical-align: top;
+  width: 70px;
+  height: 23px;
+  text-align: center;
+  line-height: 24px;
+  background: url(../../base/images/sprite.png) no-repeat -60px 0;
+}
+
+.down-btn-active {
+  display: inline-block;
+  vertical-align: top;
+  width: 70px;
+  height: 23px;
+  text-align: center;
+  line-height: 24px;
+  background: url(../../base/images/sprite.png) no-repeat -60px -25px;
+}
+
+/*下拉列表 展开 与 闭合 */
+
+.icon-open {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat 0 -140px;
+}
+
+.icon-close {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat -20px -140px;
+}
+
+/*评论 显示 与 隐藏 */
+
+.icon-comment-show {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat 0 -120px;
+}
+
+.icon-comment-hidden {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat -20px -120px;
+}
+
+/* 已评论 */
+
+.comment-ok {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat 0 bottom;
+}
+
+/* 列表顶部三个小黄点 */
+
+.icon-big-dot {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat 0 -160px;
+}
+
+.icon-dot {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat -20px -160px;
+}
+
+/* 必填的红色小星星 */
+
+.icon-star {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat -40px -160px;
+}
+
+/* 上传成功与失败图标 */
+
+.icon-success {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat -60px -160px;
+}
+
+.icon-error {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/sprite.png) no-repeat -90px -160px;
+}
+
+/* 播放 */
+
+.icon-play {
+  display: inline-block;
+  vertical-align: top;
+  width: 52px;
+  height: 52px;
+  background: url(../../base/images/sprite.png) no-repeat right 0;
+}
+
+/* 楼主 */
+
+.icon-landlord {
+  display: inline-block;
+  vertical-align: top;
+  width: 42px;
+  height: 21px;
+  background: url(../../base/images/sprite.png) no-repeat right -100px;
+}
+
+/* 图标end */
+
+.btn-confirm-blue {
+  width: 90px;
+  height: 34px;
+  font-size: 16px;
+  background-color: #3999e3;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 34px;
+  border-radius: 4px;
+}
+
+.btn-confirm-gray {
+  width: 90px;
+  height: 34px;
+  font-size: 16px;
+  background-color: #ababab;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 34px;
+  border-radius: 4px;
+}
+
+/**** 文件图标标准 ****/
+
+.icon-pic {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  background: url(../../base/images/file_type.png) no-repeat 0 0;
+}
+
+.icon-rar {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  background: url(../../base/images/file_type.png) no-repeat 0 -30px;
+}
+
+.icon-zip {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  background: url(../../base/images/file_type.png) no-repeat 0 -60px;
+}
+
+.icon-pdf {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  background: url(../../base/images/file_type.png) no-repeat right 0;
+}
+
+.icon-word {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  background: url(../../base/images/file_type.png) no-repeat right -30px;
+}
+
+.icon-ppt {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  background: url(../../base/images/file_type.png) no-repeat right -60px;
+}
+
+/**** 文件图标标准end ****/
+
+/*三角*/
+.sanjiao {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  position: absolute;
+  top: 8px;
+  right: 5px;
+}
+
+.sanjiao-top {
+  border-bottom: 5px solid transparent;
+  border-top: none;
+}
+
+/*三角 end*/
+
+/**** 小文件图标 ****/
+
+.icon-pic-small {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/file_type_small.png) no-repeat 0 0;
+}
+
+.icon-rar-small {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/file_type_small.png) no-repeat 0 -40px;
+}
+
+.icon-zip-small {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/file_type_small.png) no-repeat 0 -20px;
+}
+
+.icon-pdf-small {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/file_type_small.png) no-repeat right 0;
+}
+
+.icon-word-small {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/file_type_small.png) no-repeat right -40px;
+}
+
+.icon-ppt-small {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: url(../../base/images/file_type_small.png) no-repeat right -20px;
+}
+
+/**** 小文件图标end ****/
+
+/* 页面评论结构样式 */
+
+#comment-box {
+  padding: 32px 12px;
+}
+
+#comment-box .title {
+  height: 28px;
+  line-height: 28px;
+  font-size: 12px;
+  font-weight: normal;
+  text-indent: 12px;
+  border-bottom: 1px dashed #eee;
+  margin-bottom: 12px;
+}
+
+#comment-box .write-comment {
+  padding: 0 12px;
+}
+
+#comment-box .textarea {
+  box-sizing: border-box;
+  height: 38px;
+  width: 100%;
+  line-height: 38px;
+  padding: 0 12px;
+  color: #828282;
+  border: 1px solid #eee;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+#comment-box .clear-textarea {
+  height: 90px;
+  padding: 10px 12px;
+  border-color: #828282;
+  line-height: 18px;
+  color: #383838;
+  overflow: visible;
+}
+
+#comment-box .btn-box {
+  text-align: right;
+}
+
+#comment-box .btn {
+  width: 66px;
+  height: 34px;
+  line-height: 34px;
+  font-size: 14px;
+}
+
+#comment-box .comment-list {
+  padding: 3px 12px 23px 12px;
+  position: relative;
+}
+
+#comment-box .comment-li {
+  padding: 6px 0 6px 40px;
+  position: relative;
+}
+
+#comment-box .user-pic {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #eee;
+}
+
+.user-pic img {
+  width: 38px;
+  height: 38px;
+}
+
+#comment-box .comment-msg {
+  padding: 4px 0 14px 12px;
+  line-height: 24px;
+}
+
+#comment-box .user-name {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 8px;
+  color: #2c87ce;
+}
+
+#comment-box .icon-reply-active,.icon-delete-active {
+  position: relative;
+  vertical-align: top;
+  margin: 2px 5px 0;
+}
+
+#comment-box .reply-bj {
+  position: absolute;
+  top: -36px;
+  left: -10px;
+  display: none;
+}
+
+#comment-box .icon-reply-active:hover .reply-bj {
+  display: block;
+}
+#comment-box .icon-delete-active:hover .reply-bj {
+  display: block;
+}
+
+#comment-box .message span {
+  word-break: break-word;
+}
+
+.comment-list .write-comment {
+  display: none;
+}
+
+.comment-list .show-li {
+  position: absolute;
+  bottom: 3px;
+  right: 0;
+  color: #828282;
+  cursor: pointer;
+}
+
+/* 页面评论结构样式 end */
+
+/* 弹窗样式 */
+
+#mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .8;
+  filter: alpha(opacity=80);
+  z-index: 98;
+}
+
+#dialog-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -95px 0 0 -190px;
+  width: 380px;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  background: #fff;
+  padding: 0 12px;
+  text-align: center;
+  z-index: 99;
+  font-size: 14px;
+}
+
+.dialog-box .btns {
+  text-align: center;
+  margin: 22px auto;
+}
+
+#dialog-box .close-dialog {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#dialog-box .header {
+  height: 44px;
+  line-height: 44px;
+  padding: 0 0 0 9px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+#dialog-box .text {
+  margin: 22px auto;
+  line-height: 22px;
+}
+
+#dialog-box .btns {
+  margin-bottom: 18px;
+}
+
+#dialog-box .remve-btn {
+  width: 98px;
+  height: 36px;
+  line-height: 36px;
+  margin: 0 15px;
+}
+
+#upload-msg {
+  padding: 0px 26px;
+  height: 40px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -27px 0 0 -109px;
+  border: 1px solid #94d9ff;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  background: #c3e6ff;
+  z-index: 99;
+  border-radius: 4px;
+}
+
+#upload-msg span {
+  vertical-align: middle;
+  margin: -5px 10px 0 0;
+}
+
+/* 弹窗样式 */
+
+/* 错误页样式 */
+
+.error-page div {
+  margin: auto;
+  width: 158px;
+  height: 98px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.error-page span {
+  display: block;
+  margin: auto;
+  width: 120px;
+}
+
+/* 错误页样式 */
+/*空页面*/
+.no-content, .no-searchresult, .no-attention {
+  font-size: 18px;
+  color: #ccc;
+  line-height: 530px;
+  text-align: center;
+  height: 300px;
+  background-position: center 50px;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+
+.no-content {
+  background-image: url(../../base/images/nocontent.png);
+}
+
+.no-searchresult {
+  background-image: url(../../base/images/nosearchresult.png);
+}
+
+.no-attention {
+  background-image: url(../../base/images/noattention.png);
+}
+.write-comment p.back_msg {
+  line-height: 16px;
+  color: #323232;
+  margin-bottom: 8px;
+}
+.write-comment p.back_msg span {
+  color: #828282;
+}

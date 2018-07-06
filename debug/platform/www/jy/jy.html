@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1" />
+  <meta name="renderer" content="webkit|ie-stand" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+  <meta http-equiv="Expires" content="0" />
+  <title>优课智慧教育云平台</title>
+  <link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer-03c29ce29a.css" />
+  <link rel="stylesheet" type="text/css" href="../home/css/common-629ec20072.css" />
+  <link rel="stylesheet" type="text/css" href="../jy/css/jy-bed86da9d8.css" />
+  <link href="../home/images/favicon-96d5f5f650.ico" type="image/x-icon" rel="shortcut icon" />
+</head>
+<body>
+<link rel="stylesheet" href="../../../public/header/css/header-daf1d87f97.css">
+<div class="wrap_top_bg baiyin">
+  <div class="wrap_top">
+    <div class="logo">
+      <a href="javascript:void(0)">
+        <img src="" alt="">
+      </a>
+    </div>
+    <div class="chooseArea tabchoose">
+      <a class="area" href="javascript:;">
+        <span class="kh">[</span>
+        <span class="scholl_name">白银区</span>
+        <span class="arrow arrowDown"></span>
+        <span class="kh">]</span>
+      </a>
+      <div class="chooseList schoolChoose">
+        <ul id="schoolList"></ul>
+      </div>
+    </div>
+    <div id="nav" class="nav clearfix">
+      <div class="nav_top">
+        <div class="msg tabchoose">
+          <div class="msgT clearfix">
+            <ul id="login_message" class="nav_top_ul">
+              <li class="favorite_button">添加收藏</li>
+              <li>|</li>
+              <li class="home_button">设为首页</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav_bottom">
+        <ul class="clearfix"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/html" id="school_list">
+    {{each data}}
+      {{if $index%4 == 0 }}
+      <li class="list clearfix">
+      {{/if}}
+        <span data-id="{{$value.id}}"><a href="javascript:;" title="{{$value.name}}">{{$value.showName}}</a></span>
+      {{if ($index+1)%4 == 0}}
+      </li>
+      {{/if}}
+    {{/each}}
+  </script>
+<script type="text/html" id="loginMessage">
+  <li>|</li>
+  <li class="userName">
+    {{if data.code == "login_error" }}
+    <span class="loginButton">登录</span>
+    {{else}}
+    <span>{{data.data.userInfo.name}}&nbsp;
+      <span class="arrow arrowDown"></span>
+    </span>
+
+    <div class="chooseList myChoose clearfix">
+      <ul class="clearfix">
+        {{if data.data.userType == 1 }}
+        <li>
+          <a href="{{data.userJumpHref.spaceManager}}">机构空间</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{data.userJumpHref.mySpace}}">我的空间</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.personCenter}}">个人中心</a>
+        </li>
+        {{/if}}
+        <li>
+          <a class="logout" href="javascript:void(0)">退出</a>
+        </li>
+      </ul>
+    </div>
+    {{/if}}
+  </li>
+  {{if data.code != "login_error" && data.data.userType == 1 }}
+  <li>|</li>
+  <li>
+    <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+  </li>
+  {{/if}}
+  <!-- <li>|</li>
+     <li>消息(<b>5</b>)</li>-->
+</script>
+<script type="text/html" id="navList">
+    
+    {{each navList}}
+      {{if $value.childNav}}
+        <li class="resourceNav{{$index == 5 ? ' nav_act' : ''}}">
+          <a href="javascript:void(0)" class="nav_li">{{$value.name}}<span class="arrow"></span></a>
+          <div class="chooseList resource clearfix">
+            <ul class="clearfix">
+              {{each $value.childNav}}
+                <li class="list"><a href="{{$value.url}}">{{$value.name}}</a></li>
+              {{/each}}
+            </ul>
+          </div>
+      {{else}}
+        <li>
+          <a href="{{$value.url}}" class="nav_li{{$index == 5 ? ' nav_act' : ''}}{{ $value.type ? ' verify_app_enter' : ''}}"  type="{{$value.type}}"  {{$value.newOpen=='true' ? 'target=_blank' : ''}}>{{$value.name}}</a>
+      {{/if}}
+      </li>
+    {{/each}}
+  </script>
+
+<div class="banner"></div>
+<div class="teachingWrap">
+  <div class="teaching">
+    <div class="teachingLeft">
+      <h3><span>教研成果</span><a href="#" style="display: none">更多</a></h3>
+      <ul>
+        <li ><a href="javascript:void(0);" class="liact" data-type="0">教案</a></li>
+        <li><a href="javascript:void(0);" data-type="1">课件</a></li>
+        <li><a href="javascript:void(0);" data-type="2">反思</a></li>
+        <li><a href="javascript:void(0);" data-type="3">计划总结</a></li>
+        <li><a href="javascript:void(0);" data-type="4">教学文章</a></li>
+      </ul>
+      <div class="teachingAchievements">
+        <ol>
+        </ol>
+      </div>
+    </div>
+    <div class="teachingRight">
+      <h3><span>教研动态</span></h3>
+      <div class="dyn-list-box">
+        <ul class="dyn-list" id="dynamic_list">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tAStatistics">
+  <div class="statistics">
+    <h3>教研成果统计</h3>
+    <div id="teaAchSta">
+
+    </div>
+  </div>
+</div>
+
+
+
+<link rel="stylesheet" href="../../../public/footer/css/footer-c4b8cdbee1.css">
+
+<div id="mainbo_footer">
+  <!--<div>
+    <ul>
+      <li><p>版权所有：白银区教育局</p><p>版本号：1.2</p></li>
+      <li><p>客服热线：400-898-5166</p><p>每天9：00-17：30(法定节假日除外)</p></li>
+      <li><img src="images/code.png" /><p>扫一扫,关注我们获得更多教育咨询</p></li>
+      <li class="main_last_msg"><p>网站技术支持：明博教育科技股份有限公司</p></li>
+    </ul>
+  </div>-->
+</div>
+<script src="../../../lib/requires/requires-4aa88d7e5f.js" data-main="../jy/js/jy-bacbb04224.js"></script>
+</body>
+</html>

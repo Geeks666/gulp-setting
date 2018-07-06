@@ -1,0 +1,81 @@
+.ui-paging-container {
+  color: #666;
+  font-size: 12px;
+  margin-top: 18px;
+  margin-bottom:20px;
+}
+
+.ui-paging-container ul {
+  overflow: hidden;
+  text-align: center;
+}
+
+.ui-paging-container ul, .ui-paging-container li {
+  list-style: none;
+}
+
+.ui-paging-container li {
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 10px;
+  margin-left: 5px;
+  background: #fff;
+  color: #383838;
+  border: 1px #e6e6e6 solid;
+  font-size: 14px;
+}
+
+.ui-paging-container li.ui-pager {
+  cursor: pointer;
+}
+
+.ui-paging-container li.ui-pager:hover, .ui-paging-container li.focus {
+  background-color: #1da1f2;
+  color: #FFFFFF;
+}
+
+.ui-paging-container li.ui-paging-ellipse {
+  border: none;
+}
+
+.ui-paging-container li.ui-paging-toolbar {
+  padding: 0;
+}
+
+.ui-paging-container li.ui-paging-toolbar select {
+  height: 24px;
+  color: #ffffff;
+}
+
+.ui-paging-container li.ui-paging-toolbar input {
+  line-height: 24px;
+  height: 24px;
+  padding: 0;
+  background: #2c4074;
+  text-align: center;
+  color: #fff;
+  width: 24px;
+  margin: 0 0 0 5px;
+  vertical-align: middle;
+}
+
+.ui-paging-container li.ui-paging-toolbar a {
+  vertical-align: middle;
+  text-decoration: none;
+  display: inline-block;
+  height: 24px;
+  vertical-align: top;
+  line-height: 24px;
+  padding: 0 3px;
+  cursor: pointer;
+  margin-left: 5px;
+  color: #fff;
+}
+
+.ui-paging-container li.ui-pager-disabled, .ui-paging-container li.ui-pager-disabled:hover {
+  background-color: #fff;
+  cursor: default;
+  border: none;
+  color: #828282;
+}

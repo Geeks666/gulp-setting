@@ -1,0 +1,205 @@
+@import "../../home/sass/_reset";
+@import "../../home/sass/common";
+@import url("../../../../public/header/css/header.css");
+@import url("../../../../public/footer/css/footer.css");
+
+.banner{
+  width:100%;
+  height:352px;
+  background: #00b1f3 url("../images/banner.jpg") no-repeat center center;
+}
+.teachingWrap{
+  width:100%;
+  height:460px;
+  background: #fff;
+}
+.teaching{
+  width:1200px;
+  margin:0 auto;
+  height:460px;
+  .teachingLeft{
+    width:748px;
+    float: left;
+    height:100%;
+    margin-right: 30px;
+    ul{
+      width:100%;
+      height:34px;
+      background: #f5f5f5;
+      li{
+        float: left;
+        text-align: center;
+        height:24px;
+        line-height:24px;
+        margin-top: 6px;
+        border-right:1px #cccccc solid;
+        a{
+          display: block;
+        }
+      }
+      .liact{
+        height:26px;
+        border-bottom:2px #16a1f2 solid;
+      }
+    }
+    .teachingAchievements{
+      width:100%;
+      height: 374px;
+      position: relative;
+      ol{
+        li{
+          width:100%;
+          height:20px;
+          line-height:20px;
+          margin-top: 20px;
+          font-size: 14px;
+          img{
+            display: block;
+            float: left;
+            width:20px;
+            height:20px;
+            margin-right: 11px;
+          }
+          span{
+            float: left;
+            color: #1da1f2;
+            display: block;
+            margin-right: 10px;
+          }
+          strong{
+            float: left;
+            color: #303030;
+            display: block;
+            width:450px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            cursor: pointer;
+            &:hover{
+              color: #1da1f2;
+            }
+          }
+          u{
+            float: right;
+            color:#666666;
+            display: block;
+            text-decoration: none;
+            margin-right: 25px;
+          }
+          b{
+            float: right;
+            color:#666666;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  h3{
+    width:100%;
+    height:53px;
+    line-height:53px;
+    span{
+      font-size: 24px;
+      color: #303030;
+    }
+    a{
+      font-size: 14px;
+      color: #808080;
+      float: right;
+    }
+  }
+  .teachingRight{
+    float: right;
+    height:100%;
+    width: 420px;
+    .dyn-list-box{
+      width: 100%;
+      height: 360px;
+      overflow: hidden;
+    }
+    .dyn-list {
+      border-left:1px #d7d7d7 solid;
+      margin-left: 8px;
+      #no-content{
+        margin-top: 100px;
+      }
+    }
+
+    .dyn-li {
+      padding: 10px 0 0px 28px;
+
+      margin-left:-8px;
+      .time{
+        background: url("../images/list_circle_blue.png") no-repeat ;
+        width: 285px;
+        height: 30px;
+        line-height:20px;
+        color: #868686;
+        font-size: 14px;
+        padding-left: 25px;
+        margin-left: -24px;
+      }
+      .dyn-li-innerbox{
+        padding-left: 50px;
+        position: relative;
+        width: 285px;
+        height: 50px;
+        .dyn-name {
+          display: block;
+          line-height: 20px;
+          height: 22px;
+          font-size: 14px;
+          color: #303030;
+        }
+        .message {
+          line-height: 22px;
+          font-size: 12px;
+          color: #808080;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .message span {
+          margin-left: 3px;
+          color: #383838;
+
+        }
+      }
+    }
+
+    .dyn-li .member-pic {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 38px;
+      height: 38px;
+      img {
+        width: 100%;
+        height: 100%;
+        border:1px #e5e5e5 solid;
+      }
+    }
+
+  }
+}
+.tAStatistics{
+  width:100%;
+  height:500px;
+  background: #f9f9f9;
+  .statistics{
+    width:1200px;
+    margin:0 auto;
+    h3{
+      width:100%;
+      height:53px;
+      line-height:53px;
+      font-size: 24px;
+      color: #303030;
+    }
+    #teaAchSta{
+      width:1200px;
+      height:440px;
+    }
+  }
+}

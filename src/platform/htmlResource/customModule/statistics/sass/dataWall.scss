@@ -1,0 +1,257 @@
+$width:1044px;
+$height:700px;
+.earth{
+  position: relative;
+  height: 650px;
+}
+.mapData{
+  width: $width;
+  height: $height;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top:0;
+}
+.map{
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -260px;
+  overflow: hidden;
+  z-index: 2;
+  margin-top: -315px;
+}
+.mapImg{
+  position: absolute;
+  left: 50%;
+  margin-left: -137px;
+  top: 50%;
+  margin-top: -171px;
+  z-index: 1;
+}
+.mapImg div.landmark{
+  width: 5.8px;
+  height: 5.8px;
+  z-index: 4;
+  position: absolute;
+}
+.landmarkBg{
+  width: 5.8px;
+  height: 5.8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../images/landmark.png) no-repeat;
+  background-size: contain;
+}
+.mapImg div.landmark1{
+  left: 40px;
+  top: 42.199999999999996px;
+}
+.mapImg div.landmark2{
+  left: 86px;
+  top: 67px;
+}
+.mapImg div.landmark3{
+  left: 84px;
+  top: 89px;
+}
+.mapImg div.landmark4{
+  left: 106px;
+  top: 89px;
+}
+.mapImg div.landmark5{
+  left: 128px;
+  top: 97px;
+}
+.mapImg div.landmark6{
+  left: 111.19999999999999px;
+  top: 48.2px;
+}
+.wave1{
+  animation: fadelandmark 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.wave2{
+  animation: fadelandmark2 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.wave3{
+  animation: fadelandmark3 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.wave11 {
+  animation: fadelandmark 7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.wave21 {
+  animation: fadelandmark2 7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.wave31 {
+  animation: fadelandmark3 7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.wave111 {
+  animation: fadelandmark 8.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.wave211 {
+  animation: fadelandmark2 8.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.wave311 {
+  animation: fadelandmark3 8.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.wave1,.wave2,.wave3{
+  height: 5.8px;
+  width: 5.8px;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 3;
+  animation-iteration-count:infinite;
+  background: transparent;
+}
+@keyframes fadelandmark {
+  0% {
+    box-shadow: 0 0 0 0px rgba(21, 87, 246, 0.7);
+    background: rgba(21, 87, 246, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgba(21, 87, 246, 0);
+    background: rgba(21, 87, 246, 0);
+  }
+}
+@keyframes fadelandmark2 {
+  0% {
+    box-shadow: 0 0 0 0px rgba(21, 87, 246, 0.7);
+    background: rgba(21, 87, 246, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 1.6px rgba(21, 87, 246, 0);
+    background: rgba(21, 87, 246, 0.3);
+  }
+}
+@keyframes fadelandmark3 {
+  0% {
+    box-shadow: 0 0 0 0px rgba(21, 87, 246, 0.7);
+    background: rgba(21, 87, 246, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 0.4px rgba(21, 87, 246, 0);
+    background: rgba(21, 87, 246, 1);
+  }
+}
+.map img{
+  display: block;
+  width: 294px;
+  height: 326px;
+}
+
+.mapBackground{
+  margin-top: 0 !important;
+  width: 100%;
+  height: 100%;
+  background: url(../images/earth.png) no-repeat;
+  background-size: contain;
+  animation: spin 20s linear both infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform : rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform : rotate(360deg)
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  -webkit-transform : rotate(0deg)
+}
+100% {
+     transform: rotate(360deg);
+     -webkit-transform : rotate(360deg)
+   }
+}
+.linebg{
+  width: $width;
+  height: $height;
+  position:relative;
+  overflow: hidden;
+}
+.bgline{
+  width: $width;
+  position:absolute;
+  bottom: 0;
+  z-index: 1;
+}
+.bgTop{
+    position: absolute;
+    bottom:0px;
+    width: $width;
+    height: 500px;
+    background:url(../images/lineTop1.png) no-repeat center bottom;
+    background-size: contain;
+    z-index: 2;
+}
+.mapNum{
+  position: absolute;
+  left: 81px;
+  top: 145px;
+  width: 903px;
+  height: 486px;
+  z-index: 3;
+  background: url(../images/mapNum.png) no-repeat;
+  background-size: contain;
+}
+.mapNumbox{
+  position: absolute;
+  height: 13px;
+  line-height: 13px;
+  color: #49e7ff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  width: 140px;
+}
+.mapNum #mapNum1{
+  top: 43px;
+  left: 30px;
+}
+.mapNum #mapNum2{
+  top: 208px;
+  left: 4px;
+}
+.mapNum #mapNum3{
+  top: 378px;
+  left: 80px;
+}
+.mapNum #mapNum4{
+  top: 460px;
+  left: 350px;
+}
+.mapNum #mapNum5{
+  top: 380px;
+  right: 131px;
+}
+.mapNum #mapNum6{
+  top: 214px;
+  right: 58px;
+}
+.mapNum #mapNum7{
+  top: 71px;
+  right: 12px;
+}
+#lineWrap {
+  height:290px;
+  overflow:hidden;
+}
+#lineWrap img {
+  width: 980px;
+  height: 530px;
+  display: block;
+  margin:0 auto;
+}
+.bgTop11{
+  width: 840px;
+  height: 530px;
+  background: url(../images/line.png) no-repeat;
+  background-size: contain;
+}

@@ -1,0 +1,495 @@
+/**
+ * Created by player on 2017/12/12.
+ */
+
+define(function () {
+  var dateArray=[];
+  function getDate( totalDay ){
+    var myDate = new Date(); //获取今天日期
+    myDate.setDate(myDate.getDate() - totalDay);
+    var flag = 1;
+    var dateTemp;
+    for (var i = 0; i < totalDay; i++) {
+      dateTemp = (myDate.getYear()+1900) + "-" + ( (myDate.getMonth()+1) > 9 ? (myDate.getMonth()+1) : '0'+(myDate.getMonth()+1) ) + "-" + ( myDate.getDate() > 9 ? myDate.getDate() : '0'+myDate.getDate());
+      dateArray.push(dateTemp);
+      myDate.setDate(myDate.getDate() + flag);
+    }
+  }
+  getDate(8);
+
+  var spaceDetailData = {
+    "code":"200",
+    "data":{
+      "dataList":[
+        {
+          "areaOpenNum":0,
+          "areaVisitNum":0,
+          "classOpenNum":56,
+          "classVisitNum":15,
+          "createDate":"2017-12-01 00:00:00",
+          "name":"东城区",
+          "openGroupSpaceNum":118,
+          "openPersonSpaceNum":106,
+          "parentOpenNum":8,
+          "parentUseNum":0,
+          "parentVisitNum":2,
+          "researchOpenNum":7,
+          "researchUseNum":1,
+          "researchVisitNum":2,
+          "schoolOpenNum":62,
+          "schoolVisitNum":11,
+          "spaceNum":224,
+          "studentOpenNum":11,
+          "studentUseNum":3,
+          "studentVisitNum":5,
+          "subjectOpenNum":0,
+          "subjectVisitNum":0,
+          "teacherOpenNum":80,
+          "teacherUseNum":27,
+          "teacherVisitNum":21,
+          "usePersonSpaceNum":31,
+          "visitGroupSpaceNum":26,
+          "visitPersonSpaceNum":30
+        },
+        {
+          "areaOpenNum":0,
+          "areaVisitNum":0,
+          "classOpenNum":82,
+          "classVisitNum":13,
+          "createDate":"2017-12-01 00:00:00",
+          "name":"昌平区",
+          "openGroupSpaceNum":135,
+          "openPersonSpaceNum":45,
+          "parentOpenNum":2,
+          "parentUseNum":1,
+          "parentVisitNum":1,
+          "researchOpenNum":2,
+          "researchUseNum":0,
+          "researchVisitNum":2,
+          "schoolOpenNum":53,
+          "schoolVisitNum":5,
+          "spaceNum":180,
+          "studentOpenNum":6,
+          "studentUseNum":0,
+          "studentVisitNum":0,
+          "subjectOpenNum":0,
+          "subjectVisitNum":0,
+          "teacherOpenNum":35,
+          "teacherUseNum":18,
+          "teacherVisitNum":5,
+          "usePersonSpaceNum":19,
+          "visitGroupSpaceNum":18,
+          "visitPersonSpaceNum":8
+        },
+        {
+          "areaOpenNum":0,
+          "areaVisitNum":0,
+          "classOpenNum":8,
+          "classVisitNum":2,
+          "createDate":"2017-12-01 00:00:00",
+          "name":"朝阳区",
+          "openGroupSpaceNum":29,
+          "openPersonSpaceNum":68,
+          "parentOpenNum":14,
+          "parentUseNum":1,
+          "parentVisitNum":2,
+          "researchOpenNum":6,
+          "researchUseNum":1,
+          "researchVisitNum":3,
+          "schoolOpenNum":21,
+          "schoolVisitNum":5,
+          "spaceNum":97,
+          "studentOpenNum":12,
+          "studentUseNum":2,
+          "studentVisitNum":5,
+          "subjectOpenNum":0,
+          "subjectVisitNum":0,
+          "teacherOpenNum":36,
+          "teacherUseNum":17,
+          "teacherVisitNum":12,
+          "usePersonSpaceNum":21,
+          "visitGroupSpaceNum":7,
+          "visitPersonSpaceNum":22
+        },
+        {
+          "areaOpenNum":0,
+          "areaVisitNum":0,
+          "classOpenNum":57,
+          "classVisitNum":0,
+          "createDate":"2017-12-01 00:00:00",
+          "name":"延庆县",
+          "openGroupSpaceNum":70,
+          "openPersonSpaceNum":4,
+          "parentOpenNum":0,
+          "parentUseNum":0,
+          "parentVisitNum":0,
+          "researchOpenNum":0,
+          "researchUseNum":0,
+          "researchVisitNum":0,
+          "schoolOpenNum":13,
+          "schoolVisitNum":2,
+          "spaceNum":74,
+          "studentOpenNum":1,
+          "studentUseNum":0,
+          "studentVisitNum":0,
+          "subjectOpenNum":0,
+          "subjectVisitNum":0,
+          "teacherOpenNum":3,
+          "teacherUseNum":2,
+          "teacherVisitNum":2,
+          "usePersonSpaceNum":2,
+          "visitGroupSpaceNum":2,
+          "visitPersonSpaceNum":2
+        },
+        {
+          "areaOpenNum":0,
+          "areaVisitNum":0,
+          "classOpenNum":40,
+          "classVisitNum":1,
+          "createDate":"2017-12-01 00:00:00",
+          "name":"崇文区",
+          "openGroupSpaceNum":54,
+          "openPersonSpaceNum":14,
+          "parentOpenNum":0,
+          "parentUseNum":0,
+          "parentVisitNum":0,
+          "researchOpenNum":0,
+          "researchUseNum":0,
+          "researchVisitNum":0,
+          "schoolOpenNum":14,
+          "schoolVisitNum":2,
+          "spaceNum":68,
+          "studentOpenNum":0,
+          "studentUseNum":0,
+          "studentVisitNum":0,
+          "subjectOpenNum":0,
+          "subjectVisitNum":0,
+          "teacherOpenNum":14,
+          "teacherUseNum":9,
+          "teacherVisitNum":0,
+          "usePersonSpaceNum":9,
+          "visitGroupSpaceNum":3,
+          "visitPersonSpaceNum":0
+        },
+        {
+          "areaOpenNum":0,
+          "areaVisitNum":0,
+          "classOpenNum":32,
+          "classVisitNum":3,
+          "createDate":"2017-12-01 00:00:00",
+          "name":"房山区",
+          "openGroupSpaceNum":54,
+          "openPersonSpaceNum":6,
+          "parentOpenNum":1,
+          "parentUseNum":1,
+          "parentVisitNum":1,
+          "researchOpenNum":0,
+          "researchUseNum":0,
+          "researchVisitNum":0,
+          "schoolOpenNum":22,
+          "schoolVisitNum":1,
+          "spaceNum":60,
+          "studentOpenNum":2,
+          "studentUseNum":1,
+          "studentVisitNum":1,
+          "subjectOpenNum":0,
+          "subjectVisitNum":0,
+          "teacherOpenNum":3,
+          "teacherUseNum":1,
+          "teacherVisitNum":0,
+          "usePersonSpaceNum":3,
+          "visitGroupSpaceNum":4,
+          "visitPersonSpaceNum":2
+        },
+        {
+          "areaOpenNum":0,
+          "areaVisitNum":0,
+          "classOpenNum":4,
+          "classVisitNum":3,
+          "createDate":"2017-12-01 00:00:00",
+          "name":"海淀区",
+          "openGroupSpaceNum":32,
+          "openPersonSpaceNum":28,
+          "parentOpenNum":5,
+          "parentUseNum":1,
+          "parentVisitNum":1,
+          "researchOpenNum":6,
+          "researchUseNum":2,
+          "researchVisitNum":5,
+          "schoolOpenNum":28,
+          "schoolVisitNum":1,
+          "spaceNum":60,
+          "studentOpenNum":3,
+          "studentUseNum":2,
+          "studentVisitNum":3,
+          "subjectOpenNum":0,
+          "subjectVisitNum":0,
+          "teacherOpenNum":14,
+          "teacherUseNum":8,
+          "teacherVisitNum":3,
+          "usePersonSpaceNum":13,
+          "visitGroupSpaceNum":4,
+          "visitPersonSpaceNum":12
+        },
+        {
+          "areaOpenNum":0,
+          "areaVisitNum":0,
+          "classOpenNum":9,
+          "classVisitNum":1,
+          "createDate":"2017-12-01 00:00:00",
+          "name":"西城区",
+          "openGroupSpaceNum":20,
+          "openPersonSpaceNum":17,
+          "parentOpenNum":4,
+          "parentUseNum":0,
+          "parentVisitNum":1,
+          "researchOpenNum":1,
+          "researchUseNum":0,
+          "researchVisitNum":0,
+          "schoolOpenNum":11,
+          "schoolVisitNum":2,
+          "spaceNum":37,
+          "studentOpenNum":4,
+          "studentUseNum":1,
+          "studentVisitNum":2,
+          "subjectOpenNum":0,
+          "subjectVisitNum":0,
+          "teacherOpenNum":8,
+          "teacherUseNum":4,
+          "teacherVisitNum":4,
+          "usePersonSpaceNum":5,
+          "visitGroupSpaceNum":3,
+          "visitPersonSpaceNum":7
+        },
+        {
+          "areaOpenNum":0,
+          "areaVisitNum":0,
+          "classOpenNum":0,
+          "classVisitNum":0,
+          "createDate":"2017-12-01 00:00:00",
+          "name":"顺义区",
+          "openGroupSpaceNum":31,
+          "openPersonSpaceNum":3,
+          "parentOpenNum":0,
+          "parentUseNum":0,
+          "parentVisitNum":0,
+          "researchOpenNum":0,
+          "researchUseNum":0,
+          "researchVisitNum":0,
+          "schoolOpenNum":31,
+          "schoolVisitNum":2,
+          "spaceNum":34,
+          "studentOpenNum":0,
+          "studentUseNum":0,
+          "studentVisitNum":0,
+          "subjectOpenNum":0,
+          "subjectVisitNum":0,
+          "teacherOpenNum":3,
+          "teacherUseNum":1,
+          "teacherVisitNum":0,
+          "usePersonSpaceNum":1,
+          "visitGroupSpaceNum":2,
+          "visitPersonSpaceNum":0
+        },
+        {
+          "areaOpenNum":0,
+          "areaVisitNum":0,
+          "classOpenNum":3,
+          "classVisitNum":0,
+          "createDate":"2017-12-01 00:00:00",
+          "name":"怀柔区",
+          "openGroupSpaceNum":28,
+          "openPersonSpaceNum":2,
+          "parentOpenNum":0,
+          "parentUseNum":0,
+          "parentVisitNum":0,
+          "researchOpenNum":0,
+          "researchUseNum":0,
+          "researchVisitNum":0,
+          "schoolOpenNum":25,
+          "schoolVisitNum":1,
+          "spaceNum":30,
+          "studentOpenNum":0,
+          "studentUseNum":0,
+          "studentVisitNum":0,
+          "subjectOpenNum":0,
+          "subjectVisitNum":0,
+          "teacherOpenNum":2,
+          "teacherUseNum":1,
+          "teacherVisitNum":0,
+          "usePersonSpaceNum":1,
+          "visitGroupSpaceNum":1,
+          "visitPersonSpaceNum":0
+        }
+      ],
+      "pageCount":2,
+      "pageNo":1,
+      "pageSize":10,
+      "totalSize":18
+    },
+    "desc":"请求处理成功！",
+    "result":"success"
+  };
+  /**
+   *
+   * @type {{code: string, data: {dataList: [*], pageCount: number, pageNo: number, pageSize: number, totalSize: number}, desc: string, result: string}}
+   * area : 区域
+   * resTotal : 资源总量
+   * syncTotal : 同步资源总量
+   * ugcTotal : 教师上传资源总量
+   * downloadCount : 资源下载量
+   * collectCount : 资源收藏量
+   * userCount : 用户数
+   * perUserRes : 人均资源拥有量
+   */
+  /**
+   *
+   * @type {{code: string, data: {dataList: [*], pageCount: number, pageNo: number, pageSize: number, totalSize: number}, desc: string, result: string}}
+   * area : 区域
+   * resTotal : 资源总量
+   * syncTotal : 同步资源总量
+   * ugcTotal : 教师上传资源总量
+   * downloadCount : 资源下载量
+   * collectCount : 资源收藏量
+   * userCount : 用户数
+   * perUserRes : 人均资源拥有量
+   */
+  var resourceDetailData = {
+    "code":"200",
+    "data":{
+      "dataList":[
+        {
+          "area":"明博高中",
+          "date":"2017-12-18",
+          "perUserRes":"64623.24",
+          "syncTotal":621057,
+          "userCount":420,
+          "collectCount":10056,
+          "resTotal":624765,
+          "ugcTotal":3708,
+          "downloadCount":45200
+        },
+        {
+          "area":"明博小学",
+          "date":"2017-12-18",
+          "perUserRes":"71059.25",
+          "syncTotal":519157,
+          "userCount":350,
+          "collectCount":15040,
+          "resTotal":524765,
+          "ugcTotal":5608,
+          "downloadCount":38200
+        },
+        {
+          "area":"明博中学",
+          "date":"2017-12-18",
+          "perUserRes":"80523.56",
+          "syncTotal":859207,
+          "userCount":500,
+          "collectCount":18421,
+          "resTotal":864765,
+          "ugcTotal":5558,
+          "downloadCount":34260
+        },
+        {
+          "area":"阳光第一小学",
+          "date":"2017-12-18",
+          "perUserRes":"84528.48",
+          "syncTotal":888427,
+          "userCount":200,
+          "collectCount":25421,
+          "resTotal":894115,
+          "ugcTotal":5688,
+          "downloadCount":44260
+        },
+        {
+          "area":"庆丰小学",
+          "date":"2017-12-18",
+          "perUserRes":"68450.15",
+          "syncTotal":687727,
+          "userCount":156,
+          "collectCount":31421,
+          "resTotal":694415,
+          "ugcTotal":6688,
+          "downloadCount":36860
+        },
+        {
+          "area":"崇文二小",
+          "date":"2017-12-18",
+          "perUserRes":"75806.75",
+          "syncTotal":750655,
+          "userCount":432,
+          "collectCount":29421,
+          "resTotal":756123,
+          "ugcTotal":5468,
+          "downloadCount":46310
+        },
+        {
+          "area":"双榆树一小",
+          "date":"2017-12-18",
+          "perUserRes":"79253.20",
+          "syncTotal":750015,
+          "userCount":380,
+          "collectCount":19421,
+          "resTotal":754695,
+          "ugcTotal":4680,
+          "downloadCount":41960
+        },
+        {
+          "area":"双榆树中学小学",
+          "date":"2017-12-18",
+          "perUserRes":"85425.15",
+          "syncTotal":888427,
+          "userCount":200,
+          "collectCount":25421,
+          "resTotal":894115,
+          "ugcTotal":5688,
+          "downloadCount":44260
+        },
+        {
+          "area":"人大附中实验小学",
+          "date":"2017-12-18",
+          "perUserRes":"75862.81",
+          "syncTotal":718026,
+          "userCount":290,
+          "collectCount":68421,
+          "resTotal":723154,
+          "ugcTotal":5128,
+          "downloadCount":46560
+        },
+        {
+          "area":"群英小学",
+          "date":"2017-12-18",
+          "perUserRes":"65284.46",
+          "syncTotal":654757,
+          "userCount":286,
+          "collectCount":25961,
+          "resTotal":659415,
+          "ugcTotal":4658,
+          "downloadCount":36200
+        },
+        {
+          "area":"太平路小学",
+          "date":"2017-12-18",
+          "perUserRes":"65982.34",
+          "syncTotal":659521,
+          "userCount":156,
+          "collectCount":19421,
+          "resTotal":664146,
+          "ugcTotal":4625,
+          "downloadCount":36210
+        }
+      ],
+      "pageCount":1,
+      "pageNo":1,
+      "pageSize":10,
+      "totalSize":10
+    },
+    "desc":"请求处理成功！",
+    "result":"success"
+  };
+  return {
+    'space' : spaceDetailData,
+    'resource' : resourceDetailData
+  };
+});

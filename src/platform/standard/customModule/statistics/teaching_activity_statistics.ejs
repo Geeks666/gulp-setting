@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'teaching'}) %>
+    <div class="content contentP">
+      <%- include('view/_teaching_top.ejs', {currentPage : 'activity'}) %>
+      <div class="row row2-echrat echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="role-city echart-title">各区发起的活动数量对比</div>
+        <div class="role-county echart-title">活动发起数量</div>
+        <div class="role-school echart-title">活动参与情况</div>
+        <div class="role-city echart-option">
+          <div class="echart-title-details data-href" data-href="activity_fq.html" style="margin-left: 30px;"><span></span>查看详情</div>
+        </div>
+        <div class="role-county echart-option">
+          <div class="echart-title-details data-href" data-href="activity_fq.html" style="margin-left: -63px;"><span></span>查看详情</div>
+        </div>
+        <div class="role-school echart-option">
+          <div class="echart-title-details data-href" data-href="activity_fq.html" style="margin-left: -63px;"><span></span>查看详情</div>
+        </div>
+        <div class="row">
+          <div class="selectRight">
+            <div class="selectWrap">
+              <div class="label">统计时段：</div>
+              <div class="selectTop selectTopAct" data-value=""id="fqActivityNum">
+                <span>全学年</span>
+                <strong></strong>
+              </div>
+              <div class="selectBottom">
+                <ol>
+                  <li data-value="" data-type="2">全学年</li>
+                  <li class="role-city role-school" data-value="yesterday">昨天</li>
+                  <li data-value="lastseven">最近七天</li>
+                  <li data-value="lastthirty">最近30天</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="achievements_num_wrap">
+          <div class="role-city role-county teaching_achievements">
+            <div id="achievements_num"></div>
+          </div>
+          <div class="role-school teaching_achievements">
+            <div id="achievements_num1"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row row2-echrat echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="role-city echart-title">各区活动参与情况对比</div>
+        <div class="role-county echart-title">活动参与情况</div>
+        <div class="role-school echart-title">活动参与趋势</div>
+        <div class="role-city echart-option">
+          <div class="echart-title-details data-href" data-href="activity_cy.html"><span></span>查看详情</div>
+        </div>
+        <div class="role-county echart-option">
+          <div class="echart-title-details data-href" data-href="activity_cy.html" style="margin-left: -63px;"><span></span>查看详情</div>
+        </div>
+        <div class="row">
+          <div class="selectRight">
+            <div class="selectWrap">
+              <div class="label">统计时段：</div>
+              <div class="selectTop selectTopAct" data-value="" data-type='2' id="cyActivityNum">
+                <span>全学年</span>
+                <strong></strong>
+              </div>
+              <div class="selectBottom">
+                <ol>
+                  <li data-value="" data-type="2">全学年</li>
+                  <li class="role-city" data-value="yesterday">昨天</li>
+                  <li data-value="lastseven">最近七天</li>
+                  <li data-value="lastthirty">最近30天</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="activity_partake_wrap">
+          <div class="teaching_achievements">
+            <div id="activity_partake"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js"
+        data-main="../../customModule/statistics/js/teaching_activity_statistics.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+#xiaozhuang_footer {
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #e1e1e1;
+  padding: 20px 0;
+
+}
+#xiaozhuang_footer p{
+  font-size: 14px;
+  color: #828282;
+  text-align: center;
+}

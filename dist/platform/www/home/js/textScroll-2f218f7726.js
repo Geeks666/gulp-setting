@@ -1,0 +1,1 @@
+"use strict";define(["jquery"],function(n){function e(){clearInterval(t)}function i(){t=setInterval(function(){var n=r.find("li:first"),e=n.height();n.animate({marginTop:-e+"px"},600,function(){n.css("marginTop",0).appendTo(r)})},o)}var t,r=n(".notice_list"),o=3e3;return r.hover(function(){e()},function(){i()}).trigger("mouseleave"),{setTimer:i,clearTimer:e}});

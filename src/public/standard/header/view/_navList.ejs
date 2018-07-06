@@ -1,0 +1,8 @@
+<script type="text/html" id="navList">
+  {{each navList}}
+  <li>
+    <a class="{{$value.class}}{{$index == <%= curIndex %> ? 't-active' : ''}}" href="{{$value.url}}" {{ $value.newOpen ?
+      'target=_blank' : ''}}>{{$value.name}}</a>
+  </li>
+  {{/each}}
+</script>

@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="renderer" content="webkit|ie-comp|ie-stand"><title>白银区智慧教育云中心</title><link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer-03c29ce29a.css"><link rel="stylesheet" href="../home/css/index-68baf9b418.css"><link rel="stylesheet" href="../rank/css/videoRank-2aedaa5a00.css"></head><body><div class="wrapper"><link rel="stylesheet" href="../../../public/header/css/header-306a9b3fa0.css"><div class="wrap_top_bg baiyin"><div class="wrap_top"><div class="logo"><a href="javascript:void(0)"><img src="" alt=""></a></div><div class="chooseArea tabchoose"><a class="area" href="javascript:;"><span class="kh">[</span> <span class="scholl_name">白银区</span> <span class="arrow arrowDown"></span> <span class="kh">]</span></a><div class="chooseList schoolChoose"><ul id="schoolList"></ul></div></div><div id="nav" class="nav clearfix"><div class="nav_top"><div class="msg tabchoose"><div class="msgT clearfix"><ul id="login_message" class="nav_top_ul"><li class="favorite_button">添加收藏</li><li>|</li><li class="home_button">设为首页</li></ul></div></div></div><div class="nav_bottom"><ul class="clearfix"></ul></div></div></div></div><script type="text/html" id="school_list">{{each data}}
+      {{if $index%4 == 0 }}
+      <li class="list clearfix">
+      {{/if}}
+        <span data-id="{{$value.id}}"><a href="javascript:;" title="{{$value.name}}">{{$value.showName}}</a></span>
+      {{if ($index+1)%4 == 0}}
+      </li>
+      {{/if}}
+    {{/each}}</script><script type="text/html" id="loginMessage"><li>|</li>
+  <li class="userName">
+    {{if data.code == "login_error" }}
+    <span class="loginButton">登录</span>
+    {{else}}
+    <span>{{data.data.userInfo.name}}&nbsp;
+      <span class="arrow arrowDown"></span>
+    </span>
+
+    <div class="chooseList myChoose clearfix">
+      <ul class="clearfix">
+        {{if data.data.userType == 1 }}
+        <li>
+          <a href="{{data.userJumpHref.spaceManager}}">机构空间</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{data.userJumpHref.mySpace}}">我的空间</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.personCenter}}">个人中心</a>
+        </li>
+        {{/if}}
+        <li>
+          <a class="logout" href="javascript:void(0)">退出</a>
+        </li>
+      </ul>
+    </div>
+    {{/if}}
+  </li>
+  {{if data.code != "login_error" && data.data.userType == 1 }}
+  <li>|</li>
+  <li>
+    <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+  </li>
+  {{/if}}
+  <!-- <li>|</li>
+     <li>消息(<b>5</b>)</li>--></script><script type="text/html" id="navList">{{each navList}}
+      {{if $value.childNav}}
+        <li class="resourceNav{{$index == 5 ? ' nav_act' : ''}}">
+          <a href="javascript:void(0)" class="nav_li">{{$value.name}}<span class="arrow"></span></a>
+          <div class="chooseList resource clearfix">
+            <ul class="clearfix">
+              {{each $value.childNav}}
+                <li class="list"><a href="{{$value.url}}">{{$value.name}}</a></li>
+              {{/each}}
+            </ul>
+          </div>
+      {{else}}
+        <li>
+          <a href="{{$value.url}}" class="nav_li{{$index == 5 ? ' nav_act' : ''}}{{ $value.type ? ' verify_app_enter' : ''}}"  type="{{$value.type}}"  {{$value.newOpen=='true' ? 'target=_blank' : ''}}>{{$value.name}}</a>
+      {{/if}}
+      </li>
+    {{/each}}</script><div class="banner"><div class="slides"><ul class="slide-pic"></ul><script type="text/html" id="slidePic">{{each data}}
+      <li class="banner_bigimg{{$index+1}}">
+        <div class="banner-text-box banner_img" style="background: url('{{$value.pic}}') no-repeat center;background-size:cover;">
+          <!--<img src="{{$value.pic}}" class="banner_smallimg"/>-->
+        </div>
+      </li>
+      {{/each}}</script><ul class="slide-li"></ul><script type="text/html" id="slideLi">{{each data}}
+      <li></li>
+      {{/each}}</script></div></div><!--<div id="spaceNav" class="wrap">
+       include('../home/view/_second_nav.ejs', {currentPage : 'rank'})
+    </div>--><div class="content clearfix"><div class="nav_left fl"><ul><li class=""><a href="../rank/allRank.html">综合排行</a></li><li class=""><a href="../rank/schoolRank.html">学校排行</a></li><li class="active"><a href="../rank/teacherRank.html">教师排行</a></li><li class=""><a href="../rank/activityRank.html">活动排行</a></li><li class=""><a href="../rank/videoRank.html">视频排行</a></li></ul></div><div class="content_right fl"><div class="teacher_rank"><div class="content_title"><!--<span>教师排行</span>
+            <a href="javascript:void(0)" class="export_data"><i></i>导出数据</a>--><ul class="clearfix"><li class="active fl" data-value="1"><a href="javascript:void(0)">登录次数</a></li><li class="fl" data-value="2"><a href="javascript:void(0)">资源上传数</a></li><li class="fl" data-value="3"><a href="javascript:void(0)">资源下载数</a></li></ul></div><div class="content_table"></div><script id="teacherRank" type="text/html"><table>
+              <thead>
+              <tr>
+                <td>排名</td>
+                <td>教师名称</td>
+                <td>登录次数</td>
+                <td>资源上传数</td>
+                <td>资源下载数</td>
+                <td>上传视频数</td>
+              </tr>
+              </thead>
+              <tbody>
+                {{each data}}
+                  {{if ($index+1)%2 == 0 }}<tr class="odd">{{else}}<tr>{{/if}}
+                    <td>
+                      {{if currentPage*pageSize+$index == 0 }}<span class="first">{{/if}}
+                              {{if currentPage*pageSize+$index == 1 }}<span class="second">{{/if}}
+                              {{if currentPage*pageSize+$index == 2 }}<span class="three">{{/if}}
+                                {{currentPage*pageSize+$index+1}}
+                              </span>
+                    </td>
+                    <td>{{$value.name}}</td>
+                    <td>{{$value.lgCounts}}</td>
+                    <td>{{$value.resUpCount}}</td>
+                    <td>{{$value.resDownCount}}</td>
+                    <td>{{$value.videoCount}}</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table></script><div id="pageTool"></div></div></div></div><ul id="others"><li id="goTop"><span class="icon"></span> 返回顶部</li></ul><link rel="stylesheet" href="../../../public/footer/css/footer-c7529391f4.css"><div id="mainbo_footer"><!--<div>
+    <ul>
+      <li><p>版权所有：白银区教育局</p><p>版本号：1.2</p></li>
+      <li><p>客服热线：400-898-5166</p><p>每天9：00-17：30(法定节假日除外)</p></li>
+      <li><img src="images/code.png" /><p>扫一扫,关注我们获得更多教育咨询</p></li>
+      <li class="main_last_msg"><p>网站技术支持：明博教育科技股份有限公司</p></li>
+    </ul>
+  </div>--></div></div><script src="../../../lib/requires/requires-4aa88d7e5f.js" data-main="../rank/js/teacherRank-4a9ab9634d.js"></script></body></html>

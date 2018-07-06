@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'teaching'}) %>
+    <div class="content contentP">
+      <%- include('view/_teaching_top.ejs', {currentPage : 'overview'}) %>
+      <div class="role-city row row6-index echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">
+          各区域教研成果对比
+          <span>
+            <div class="echart-title-info">
+              <p> 教研成果总量包含：</p>
+              <p> 1、区域级成果：区域教学研讨、专家指导、在线观课，课堂评价，校际教研活动的参与数</p>
+              <p> 2、学校级成果：</p>
+              <p class="info_p">教师教研成果：教案、课件、反思、教学文章、听课记录、成长档案、计划总结、集备活动参与数、校际教研活动参与数、
+                课堂评价活动参与数</p>
+              <p class="info_p">教学管理成果：查阅教案、查阅课件、查阅反思、查阅教学文章、查阅听课记录节、查阅计划总结、查阅集体备课、
+                集备活动，校际教研活动、课堂评价活动</p>
+            </div>
+          </span>
+
+        </div>
+        <div class="row">
+          <div class="selectRight">
+            <div class="selectWrap">
+              <div class="label">统计时段：</div>
+              <div class="selectTop selectTopAct" data-value="" id="citySelect">
+                <span>全学年</span>
+                <strong></strong>
+              </div>
+              <div class="selectBottom">
+                <ol>
+                  <li data-value="">全学年</li>
+                  <li data-value="yesterday">昨天</li>
+                  <li data-value="lastseven">最近七天</li>
+                  <li data-value="lastthirty">最近30天</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="regionalResultsWrap">
+          <div class="echart-area left">
+            <div class="label1">各区域成果总量占比（TOP10）</div>
+            <div id="regionalResults"></div>
+          </div>
+          <div class="divider left"></div>
+          <div class="data-area left">
+            <div class="label1">各区域教研成果数量及占比（全部）</div>
+            <div class="table-page tableWrapIndex" id="table_county">
+              <table id="rank_percent">
+              </table>
+              <div class="pageTool" id="pageTool"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row row2-echrat echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">
+          教研成果总量统计
+          <span>
+            <div class="echart-title-info">
+              <p> 教研成果总量包含：</p>
+              <p> 1、区域级成果：区域教学研讨、专家指导、在线观课，课堂评价，校际教研活动的参与数</p>
+              <p> 2、学校级成果：</p>
+              <p class="info_p">教师教研成果：教案、课件、反思、教学文章、听课记录、成长档案、计划总结、集备活动参与数、校际教研活动参与数、
+                课堂评价活动参与数</p>
+              <p class="info_p">教学管理成果：查阅教案、查阅课件、查阅反思、查阅教学文章、查阅听课记录节、查阅计划总结、查阅集体备课、
+                集备活动，校际教研活动、课堂评价活动</p>
+            </div>
+          </span>
+        </div>
+        <div class="row">
+          <div class="selectRight">
+            <div class="selectWrap">
+              <div class="label">统计时段：</div>
+              <div class="selectTop selectTopAct" data-value="" id="totalSelect">
+                <span>全学年</span>
+                <strong></strong>
+              </div>
+              <div class="selectBottom">
+                <ol>
+                  <li data-value="">全学年</li>
+                  <!--<li data-value="lastseven">最近七天</li>
+                  <li data-value="lastthirty">最近30天</li>-->
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="teaching_achievements">
+          <div id="teaching_achievements_trend"></div>
+        </div>
+      </div>
+      <div class="row row2-echrat echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">教研成果增长趋势</div>
+        <div class="row">
+          <div class="selectRight">
+            <div class="selectWrap">
+              <div class="label">统计时段：</div>
+              <div class="selectTop selectTopAct" data-value="" id="totalSelectTrend">
+                <span>全学年</span>
+                <strong></strong>
+              </div>
+              <div class="selectBottom">
+                <ol>
+                  <li data-value="" >全学年</li>
+                  <!--<li data-value="lastseven">最近七天</li>
+                  <li data-value="lastthirty">最近30天</li>-->
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="teaching_achievements">
+          <div id="teaching_achievement_increase_trend"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js"
+        data-main="../../customModule/statistics/js/teaching_overview.js"></script>
+</body>
+</html>

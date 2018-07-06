@@ -1,0 +1,158 @@
+
+@import "../../rank/sass/common";
+
+.total_num{
+  position: relative;
+  font-size:16px;
+  color: #2872ce;
+  padding:14px 0 16px 30px;
+  i{
+    background: url(../../rank/images/icon.png) no-repeat;
+    background-position: 2px -68px;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    position: absolute;
+    top: 24px;
+    left: 11px;
+  }
+  span{
+    font-size:24px;
+    color: #d7423d;
+  }
+}
+.teacher_rank{
+  width: 302px;
+  height:450px;
+  border: 1px solid #e6e6e6;
+  .teacher_list{
+    li{
+      font-size: 14px;
+      height: 34px;
+      line-height: 34px;
+      color: #303030;
+      padding-left: 16px;
+      i{
+        display: inline-block;
+        width:22px;
+        height:22px;
+        line-height:22px;
+        text-align: center;
+        border-radius: 4px;
+        margin-right: 8px;
+        margin-top: 6px;
+      }
+      i.active{
+        background: #fe6f11;
+        color: #fff;
+      }
+      span.school_name{
+        display: inline-block;
+        width:180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      span.teacher_num{
+        color: #2e5c9f;
+      }
+    }
+  }
+}
+.user_rank{
+  width:520px;
+  height:450px;
+  border: 1px solid #e6e6e6;
+  margin-left: 12px;
+  margin-bottom:17px;
+  .user_rank_echart{
+    width: 520px;
+    height: 350px;
+  }
+}
+.resource_rank{
+  width:836px;
+  height:390px;
+  border: 1px solid #e6e6e6;
+  margin-bottom:17px;
+  .grade_select{
+    float: right;
+    font-size: 14px;
+    margin-right: 12px;
+    position: relative;
+    span{
+      background: #fff;
+      width: 96px;
+      height: 32px;
+      line-height: 32px;
+      padding-left: 10px;
+      border: 1px solid #e6e6e6;
+      display: inline-block;
+      position: relative;
+      i{
+        background: url(../../rank/images/icon.png) no-repeat;
+        background-position: 3px -78px;
+        width: 18px;
+        height: 16px;
+        display: inline-block;
+        position: absolute;
+        top: 10px;
+        right: 3px;
+        cursor: pointer;
+      }
+      i.arrow_up{
+        background-position: -13px -79px;
+      }
+    }
+    div{
+      display: none;
+      width: 108px;
+      position: absolute;
+      top: 39px;
+      right: 1px;
+      background: #fff;
+      ul{
+        li{
+          height: 32px;
+          line-height: 32px;
+          padding-left: 10px;
+          border: 1px solid #e6e6e6;
+          border-top: none;
+          cursor: pointer;
+        }
+        li:hover{
+          background: #f6f6f6;
+          color: #1da1f2;
+        }
+      }
+    }
+  }
+  .resource_rank_echart{
+    width:710px;
+    height:300px;
+    canvas{
+      z-index:9;
+    }
+  }
+}
+.activity_rank{
+  width:411px;
+  height:390px;
+  border: 1px solid #e6e6e6;
+  margin-bottom:17px;
+  .activity_rank_echart{
+    width:411px;
+    height:300px;
+  }
+}
+.activity_works_rank{
+  width:411px;
+  height:390px;
+  margin-left: 12px;
+  border: 1px solid #e6e6e6;
+  margin-bottom:17px;
+  .activity_works_rank_echart{
+    width:411px;
+    height:300px;
+  }
+}

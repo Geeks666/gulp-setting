@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="../../../public/header/css/header.css">
+<div id="mainbo-top-nav" class="mainbo-top-nav">
+  <div class="mainbo-top-nav-box">
+    <div class="logo"><img src="" alt=""></div>
+    <ul class="nav" id="nav"></ul>
+    <script type="text/html" id="navList">
+      <%
+      if (typeof curIndex == 'undefined') {
+        curIndex = 0;
+      }
+      %>
+      {{each navList}}
+      <li>
+        <a class="{{$value.class}}{{$index == <%= curIndex %> ? ' t-active ' : ''}}" href="{{$value.url}}" {{
+           $value.newOpen ? 'target=_blank' : ''}}>{{$value.name}}</a>
+      </li>
+      {{/each}}
+    </script>
+    <div class="mainbo-search" id="login_message"></div>
+
+    <script type="text/html" id="loginMessage">
+      {{if data.code !='success' }}
+        <a {{ <%= curIndex %> == 4 ? 'href=#' : '' }} id="mainbo-login" class="loginButton">登录</a>
+      {{else}}
+      {{if data.data.userType == 1 }}
+      <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+      {{/if}}
+      <!--<div class="message-warn"><a href="javascript:;" class="link">消息-->
+        <!--</a><i></i></div>-->
+      <div class="noread_wrapper">
+        <div class="h_msg message-warn">
+          <span></span>
+        </div>
+        <span></span>
+      </div>
+      <div class="login_user">
+        <div class="login_username">
+          {{data.data.userInfo.name}}<span class="arrow"></span>
+        </div>
+        {{if data.data.userType == 1 }}
+        {{if (data.data.account != "admin" && data.data.account != "test")}}
+        <ul class="admin_bg">
+          <li><a href="{{data.userJumpHref.spaceManager}}">机构空间</a></li>
+          <li><a href="{{data.userJumpHref.myApp}}">我的应用</a></li>
+          <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{else}}
+        <ul class="admin_sm">
+          <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{/if}}
+        {{else}}
+        <ul class="person_bg">
+          {{if <%= curIndex %> == 4}}
+            {{if data.data.userRole=='3002' & data.data.userType =='200' || data.data.userRole=='3003'}}
+              <li class="data-href" data-href="../background/index.html" data-target="_blank"><a href="#"  style=""  >管理入口</a></li>
+            {{/if}}
+            <li class="data-href" data-href="../protected/my_works.html" ><a href="#">我的作品</a></li>
+          {{/if}}
+          <li><a href="{{data.userJumpHref.mySpace}}">我的空间</a></li>
+          <li><a href="{{data.userJumpHref.myApp}}">我的应用</a></li>
+          <li><a href="{{data.userJumpHref.personCenter}}">个人中心</a></li>
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{/if}}
+      </div>
+      {{/if}}
+    </script>
+  </div>
+  <%- include('../view/_navList.ejs', {curIndex:3}) %>
+  <%- include('../view/_loginMessage.ejs', {curIndex:3}) %>
+</div>

@@ -1,0 +1,212 @@
+@charset "utf-8";
+#header {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #3598d9;
+}
+
+.header_content {
+    width: 1000px;
+    margin: 0 auto;
+    height: 60px;
+}
+
+.nav li {
+    float: left;
+    width: 88px;
+    height: 60px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.nav a {
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.nav .nav_active {
+    background: #037ecc;
+}
+
+.nav span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../../images/index_smallIcon.png) no-repeat;
+    margin-top: 24px;
+    float: left;
+    margin-right: 3px;
+}
+
+.nav .nav_icon1 {
+    background-position: 0px 0px;
+}
+
+.nav .nav_icon3 {
+    background-position: -15px -15px; 
+}
+
+.nav .nav_icon4 {
+    background-position: 0px -30px;
+}
+
+.nav .nav_icon5 {
+    background-position: 0px -15px;
+}
+
+.nav .nav_icon6 {
+    background-position: -15px -30px;
+}
+
+.search {
+    width: 255px;
+    float: right;
+    padding-right: 10px;
+    height: 60px;
+}
+
+.nav .nav_icon2 {
+    background-position: -15px 0px; 
+}
+
+.search .login_text {
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+}
+
+/* banner */
+#banner {
+    overflow: hidden;
+    width: 100%;
+}
+.banner {
+    height: 200px;
+}
+.banner img{
+    position: absolute;
+    left: -460px;
+    top: 0;
+    height: 200px;
+    width: 1920px;
+}
+.banner .space-name {
+    position: absolute;
+    font: bold 50px/60px 'KaiTi';
+    color: #182c44;
+    top: 74px;
+    left: 39px;
+}
+.banner .go-work-list {
+    /*bottom: 12px;
+    right: 2px;
+    width: 113px;
+    height: 32px;*/
+    padding:6px;
+    margin-right: 6px;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+.banner #found {
+     right: 135px;
+}
+.banner .go-work-list:hover{
+    background: #3498d8;
+    border: 1px solid #eee;
+}
+.banner  .go-my-work {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    font-size: 16px;
+    color: #3498d8;
+    margin-left: -70px;
+    display: none;
+}
+/* banner end*/
+/* content-nav */
+.content-nav {
+    background: url(../../images/nav-bj.jpg); 
+    line-height: 45px;
+    text-align: center;
+}
+.content-nav a {
+    font-size: 16px;
+}
+.content-nav .active {
+    color: #2e86ce;
+}
+.content-nav  .cont-li {
+    float: left;
+    width: 16.6%;
+    height: 45px;
+}
+/* content-nav end */
+
+
+#mainbo-top-nav {
+    width: 100%;
+    height: 60px;
+    line-height: 64px;
+    background: #3598d9;
+    font-family: "Microsoft YaHei";
+    overflow: hidden;
+}
+#mainbo-top-nav .mainbo-top-nav-box {
+    width: 1000px;
+    margin: 0 auto;
+    height: 60px;
+}
+#mainbo-top-nav .mainbo-search {
+    float: right;
+}
+#mainbo-top-nav .mainbo-search a {
+    color: #fff;
+    font-size: 14px;
+    float: left;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+#mainbo_footer {
+  background-color: #ededed;
+  padding: 20px 0;
+  font-size: 12px;
+  color: #383838;
+}
+#mainbo_footer ul {
+  overflow: hidden;
+}
+#mainbo_footer ul li {
+  float: left;
+  width: 25%;
+  height: 100px;
+  border-left: 1px solid #cbcbcb;
+  margin-left: -1px;
+  padding-top: 30px;
+}
+#mainbo_footer img {
+  width: 66px;
+  height: 67px;
+  margin: 0 auto;
+  display: block;
+  margin-top: -15px;
+}
+#mainbo_footer p {
+  text-indent: 30px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+#mainbo_footer .main_last_msg p {
+  text-indent: 0px;
+  text-align: center;
+  line-height: 60px;
+}
+

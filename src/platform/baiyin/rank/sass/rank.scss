@@ -1,0 +1,39 @@
+@import "../../home/sass/_reset";
+@import "../../home/sass/common";
+
+/*排行榜*/
+#rank {
+  padding: 0 0 58px 0;
+}
+#rank h2 {
+  line-height: 60px;
+  font-size: 20px;
+}
+#rank .more {
+  line-height: 60px;
+}
+
+#rank table{
+  width: 100%;
+  text-align: center;
+  line-height: 64px;
+  font-size: 15px;
+  color: #303030;
+}
+#rank table thead {
+  line-height: 50px;
+  font-size: 16px;
+  color: #5e5f61;
+  font-weight: normal;
+  background: #edf2f8;
+}
+#rank table th {
+  font-weight: normal;
+}
+#rank table tr {
+  border-bottom: 1px dashed #ccc;
+}
+#rank .redColor {
+  color: #ff5600;
+}
+

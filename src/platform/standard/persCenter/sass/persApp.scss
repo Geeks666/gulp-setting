@@ -1,0 +1,331 @@
+@charset "utf-8";
+$grayText: #828282;
+$blackText: #383838;
+$blueText: #1da1f3;
+$whiteText: #fff;
+$borderColor: #e1e1e1;
+$backgroundColor: #fff;
+$min-text: 12px;
+$middle-text: 14px;
+$big-text: 16px;
+$darkblue: #1da1f3;
+$cancelgray: #abbdd5;
+
+%pad-box {
+  border: 1px solid $borderColor;
+  background: $whiteText;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+%pad-19 {
+  padding: 0 19px;
+  @extend %pad-box;
+}
+
+%btn {
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: $min-text;
+  border-radius: 2px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+@mixin boxSize($width:auto,$height:auto) {
+  width: $width;
+  height: $height;
+  @extend %pad-19;
+}
+
+@mixin box($width:auto,$height:auto) {
+  @if $width == auto {
+    width: auto;
+    height: auto;
+  } @else {
+    width: $width + px;
+    height: $height + px;
+  }
+  border: 1px solid $borderColor;
+  background: $backgroundColor;
+}
+
+@mixin btn($width:0,$height:0,$boolean:true) {
+  width: $width;
+  height: $height;
+  line-height: $height;
+  @extend %btn;
+  @if $boolean {
+    color: $whiteText;
+    background-color: $blueText;
+  } @else {
+    color: $whiteText;
+    background-color: #abbdd5;
+    border: 1px solid #abbdd5;
+  }
+}
+
+.wrap {
+  width: 1000px !important;
+}
+
+#mask {
+  background: #202020;
+  z-index: 80;
+}
+
+#app {
+  border: 1px solid $borderColor;
+  margin-top: 16px;
+  .content-header {
+    background: #fff;
+    padding: 0px 20px;
+    .content-header-content {
+      padding: 8px 0px;
+      border-bottom: 1px solid $borderColor;
+      .header-list {
+        .header-li {
+          float: left;
+          cursor: pointer;
+          background: #ffffff;
+          padding: 0 10px;
+          border-right: 1px solid $borderColor;
+          span {
+            display: inline-block;
+            padding: 4px 14px;
+            color: $grayText;
+            font-size: 15px;
+            border-radius: 2px;
+          }
+          .tab-choose {
+            color: #ffffff;
+            background: $darkblue;
+          }
+        }
+      }
+    }
+  }
+  #app-list {
+    background: $backgroundColor;
+    padding: 20px 0 100px 0;
+    min-height: 396px;
+  }
+  .app-li {
+    @include box(308, 124);
+    margin: 0 0 17px 17px;
+    float: left;
+    position: relative;
+    .remove-btn {
+      position: absolute;
+      top: 7px;
+      right: 8px;
+      cursor: pointer;
+      display: none;
+    }
+    &:hover {
+      box-shadow: 0 0 4px 2px $borderColor;
+      .remove-btn {
+        display: block;
+      }
+    }
+    .icon-close-small {
+      vertical-align: top;
+      width: 10px;
+      height: 10px;
+      background: url("../../persCenter/images/close.png") 0px 0px no-repeat;
+      &:hover {
+        background: url("../../persCenter/images/close_active.png") 0px 0px no-repeat;
+      }
+    }
+  }
+  .app-pic {
+    width: 72px;
+    height: 72px;
+    float: left;
+    margin: 27px 16px 0 27px;
+  }
+  .app-msg {
+    width: 175px;
+    float: left;
+    padding-top: 18px;
+    //line-height:28px;
+    line-height: 50px;
+  }
+  .app-name {
+    font-size: $big-text;
+  }
+  .user-number {
+    color: $grayText;
+  }
+  .btn {
+    @include btn(84px, 28px);
+    line-height: 26px;
+    margin: 0;
+    background: $backgroundColor;
+    border: 1px solid $borderColor;
+  }
+  .download {
+    color: $blueText;
+    float: left;
+    &:hover {
+      border-color: $blueText;
+    }
+  }
+  .into {
+    float: right;
+    color: #fb731b;
+    &:hover {
+      border-color: #fb731b;
+    }
+  }
+  #add-app {
+    cursor: pointer;
+  }
+  .add-pic {
+    width: 75px;
+    height: 56px;
+    position: relative;
+    margin: 36px auto;
+    text-align: center;
+    font-size: $middle-text;
+    span {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: url(../images/local-icon.png) no-repeat 0 -115px;
+      margin: 10px auto;
+    }
+  }
+  .no-drop {
+    cursor: no-drop;
+    color: #a8a8a8;
+    &:hover {
+      border-color: #e1e1e1;
+    }
+  }
+}
+
+#confirm {
+  width: 98px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  background-color: $blueText;
+}
+
+#cancel {
+  width: 98px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  background-color: $cancelgray;
+  border: 1px solid $cancelgray;
+}
+
+#confirm, #cancel {
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 12px;
+  border-radius: 2px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/*应用加载*/
+.dialog-box {
+  padding: 0 12px !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  .no-content {
+    height: 200px;
+    line-height: 330px;
+    background-position: center -35px;
+  }
+  .close-dialog {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+#addAppDialog {
+  @include boxSize(674px);
+  margin: -170px 0 0 -337px;
+  padding-bottom: 35px !important;
+  .app-boxs {
+    height: 210px;
+    overflow: auto;
+    position: relative;
+  }
+  .app-li {
+    float: left;
+    margin: 0 2px 14px;
+    width: 212px;
+    height: 90px;
+  }
+  .active {
+    background: #fafafa;
+    .checkbox {
+      background: url(../images/local-icon.png) no-repeat -123px -5px;
+    }
+  }
+  .checkbox, .app-pic, .app-msg {
+    float: left;
+  }
+  .checkbox {
+    @include box(14, 14);
+    margin: 12px 10px 0 6px;
+  }
+  .app-pic {
+    width: 64px;
+    height: 64px;
+    float: left;
+    margin: 13px 10px 0 0;
+  }
+  .app-msg {
+    float: left;
+    width: 105px;
+    line-height: 26px;
+    margin-top: 20px;
+  }
+  .app-name {
+    font-size: $big-text;
+  }
+  .user-number {
+    font-size: $min-text;
+    color: $grayText;
+  }
+  #choose-all {
+    float: left;
+    height: 24px;
+    line-height: 26px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    span {
+      margin: 5px 5px 0 1px;
+      cursor: pointer;
+    }
+  }
+  .choose-active {
+    span {
+      background: url(../images/local-icon.png) no-repeat -123px -5px;
+    }
+  }
+  .icon-close-small {
+    vertical-align: top;
+    width: 10px;
+    height: 10px;
+    background: url("../../persCenter/images/close.png") 0px 0px no-repeat;
+    &:hover {
+      background: url("../../persCenter/images/close_active.png") 0px 0px no-repeat;
+    }
+  }
+}

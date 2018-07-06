@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'user'}) %>
+    <div class="content">
+      <%- include('view/_user_top.ejs', {currentPage : 'userarea'}) %>
+      <div class="role-city row row2-user-area echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台用户地域分布</div>
+        <div class="label">用户总数<span id="total_users"></span></div>
+        <div class="label label-right">用户情况统计<span id="county"></span></div>
+        <div id="userarea_map_wrap">
+          <div id="userarea_map"></div>
+          <div id="userarea_map_pie"></div>
+        </div>
+      </div>
+      <div class="role-county row row2-user-area-total-county echart small left">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">区域用户总量统计</div>
+        <div class="label">用户总数<span id="total_users_county"></span></div>
+        <div class="table-page" id="table_county">
+          <table id="table_userarea_county"></table>
+          <div id="pageTool"></div>
+        </div>
+      </div>
+      <div class="role-county row row2-user-area-area-county echart small right">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">首次使用平台的用户分布</div>
+        <div class="label">首次使用平台的用户总数<span id="total_isfirst_school"></span></div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-type="school" data-fun="1"
+               data-id="userarea_isfirst_county" data-value="yesterday">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>
+            </ol>
+          </div>
+        </div>
+        <div id="userarea_isfirst_county"></div>
+      </div>
+
+      <div class="role-county row row3-user-area-county echart no-margin cf">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">使用平台的用户分布情况</div>
+        <div class="label">使用平台的用户总数<span id="total_nofirst_school"></span></div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct userDistribution" data-type="school" data-fun="0"
+               data-id="userarea_nofirst_county" data-value="yesterday">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>
+            </ol>
+          </div>
+        </div>
+        <div id="userarea_nofirst_county"></div>
+        <div class="title"></div>
+        <div id="pageTool_county"></div>
+      </div>
+      <div class="role-city row row4-user-area echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">使用平台的用户地域分布</div>
+        <div class="label">使用平台用户数<span id="total_users_nofirst"></span></div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-type="area" data-fun="0"
+               data-id="userarea_nofirst" data-value="yesterday">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>
+            </ol>
+          </div>
+        </div>
+        <div id="userarea_nofirst"></div>
+      </div>
+      <div class="role-city row row3-user-area echart no-margin">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">首次使用平台的用户地域分布</div>
+        <div class="label">首次使用平台用户数<span id="total_users_isfirst"></span></div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-type="area"
+               data-fun="1" data-id="userarea_isfirst" data-value="yesterday">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>
+            </ol>
+          </div>
+        </div>
+        <div id="userarea_isfirst"></div>
+      </div>
+      <%- include('view/_footer.ejs') %>
+    </div>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js" data-main="../../customModule/statistics/js/user_area.js"></script>
+</body>
+</html>

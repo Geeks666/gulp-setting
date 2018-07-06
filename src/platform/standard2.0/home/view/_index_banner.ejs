@@ -1,0 +1,18 @@
+
+<ul class="slide-pic"></ul>
+<script type="text/html" id="slidePic">
+  {{each data}}
+  <li class="banner_bigimg{{$index+1}}">
+    <div class="banner-text-box">
+      <img src="{{$value.pic}}" class="banner_smallimg"/>
+    </div>
+  </li>
+  {{/each}}
+</script>
+<ul class="slide-li">
+</ul>
+<script type="text/html" id="slideLi">
+  {{each data}}
+  <li></li>
+  {{/each}}
+</script>

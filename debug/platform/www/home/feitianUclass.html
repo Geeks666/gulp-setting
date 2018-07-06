@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+  <title>飞天E教平台</title>
+  <link rel="stylesheet" href="../home/css/feitianUclass-656c5edbd9.css">
+  <script src="../../../lib/requires/requires-4aa88d7e5f.js" data-main="../home/js/feitianUclass-26f8ee75c5.js"></script>
+</head>
+<body>
+  <link rel="stylesheet" href="../../../public/header/css/header-daf1d87f97.css">
+<div class="wrap_top_bg baiyin">
+  <div class="wrap_top">
+    <div class="logo">
+      <a href="javascript:void(0)">
+        <img src="" alt="">
+      </a>
+    </div>
+    <div class="chooseArea tabchoose">
+      <a class="area" href="javascript:;">
+        <span class="kh">[</span>
+        <span class="scholl_name">白银区</span>
+        <span class="arrow arrowDown"></span>
+        <span class="kh">]</span>
+      </a>
+      <div class="chooseList schoolChoose">
+        <ul id="schoolList"></ul>
+      </div>
+    </div>
+    <div id="nav" class="nav clearfix">
+      <div class="nav_top">
+        <div class="msg tabchoose">
+          <div class="msgT clearfix">
+            <ul id="login_message" class="nav_top_ul">
+              <li class="favorite_button">添加收藏</li>
+              <li>|</li>
+              <li class="home_button">设为首页</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav_bottom">
+        <ul class="clearfix"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/html" id="school_list">
+    {{each data}}
+      {{if $index%4 == 0 }}
+      <li class="list clearfix">
+      {{/if}}
+        <span data-id="{{$value.id}}"><a href="javascript:;" title="{{$value.name}}">{{$value.showName}}</a></span>
+      {{if ($index+1)%4 == 0}}
+      </li>
+      {{/if}}
+    {{/each}}
+  </script>
+<script type="text/html" id="loginMessage">
+  <li>|</li>
+  <li class="userName">
+    {{if data.code == "login_error" }}
+    <span class="loginButton">登录</span>
+    {{else}}
+    <span>{{data.data.userInfo.name}}&nbsp;
+      <span class="arrow arrowDown"></span>
+    </span>
+
+    <div class="chooseList myChoose clearfix">
+      <ul class="clearfix">
+        {{if data.data.userType == 1 }}
+        <li>
+          <a href="{{data.userJumpHref.spaceManager}}">机构空间</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{data.userJumpHref.mySpace}}">我的空间</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+        </li>
+        <li>
+          <a href="{{data.userJumpHref.personCenter}}">个人中心</a>
+        </li>
+        {{/if}}
+        <li>
+          <a class="logout" href="javascript:void(0)">退出</a>
+        </li>
+      </ul>
+    </div>
+    {{/if}}
+  </li>
+  {{if data.code != "login_error" && data.data.userType == 1 }}
+  <li>|</li>
+  <li>
+    <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+  </li>
+  {{/if}}
+  <!-- <li>|</li>
+     <li>消息(<b>5</b>)</li>-->
+</script>
+<script type="text/html" id="navList">
+    
+    {{each navList}}
+      {{if $value.childNav}}
+        <li class="resourceNav{{$index == 5 ? ' nav_act' : ''}}">
+          <a href="javascript:void(0)" class="nav_li">{{$value.name}}<span class="arrow"></span></a>
+          <div class="chooseList resource clearfix">
+            <ul class="clearfix">
+              {{each $value.childNav}}
+                <li class="list"><a href="{{$value.url}}">{{$value.name}}</a></li>
+              {{/each}}
+            </ul>
+          </div>
+      {{else}}
+        <li>
+          <a href="{{$value.url}}" class="nav_li{{$index == 5 ? ' nav_act' : ''}}{{ $value.type ? ' verify_app_enter' : ''}}"  type="{{$value.type}}"  {{$value.newOpen=='true' ? 'target=_blank' : ''}}>{{$value.name}}</a>
+      {{/if}}
+      </li>
+    {{/each}}
+  </script>
+  <div id="notice-banner">
+    <div class="notice-banner-content">
+      <div class="notice-banner-box">
+        <img class="notice-banner-img" src="images/feitian/banner.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+<ul class="content">
+  <li class="cont-list" style="background: rgb(247, 247, 247);">
+    <div class="message wrap">
+      <div class="mes-left">
+        <img class="mes-pic" src="images/feitian/v2.png" alt="" />
+        <div class="mes-left-right">
+          <h2 class="title"> 飞天优课 </h2>
+          <p class="mes-text"> 集数字化教材、嵌入式教学资源、备授课工具、资源管理工具等于一体 </p>
+        </div>
+      </div>
+      <a class="mes-right" href="http://www.byeduyun.cn/download/20170607/Uclass-Teacher-by.zip"> 立即下载 </a>
+      <div class="mes-bottom">
+        <h3 class="bot-title"> 应用介绍 </h3>
+        <p class="bot-text"> 优课数字化教学应用系统（简称飞天优课），是专为中小学教师打造的一款数字化备授课软件。飞天优课从实际教学出发，整合正版数字内容、优质教学资源、常用备授课工具，帮助教师实现数字化教学的常态应用，节省备课时间，提升课堂教学效果。同时提供机构管理端软件，支持省、市、区县、学校分级管理，帮助教育部门实现数字化教学常态管理，促进教学资源共建共享 </p>
+      </div>
+    </div> </li>
+  <li class="cont-list" style="background: rgb(255, 255, 255);"> <h2 class="header-title wrap"> 创新优势 </h2>
+    <div class="message-list clearFix wrap">
+      <div class="one-pic"></div>
+      <div class="one-text">
+        <h3 class="min-title"> 1.优质教学资源，实现数字化教学常态应用 </h3>
+        <p class="min-text"> 国内主流教材出版社授权的正版数字内容，覆盖率达95%以上。同时提供海量的优质资源，85万条优质备课资源、150万道习题、6000余条动漫测试、6大系列电子教辅、10000余节名师视频课堂、1-9年级英语多媒体教材等。 </p>
+      </div>
+    </div> </li>
+  <li class="cont-list" style="background: rgb(247, 247, 247);">
+    <div class="message-list clearFix wrap">
+      <div class="two-text">
+        <h3 class="min-title"> 2、便捷的备授课工具 </h3>
+        <p class="min-text"> 提供课件编辑工具和学科工具，帮助教师轻松制作个性化课件。 </p>
+      </div>
+      <div class="two-pic"></div>
+    </div> </li>
+  <li class="cont-list" style="background: rgb(255, 255, 255);">
+    <div class="message-list clearFix wrap">
+      <div class="three-pic"></div>
+      <div class="three-text">
+        <h3 class="min-title"> 3、统一整合的管理平台 </h3>
+        <p class="min-text"> 支持资源的整合与管理，提升资源使用率，推进数字化教学资源均衡。 </p>
+      </div>
+    </div> </li>
+  <li class="cont-list" style="background: rgb(247, 247, 247);">
+    <div class="message-list clearFix wrap">
+      <div class="two-text ">
+        <h3 class="min-title"> 4、开放兼容的软件平台 </h3>
+        <p class="min-text"> 支持多种交互教学设备，提升设备使用率；兼容主流操作系统，便于跨平台使用。 </p>
+      </div>
+      <div class="two-pic four-pic"></div>
+    </div> </li>
+</ul>
+
+<link rel="stylesheet" href="../../../public/footer/css/footer-c4b8cdbee1.css">
+
+<div id="mainbo_footer">
+  <!--<div>
+    <ul>
+      <li><p>版权所有：白银区教育局</p><p>版本号：1.2</p></li>
+      <li><p>客服热线：400-898-5166</p><p>每天9：00-17：30(法定节假日除外)</p></li>
+      <li><img src="images/code.png" /><p>扫一扫,关注我们获得更多教育咨询</p></li>
+      <li class="main_last_msg"><p>网站技术支持：明博教育科技股份有限公司</p></li>
+    </ul>
+  </div>-->
+</div>
+</body>
+</html>

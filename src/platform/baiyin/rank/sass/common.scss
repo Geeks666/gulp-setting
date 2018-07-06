@@ -1,0 +1,163 @@
+@import "../../home/sass/_reset";
+@import "../../home/sass/common";
+@import "../../public/sass/_paging";
+$navSelectedColor:#1da1f2;
+$navBackgroundColor:#f1f1f1;
+$contentTitleBackground:#edf2f8;
+$tableTitleColor:#303030;
+$whiteColor: #fff;
+$defaultTextColor: #303030;
+$min-text: 12px;
+$middle-text: 14px;
+$big-text: 16px;
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.content{
+  width:1000px;
+  margin:auto;
+  padding:15px 0;
+}
+.nav_left{}
+.nav_left ul{}
+.nav_left ul li{
+  width: 150px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  background: $navBackgroundColor;
+  border-top: 1px $whiteColor solid;
+}
+.nav_left ul li:first-child{
+   border-top: none;
+ }
+.nav_left ul li.active{
+  background: $navSelectedColor;
+}
+.nav_left ul li a{
+  color: $defaultTextColor;
+  font-size:$big-text;
+}
+.nav_left ul li.active a{
+  color: $whiteColor;
+  font-weight:bold;
+}
+.nav_left ul li:hover a{
+  color: $navSelectedColor;
+}
+.nav_left ul li.active:hover a{
+  color: $whiteColor;
+}
+
+.content_right{
+  padding-left:12px;
+  width:838px;
+}
+.teacher_rank{
+  width:836px;
+  border:1px solid #e6e6e6;
+}
+.content_right .content_title{
+  height: 44px;
+  line-height: 44px;
+  background: $contentTitleBackground;
+  font-size:$big-text;
+}
+.content_right .content_title>span{
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  border-left: 4px solid $navSelectedColor;
+  padding-left: 8px;
+  margin-top:12px;
+}
+.content_right .content_title>a{
+  float: right;
+  font-size: $middle-text;
+  color: #2872ce;
+  position: relative;
+  padding: 0 10px 0 10px;
+}
+
+.content_right .content_nav{
+  padding: 18px 0 0 14px;
+  font-size: $big-text;
+  color: $tableTitleColor;
+  .content_nav_title{
+    color: #2872ce;
+  }
+  a{
+    display: inline-block;
+    padding: 0 10px;
+  }
+  a.active{
+    background: #1da1f2;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    padding: 7px 16px;
+    border-radius: 16px;
+  }
+}
+.content_right .content_table{
+  padding:  0 14px;
+}
+.content_right .content_table table{
+  width: 808px;
+  margin-top:16px;
+}
+.content_right .content_table table td{
+  text-align: center;
+}
+.content_right .content_table table thead{
+  font-size: $middle-text;
+  font-weight: bold;
+  color: $tableTitleColor;
+  height: 42px;
+  line-height: 42px;
+}
+.content_right .content_table table thead td{
+  border-left:1px solid $whiteColor;
+  border-bottom:1px solid $whiteColor;
+  background: url("../../rank/images/title_bg.png") repeat-x;
+}
+.content_right .content_table table thead td:first-child{
+  border-left:none;
+}
+.content_right .content_table table tbody tr{
+  height:38px;
+  line-height:38px;
+}
+.content_right .content_table table tbody tr td{
+  background-color: #fbfbfb;
+  border-left:1px solid $whiteColor;
+  border-top:1px solid $whiteColor;
+  font-size:$middle-text;
+  color: #666;
+}
+.content_right .content_table table tbody tr td:first-child{
+  border-left:none;
+  border-top:1px solid $whiteColor;
+}
+.content_right .content_table table tbody tr.odd td{
+  background-color: #f1f8ff;
+}
+.content_right .content_table table tbody tr td span.first,.content_right .content_table table tbody tr td span.second,.content_right .content_table table tbody tr td span.three{
+  display: inline-block;
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+}
+.content_right .content_table table tbody tr td span.first{
+  background: #fe6f11;
+}
+.content_right .content_table table tbody tr td span.second{
+  background: #35c486;
+}
+.content_right .content_table table tbody tr td span.three{
+  background: #409dd6;
+}

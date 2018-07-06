@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'resource'}) %>
+    <div class="content">
+      <%- include('view/_resource_top.ejs', {currentPage : 'sync'}) %>
+      <div class="row row1-resource-sync">
+        <div class="label">同步教学资源量：<span id="syncResourceTotal"></span></div>
+      </div>
+      <div class="row row2-resource-sync echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">同步资源统计</div>
+        <div class="radio" data-value="subject" id="radio_resource">
+          <div class="item-wrap active" data-value="subject">
+            <span class="icon icon-radio"></span>
+            <span class="item">按学科统计</span>
+          </div>
+          <div class="item-wrap" data-value="publisher">
+            <span class="icon icon-radio"></span>
+            <span class="item">按出版社统计</span>
+          </div>
+        </div>
+        <div class="selectWrap">
+          <div class="label">学段：</div>
+          <div class="selectTop selectTopAct" data-value="140" id="select_resource">
+            <span>小学</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="140">小学</li>
+              <li data-value="141">初中</li>
+              <li data-value="142">高中</li>
+            </ol>
+          </div>
+        </div>
+        <div id="sync"></div>
+      </div>
+      <div class="row row2-resource-sync echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">同步资源使用趋势</div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-value="yesterday" id="select_resource_trand">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>
+            </ol>
+          </div>
+        </div>
+        <div id="sync_trand"></div>
+      </div>
+      <div class="row row2-resource-sync echart no-margin">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">同步资源使用情况统计</div>
+        <div id="sync_use"></div>
+      </div>
+
+    </div>
+    <%- include('view/_footer.ejs') %>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js"
+        data-main="../../customModule/statistics/js/resource_sync.js"></script>
+</body>
+</html>

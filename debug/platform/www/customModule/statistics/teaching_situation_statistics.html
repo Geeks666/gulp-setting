@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main-76f12792b7.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <div class="header">
+  <div class="header-center">
+    <div class="position">
+      <span class="icon icon-location"></span><strong></strong>
+      <div class="exit"><span class="icon icon-exit"></span><span>退出</span></div>
+    </div>
+    <div class="logo"></div>
+  </div>
+</div>
+  <div class="wrap">
+    <div class="sidebar left">
+  <div class="item-wrap" data-href="index.html">
+    <div class="item no-border ">
+      <span class="icon icon-index"></span>
+      <span class="label">平台概况</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="user_type.html">
+    <div class="item ">
+      <span class="icon icon-user-sidebar"></span>
+      <span class="label">用户统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="space_echart.html">
+    <div class="item ">
+      <span class="icon icon-space"></span>
+      <span class="label">空间统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="app_echart.html">
+    <div class="item ">
+      <span class="icon icon-app"></span>
+      <span class="label">应用统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="resource_total.html">
+    <div class="item ">
+      <span class="icon icon-resource"></span>
+      <span class="label">资源统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="teaching_overview.html">
+    <div class="item active">
+      <span class="icon icon-teaching"></span>
+      <span class="label">教研分析</span>
+    </div>
+  </div>
+</div>
+    <div class="content contentP">
+      <div class="row row1 row1-teaching row1-app">
+  <div class="item-wrap" data-href="teaching_overview.html">
+    <div class="item ">
+      <span class="icon icon-overview"></span>
+      教研总览
+    </div>
+  </div>
+  <div class="item-wrap areatotal" data-href="teaching_activity_statistics.html">
+    <div class="item ">
+      <span class="icon icon-activity"></span>
+      区域教研活动统计
+    </div>
+  </div>
+  <div class="item-wrap schooltotal" data-href="teaching_situation_statistics.html">
+    <div class="item active">
+      <span class="icon icon-situation"></span>
+      学校教研情况统计
+    </div>
+  </div>
+</div>
+<div class="divider row1-user-type" style="margin: 0;"></div>
+<div class="row row1 rowSelect">
+  <div class="selectWrap" id="schoolYear">
+    <div class="label">学年：</div>
+    <div class="selectTop selectTopAct" data-value="">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom">
+      <ol></ol>
+    </div>
+  </div>
+  <div class="selectWrap" id="studySection">
+    <div class="label">学段：</div>
+    <div class="selectTop selectTopAct" data-value="">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom" >
+      <ol></ol>
+    </div>
+  </div>
+  <div class="selectWrap" id="subject">
+    <div class="label">学科：</div>
+    <div class="selectTop selectTopAct">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom">
+      <ol>
+        <li data-value="">全部</li>
+      </ol>
+    </div>
+  </div>
+  <div class="role-school selectWrap" id="grade">
+    <div class="label">年级：</div>
+    <div class="selectTop selectTopAct">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom">
+      <ol>
+        <li data-value="">全部</li>
+      </ol>
+    </div>
+  </div>
+  <div class="selectWrap">
+    <input type="button" value="搜索" class="dateConfirmBtn searchBtn" id="searchBtn">
+  </div>
+</div>
+      <div class="role-city row row2-echrat echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">各区域学校教研情况对比</div>
+        <div class="echart-option">
+          <div class="echart-title-details data-href" data-href="school_teaching_detail.html" style="margin-left: 30px;">
+            <span></span>查看详情
+          </div>
+        </div>
+        <div class="row">
+          <div class="selectRight">
+            <div class="selectWrap">
+              <div class="label">统计时段：</div>
+              <div class="selectTop selectTopAct" data-value="" id="areaSchool">
+                <span>全学年</span>
+                <strong></strong>
+              </div>
+              <div class="selectBottom">
+                <ol>
+                  <li data-value="">全学年</li>
+                  <li data-value="yesterday">昨天</li>
+                  <li data-value="lastseven">最近七天</li>
+                  <li data-value="lastthirty">最近30天</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="teaching_achievements">
+          <div id="school_teaching_contrast"></div>
+        </div>
+      </div>
+      <div class="role-county row row4-index echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">各校教研成果对比</div>
+        <div id="schoolTotalResultsWrap">
+          <div class="echart-option">
+            <div class="echart-title-details data-href" data-href="school_teaching_detail.html" style="margin-left: -30px;">
+              <span></span>查看详情</div>
+          </div>
+          <div class="row">
+            <div class="selectRight">
+              <div class="selectWrap">
+                <div class="label">统计时段：</div>
+                <div class="selectTop selectTopAct" data-value="" id="schtotalSelect">
+                  <span>全学年</span>
+                  <strong></strong>
+                </div>
+                <div class="selectBottom">
+                  <ol>
+                    <li data-value="">全学年</li>
+                    <li data-value="yesterday">昨天</li>
+                    <li data-value="lastseven">最近七天</li>
+                    <li data-value="lastthirty">最近30天</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="echart-area left">
+            <div class="label" style="margin:10px 0 27px 10px">学校教研成果总量<span class="count" id="schtotal"></span></div>
+            <div id="schoolTotalResults"></div>
+          </div>
+           <div class="divider left"></div>
+          <div class="data-area left">
+            <div class="label1">学校教研成果数量及占比（Top10）</div>
+            <div class="table-page tableWrapIndex" id="table_county">
+              <table id="rank_percent3">
+
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="role-school row row4-index echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">各学科情况对比</div>
+        <div id="schoolTeachingAchievementsWrap">
+          <div class="echart-option">
+            <div class="echart-title-details data-href" data-href="school_teaching_detail.html" style="margin-left: -30px;">
+              <span></span>学校教研成果数据明细</div>
+          </div>
+          <div class="row">
+            <div class="selectRight">
+              <div class="selectWrap">
+                <div class="label">统计时段：</div>
+                <div class="selectTop selectTopAct" data-value="" id="subjectContrast">
+                  <span>全学年</span>
+                  <strong></strong>
+                </div>
+                <div class="selectBottom">
+                  <ol>
+                    <li data-value="">全学年</li>
+                    <li data-value="yesterday">昨天</li>
+                    <li data-value="lastseven">最近七天</li>
+                    <li data-value="lastthirty">最近30天</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="echart-area left">
+            <div class="label" style="margin:10px 0 27px 10px">学校教研成果<span class="count" id="subschoolAchievements"></span></div>
+            <div id="schoolTeachingAchievements"></div>
+          </div>
+          <div class="divider left"></div>
+          <div class="data-area left">
+            <div class="label1">学科教研成果数量及占比</div>
+            <div class="table-page tableWrapIndex" id="table_county">
+              <table id="rank_percent2">
+
+              </table>
+              <div class="pageTool" id="pageTool2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="role-school row row4-index echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">各年级情况对比</div>
+        <div id="schoolGradeTeachingAchievementsError">
+          <div class="row">
+            <div class="selectRight">
+              <div class="selectWrap">
+                <div class="label">统计时段：</div>
+                <div class="selectTop selectTopAct" data-value="" id="gradeContrast">
+                  <span>全学年</span>
+                  <strong></strong>
+                </div>
+                <div class="selectBottom">
+                  <ol>
+                    <li data-value="">全学年</li>
+                    <li data-value="yesterday">昨天</li>
+                    <li data-value="lastseven">最近七天</li>
+                    <li data-value="lastthirty">最近30天</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="echart-area left">
+            <div class="label" style="margin:10px 0 27px 10px">学校教研成果<!--<span class="count" id="gardeschoolAchievements"></span>--></div>
+            <div id="schoolGradeTeachingAchievements"></div>
+          </div>
+          <div class="divider left"></div>
+          <div class="data-area left">
+            <div class="label1">年级教研成果数量及占比</div>
+            <div class="table-page tableWrapIndex" id="table_county1">
+              <table id="rank_percent1">
+              </table>
+              <div class="pageTool" id="pageTool3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row row5-index echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">学校教研与管理--成果分布</div>
+        <div id="schoolWrap">
+          <div class="echart-area left">
+            <div class="label">常规教学<span class="count" id="routine_teaching"></span></div>
+            <div id="schoolRoutineTeaching"></div>
+          </div>
+          <div class="divider left"></div>
+          <div class="data-area left">
+            <div class="label">教育科研<span class="count" id="educational_research"></span></div>
+            <div id="schoolEducationalResearch"></div>
+          </div>
+          <div class="xWidth">
+            <div class="divider1 "></div>
+          </div>
+          <div>
+            <div class="label">教学管理<span class="count" id="teaching_management"></span></div>
+            <div id="schoolTeachingManagement"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires-4aa88d7e5f.js"
+        data-main="../../customModule/statistics/js/teaching_situation_statistics-fe3d803acd.js"></script>
+</body>
+</html>

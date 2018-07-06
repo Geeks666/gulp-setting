@@ -1,0 +1,1 @@
+"use strict";require.config({baseUrl:"../",paths:{platformConf:"public/js/platformConf-6e48d40e05.js"}}),require(["platformConf"],function(e){require.config(e),define("",["jquery","template","layer","service","orgConfig","tools","footer","header"],function(e,r,o,f,i,t,n,a){})});

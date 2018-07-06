@@ -1,0 +1,33 @@
+<div class="application_banner">
+  <div class="application_banner_box">
+    <img src="../home/images/application_banner_img.png" class="banner_img"/>
+    <div class="recommended">
+      <h4>推荐应用</h4>
+      <ul id="recommended_list" class="recommended_list">
+        推荐应用内容
+      </ul>
+      <script type="text/html" id="recommended_list_">
+        {{each data}}
+        {{if $index < 3 }}
+        <li isDetail="{{$value.isDetail ? 'true' : 'false'}}" appid="{{$value.id}}">
+          <dl class="recommended_type">
+            <dt class="recommended_img1"><img src="{{$value.logo}}"></dt>
+            <dd class="type_title">
+              <a class="app_url_notneedLogin appName" isLogin="2" appid="{{$value.id}}" isopen="{{$value.isDetail}}" appUrl="{{$value.appUrl}}" href="javascript:void(0);">{{$value.name}}</a>
+            </dd>
+            <dd class="praise_text">
+              {{if $value.isLike }}
+              <span type="1" class="praised"></span>
+              {{else}}
+              <span type="0" appid="{{$value.id}}" class="unpraise_{{$value.id}} praise-icon2"></span>
+              {{/if}}
+              <span class="like_num_{{$value.id}}">{{$value.likeNum}}</span>
+            </dd>
+          </dl>
+          <span class="attribution type_{{$value.id}}">{{$value.category}}</span>
+          {{/if}}
+          {{/each}}
+      </script>
+    </div>
+  </div>
+</div>

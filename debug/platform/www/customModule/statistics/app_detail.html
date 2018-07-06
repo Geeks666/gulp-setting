@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../statistics/css/main.css">
+</head>
+<body data-module="app">
+<div class="bg-gradient">
+  <div class="header">
+  <div class="header-center">
+    <div class="position">
+      <span class="icon icon-location"></span><strong></strong>
+      <div class="exit"><span class="icon icon-exit"></span><span>退出</span></div>
+    </div>
+    <div class="logo"></div>
+  </div>
+</div>
+  <div class="wrap">
+    <div class="sidebar left">
+  <div class="item-wrap" data-href="index.html">
+    <div class="item no-border ">
+      <span class="icon icon-index"></span>
+      <span class="label">平台概况</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="user_type.html">
+    <div class="item ">
+      <span class="icon icon-user-sidebar"></span>
+      <span class="label">用户统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="space_echart.html">
+    <div class="item ">
+      <span class="icon icon-space"></span>
+      <span class="label">空间统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="app_echart.html">
+    <div class="item active">
+      <span class="icon icon-app"></span>
+      <span class="label">应用统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="resource_total.html">
+    <div class="item ">
+      <span class="icon icon-resource"></span>
+      <span class="label">资源统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="teaching_overview.html">
+    <div class="item ">
+      <span class="icon icon-teaching"></span>
+      <span class="label">教研分析</span>
+    </div>
+  </div>
+</div>
+    <div class="content">
+      <div class="row row1 row1-user-type row1-app">
+  <div class="item-wrap" data-href="app_echart.html">
+    <div class="item ">
+      <span class="icon icon-echart"></span>
+      图表统计
+    </div>
+  </div>
+  <div class="item-wrap" data-href="app_detail.html">
+    <div class="item active">
+      <span class="icon icon-detail"></span>
+      数据明细
+    </div>
+  </div>
+</div>
+<div class="divider row1-user-type"></div>
+
+      <div class="row echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">应用统计明细</div>
+        <div class="wrapTable clearfix">
+          <div class="wrapTableTop">
+            <div class="wrapTableTopExport">
+              <span></span>
+              <strong>导出数据</strong>
+            </div>
+            <div class="dataWrap">
+              <input placeholder="请输入日期" class="laydate-icon" id="date">
+              <input placeholder="请输入应用关键字" type="text" class="input-serarch">
+              <input type="button" value="搜索" class="dateConfirmBtn dateAppBtn">
+            </div>
+          </div>
+          <div class="tableWrap clearfix" id="spaceTableApp">
+            <table>
+              <thead>
+              <th style="width:474px;text-align: left;padding-left: 25px;">应用名称</th>
+              <th style="width:171px;">访问人数</th>
+              <th style="width:162px;">访问次数</th>
+              <th style="width:168px;">访问次数占比</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <div id="pageTool1App"></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer cf">
+  <p>技术运营支持：明博教育科技股份有限公司&nbsp;&nbsp;&nbsp;&nbsp; 客户服务热线：400-898-5166</p>
+  <p>Copyright&copy; mainbojiaoyu.cn All rights reserved&nbsp;&nbsp;&nbsp;&nbsp;鄂 ICP 备 0235635 号 -2</p>
+</div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="../../../../lib/component/laydate/js/laydate.js"></script>
+<script src="../../../../lib/requires/requires-4aa88d7e5f.js" data-main="../statistics/js/module_detail.js"></script>
+<script type="text/javascript">
+  laydate.skin('shenlan'); //切换皮肤
+</script>
+</body>
+</html>

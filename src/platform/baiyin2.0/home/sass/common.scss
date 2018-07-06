@@ -1,0 +1,80 @@
+html,body{
+	font-family: "Microsoft YaHei"! important;
+}
+body{
+	background-color: #f7f7f7;
+}
+.wrap{
+	width: 1200px;
+	position: relative;
+	margin: 0 auto;
+}
+
+/*公告，新闻面包屑*/
+.nav_tit {
+	width:1200px;
+	height:45px;
+	line-height:45px;
+	margin:0 auto;
+	color:#282828;
+	font-size:14px;
+}
+.nav_tit  a {
+	color:#282828;
+}
+.nav_tit span {
+	font-weight:bold;
+}
+#no-content {
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	line-height: 323px;
+	height: 216px;
+	width:216px;
+	margin-left: -108px;
+	margin-top: -108px;
+	color: #a9a9a9;
+	text-align: center;
+	background: url(../../home/images/noContent.png) center -20px no-repeat;
+	font-size:16px;
+}
+.title {
+	height:45px;
+	font-weight: normal;
+	line-height:45px;
+	border-bottom:1px solid #eee;
+	background:#fff;
+	position: relative;
+	z-index: 2;
+	margin:0 auto;
+}
+.title_noborder {
+	width:620px;
+	font-size:18px;
+	color:#383838;
+	text-align:center;
+	line-height:66px;
+	margin-bottom:30px;
+	border-bottom:none;
+}
+
+.title strong {
+	font-size:16px;
+	color:#383838;
+	float:left;
+	margin-left:8px;
+}
+.title a {
+	font-size:12px;
+	color:#828282;
+	float:right;
+	margin-top:2px;
+	cursor:pointer;
+}
+.spaceNavul{
+	float: left;
+}
+.spaceNavul1{
+	float: right;
+}

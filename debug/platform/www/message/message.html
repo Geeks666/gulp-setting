@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit|ie-stand"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Cache-Control" content="no-cache, must-revalidate"/>
+  <meta http-equiv="Expires" content="0"/>
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <title>优课智慧教育云平台</title>
+</head>
+<link href="../message/css/message-0a1223dbb7.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer-03c29ce29a.css"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/component/pagingSimple/paging-6ac8887f17.css"/>
+<script>
+  if (top.location != self.location) {
+    top.location = self.location;//防止页面被框架包含
+  }
+</script>
+<body>
+<div class="wrap">
+  
+  <link rel="stylesheet" href="../../../public/header/css/header-daf1d87f97.css">
+<div id="mainbo-top-nav" class="mainbo-top-nav">
+  <div class="mainbo-top-nav-box">
+    <div class="logo"><img src="" alt=""></div>
+    <ul class="nav" id="nav"></ul>
+    <script type="text/html" id="navList">
+      
+      {{each navList}}
+      <li>
+        <a class="{{$value.class}}{{$index == 0 ? ' t-active ' : ''}}" href="{{$value.url}}" {{
+           $value.newOpen ? 'target=_blank' : ''}}>{{$value.name}}</a>
+      </li>
+      {{/each}}
+    </script>
+    <div class="mainbo-search" id="login_message"></div>
+
+    <script type="text/html" id="loginMessage">
+      {{if data.code !='success' }}
+        <a {{ 0 == 4 ? 'href=#' : '' }} id="mainbo-login" class="loginButton">登录</a>
+      {{else}}
+      {{if data.data.userType == 1 }}
+      <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+      {{/if}}
+      <!--<div class="message-warn"><a href="javascript:;" class="link">消息-->
+        <!--</a><i></i></div>-->
+      <div class="noread_wrapper">
+        <div class="h_msg message-warn">
+          <span></span>
+        </div>
+        <span></span>
+      </div>
+      <div class="login_user">
+        <div class="login_username">
+          {{data.data.userInfo.name}}<span class="arrow"></span>
+        </div>
+        {{if data.data.userType == 1 }}
+        {{if (data.data.account != "admin" && data.data.account != "test")}}
+        <ul class="admin_bg">
+          <li><a href="{{data.userJumpHref.spaceManager}}">机构空间</a></li>
+          <li><a href="{{data.userJumpHref.myApp}}">我的应用</a></li>
+          <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{else}}
+        <ul class="admin_sm">
+          <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{/if}}
+        {{else}}
+        <ul class="person_bg">
+          {{if 0 == 4}}
+            {{if data.data.userRole=='3002' & data.data.userType =='200' || data.data.userRole=='3003'}}
+              <li class="data-href" data-href="../background/index.html" data-target="_blank"><a href="#"  style=""  >管理入口</a></li>
+            {{/if}}
+            <li class="data-href" data-href="../protected/my_works.html" ><a href="#">我的作品</a></li>
+          {{/if}}
+          <li><a href="{{data.userJumpHref.mySpace}}">我的空间</a></li>
+          <li><a href="{{data.userJumpHref.myApp}}">我的应用</a></li>
+          <li><a href="{{data.userJumpHref.personCenter}}">个人中心</a></li>
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{/if}}
+      </div>
+      {{/if}}
+    </script>
+  </div>
+  <script type="text/html" id="navList">
+  {{each navList}}
+  <li>
+    <a class="{{$value.class}}{{$index == 3 ? 't-active' : ''}}" href="{{$value.url}}" {{ $value.newOpen ?
+      'target=_blank' : ''}}>{{$value.name}}</a>
+  </li>
+  {{/each}}
+</script>
+  <script type="text/html" id="loginMessage">
+  {{if data.code == "login_error" }}
+  <a id="mainbo-login" class="loginButton">登录</a>
+  {{else}} {{if data.data.userType == 1 }}
+  <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+  {{/if}}
+  <!--<div class="message-warn"><a href="javascript:;" class="link">消息-->
+  <!--</a><i></i></div>-->
+  <div class="noread_wrapper">
+    <div class="h_msg message-warn">
+      <span></span>
+    </div>
+    <span></span>
+  </div>
+  <div class="login_user">
+    <div class="login_username">
+      {{data.data.userInfo.name}}
+      <span class="arrow"></span>
+    </div>
+    {{if data.data.userType == 1 }} {{if (data.data.account != "admin" && data.data.account != "test")}}
+    <ul class="admin_bg">
+      <li>
+        <a href="{{data.userJumpHref.spaceManager}}">机构空间</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+      </li>
+      <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{else}}
+    <ul class="admin_sm">
+      <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{/if}} {{else}}
+    <ul class="person_bg">
+      <li>
+        <a href="{{data.userJumpHref.mySpace}}">我的空间</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.personCenter}}">个人中心</a>
+      </li>
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{/if}}
+  </div>
+  {{/if}}
+</script>
+</div>
+  <!--main_content-->
+  <div class="main_content">
+    <div class="main_box">
+     <div class="navbar">
+      <span class="title fl">消息中心</span>
+       <div class="applicationname fr">
+         <label for="" class="fl form-label">应用名称</label>
+         <div class="form-select-box fl">
+           <div class="form-select form-app">
+             <span class="sanjiao"></span>
+             <span class="type"></span>
+             <ul class="types"></ul>
+           </div>
+         </div>
+       </div>
+    </div>
+      <div class="list-area">
+        <div class="list-master">
+          <div class="form-check-box fl">
+            <div class="form-check all">
+              <span></span>
+            </div>
+          </div>
+          <span class="fl">全选</span>
+          <input type="button" class="form-btn btn-del" value="删除">
+          <input type="button" class="form-btn btn-read" value="标记为已读">
+        </div>
+        <ul class="message-list" id="tpl">
+          <!--<li class="read">
+            <div class="form-select-box fl">
+              <div class="form-check"><span></span></div>
+            </div>
+            <div class="mes-con fl">
+              <span class="mr8">[名师工作室]</span>
+              <span>admin申请加入您的工作室</span>
+            </div>
+            <span class="mes-date fr">2017-08-11 11:36:22</span>
+          </li>
+          <li class="not-read">
+            <div class="form-select-box fl">
+              <div class="form-check"><span></span></div>
+            </div>
+            <div class="mes-con fl">
+              <span class="mr8">[名师工作室]</span>
+              <span>admin申请加入您的工作室</span>
+            </div>
+            <span class="mes-date fr">2017-08-11 11:36:22</span>
+          </li>-->
+        </ul>
+        <div id="page"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" href="../../../public/footer/css/footer-c4b8cdbee1.css">
+<div id="mainbo_footer" >
+  <!--
+  <div id="mainbo_footer" class="mainbo_footer">
+    <div>
+      <ul>
+        <li><p>版权所有：明博教育科技股份有限公司</p><p>版本号：1.5</p></li>
+        <li><p>客服热线：400-898-5166</p><p>每天9：00-17：30(法定节假日除外)</p></li>
+        <li><img src="http://192.168.0.48/portal/images/code.png"><p>扫一扫,关注我们获得更多教育咨询</p></li>
+        <li class="main_last_msg"><p>网站技术支持：明博教育科技股份有限公司</p></li>
+      </ul>
+    </div>
+  </div>-->
+</div>
+<script src="../../../lib/requires/requires-4aa88d7e5f.js" data-main="../message/js/message-4e1b9eabd5.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+@import "_reset.scss";
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.downMain {
+  width: 100%;
+  min-width: 1180px;
+  .downInfo {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #efefef;
+    text-align: center;
+    img {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 1180px;
+      height: 500px;
+      margin-left: -590px;
+      z-index: 2;
+    }
+    .leftBg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #39a1f9;
+      z-index: 1;
+    }
+    .btnCon{
+      position: relative;
+      width: 1180px;
+      height: 500px;
+      margin: 0 auto;
+      z-index: 3;
+      .downBtn{
+        position: absolute;
+        right: 280px;
+        bottom: 124px;
+        width: 170px;
+        height: 46px;
+        line-height: 46px;
+        text-align: center;
+        background-color: #39a1f9;
+        color:#fff;
+        z-index: 3;
+        border-radius: 3px;
+      }
+      .downBtn_student{
+        right: 45px;
+      }
+    }
+  }
+  .downTrait {
+    width: 100%;
+    height: 142px;
+    background: #39a1f9;
+    text-align: center;
+    overflow: hidden;
+    border-top: 15px solid #efefef;
+    h2 {
+      height: 50px;
+      line-height: 50px;
+      font-size: 29px;
+      color: #fff;
+      margin-top: 30px;
+      letter-spacing: 5px;
+    }
+    p {
+      height: 30px;
+      line-height: 30px;
+      font-size: 20px;
+      color: #d5d5d5;
+    }
+  }
+  .referral {
+    width: 100%;
+    .referralList {
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      .listCon {
+        width: 1180px;
+        height: 100%;
+        margin: 0 auto;
+        padding-top: 75px;
+        img {
+          float: left;
+        }
+        .textCon {
+          float: left;
+          width: 468px;
+          margin-top: 100px;
+          h1{
+            line-height: 30px;
+            text-align: center;
+            overflow: hidden;
+            font-size: 22px;
+            color: #239dee;
+          }
+          p{
+            line-height: 24px;
+            overflow: hidden;
+            font-size: 16px;
+            color: #3c3d3d;
+            margin-top: 30px;
+          }
+        }
+      }
+      &.change{
+        background: #f8f8f8;
+      }
+    }
+  }
+  .downFoot{
+    width: 100%;
+    min-width: 1180px;
+    text-align: center;
+    .footCon{
+      position: relative;
+      width: 1024px;
+      height: 207px;
+      margin: 0 auto;
+      .footBtn{
+        position: absolute;
+        top: 100px;
+        left: 390px;
+        width: 242px;
+        height: 81px;
+        //border: 1px solid red;
+        background: url("../images/xiaozhuang/bottom_03.png") no-repeat;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main-76f12792b7.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <div class="header">
+  <div class="header-center">
+    <div class="position">
+      <span class="icon icon-location"></span><strong></strong>
+      <div class="exit"><span class="icon icon-exit"></span><span>退出</span></div>
+    </div>
+    <div class="logo"></div>
+  </div>
+</div>
+  <div class="wrap">
+    <div class="sidebar left">
+  <div class="item-wrap" data-href="index.html">
+    <div class="item no-border ">
+      <span class="icon icon-index"></span>
+      <span class="label">平台概况</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="user_type.html">
+    <div class="item ">
+      <span class="icon icon-user-sidebar"></span>
+      <span class="label">用户统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="space_echart.html">
+    <div class="item ">
+      <span class="icon icon-space"></span>
+      <span class="label">空间统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="app_echart.html">
+    <div class="item ">
+      <span class="icon icon-app"></span>
+      <span class="label">应用统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="resource_total.html">
+    <div class="item active">
+      <span class="icon icon-resource"></span>
+      <span class="label">资源统计</span>
+    </div>
+  </div>
+  <div class="item-wrap" data-href="teaching_overview.html">
+    <div class="item ">
+      <span class="icon icon-teaching"></span>
+      <span class="label">教研分析</span>
+    </div>
+  </div>
+</div>
+    <div class="content">
+      <div class="role-city role-county row row1 row1-user-type row1-resource">
+  <div class="item-wrap" data-href="resource_total.html">
+    <div class="item active">
+      <span class="icon icon-user"></span>
+      资源总量
+    </div>
+  </div>
+  <div class="item-wrap" data-href="resource_sync.html">
+    <div class="item ">
+      <span class="icon icon-map"></span>
+      同步教学资源
+    </div>
+  </div>
+  <div class="item-wrap" data-href="resource_ugc.html">
+    <div class="item ">
+      <span class="icon icon-airplane"></span>
+      教师上传资源
+    </div>
+  </div>
+  <div class="item-wrap" data-href="resource_detail.html">
+    <div class="item ">
+      <span class="icon icon-detail"></span>
+      数据明细
+    </div>
+  </div>
+</div>
+<div class="role-city role-county divider row1-user-type"></div>
+
+      <div class="row row2-resource-total echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源统计</div>
+        <div id="resource_wrap">
+          <div class="label">资源总量：<span id="resTotal"></span></div>
+          <div id="resource"></div>
+          <div class="title">
+            <div class="title-item title1">同步教学资源量：<span class="count" id="syncResourceTotal"></span></div>
+            <div class="title-item title2">教师上传资源量：<span class="count" id="ugcResourceTotal"></span></div>
+            <div class="title-item title3">教材覆盖率：<span class="count" id="publisherCoverageRate"></span></div>
+            <div class="title-item title4">学科覆盖率：<span class="count" id="subjectCoverageRate"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="role-city role-county row row3-resource-total echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源总量统计</div>
+        <div class="radio" data-value="subject" id="radio_resource">
+          <div class="item-wrap active" data-value="subject">
+            <span class="icon icon-radio"></span>
+            <span class="item">按学科统计</span>
+          </div>
+          <div class="item-wrap" data-value="publisher">
+            <span class="icon icon-radio"></span>
+            <span class="item">按出版社统计</span>
+          </div>
+        </div>
+        <div class="selectWrap">
+          <div class="label">学段：</div>
+          <div class="selectTop selectTopAct" data-value="140" id="select_resource">
+            <span>小学</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="140">小学</li>
+              <li data-value="141">初中</li>
+              <li data-value="142">高中</li>
+            </ol>
+          </div>
+        </div>
+        <div id="resource_total"></div>
+      </div>
+      <div class="role-school row row3-resource-total-school echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源总量统计</div>
+        <div class="radio" id="radio_resource_school" data-value="all">
+          <div class="item-wrap active" data-value="all">
+            <span class="icon icon-radio"></span>
+            <span class="item">全部资源</span>
+          </div>
+          <div class="item-wrap" data-value="sync">
+            <span class="icon icon-radio"></span>
+            <span class="item">同步教学资源</span>
+          </div>
+          <div class="item-wrap" data-value="ugc">
+            <span class="icon icon-radio"></span>
+            <span class="item">教师上传资源</span>
+          </div>
+        </div>
+        <ul class="tab ulli-wrap" data-value="subject" id="tab_resource_school">
+          <li class="ulli liAct" data-value="subject">学科统计</li>
+          <li class="ulli" data-value="publisher">出版社统计</li>
+        </ul>
+        <div class="selectWrap">
+          <div class="label">学段：</div>
+          <div class="selectTop selectTopAct" data-value="140" id="select_resource_school">
+            <span>小学</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="140">小学</li>
+              <li data-value="141">初中</li>
+              <li data-value="142">高中</li>
+            </ol>
+          </div>
+        </div>
+        <div id="resource_total_school"></div>
+      </div>
+      <div class="row row3-resource-total echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源使用趋势</div>
+        <div class="role-school radio" id="radio_resource_trand_school" data-value="all">
+          <div class="item-wrap active" data-value="all">
+            <span class="icon icon-radio"></span>
+            <span class="item">全部资源</span>
+          </div>
+          <div class="item-wrap" data-value="sync">
+            <span class="icon icon-radio"></span>
+            <span class="item">同步教学资源</span>
+          </div>
+          <div class="item-wrap" data-value="ugc">
+            <span class="icon icon-radio"></span>
+            <span class="item">教师上传资源</span>
+          </div>
+        </div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-value="yesterday" id="select_resource_trand">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>
+            </ol>
+          </div>
+        </div>
+        <div id="resource_trand"></div>
+      </div>
+      <div class="role-city role-county row row3-resource-total echart no-margin">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源使用情况统计</div>
+        <div id="resource_use"></div>
+      </div>
+      <div class="role-school row row4-resource-total-school echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源使用排名</div>
+        <div class="radio" data-value="collect" id="radio_resource_rank_school">
+          <div class="item-wrap active" data-value="collect">
+            <span class="icon icon-radio"></span>
+            <span class="item">收藏量</span>
+          </div>
+          <div class="item-wrap" data-value="download">
+            <span class="icon icon-radio"></span>
+            <span class="item">下载量</span>
+          </div>
+        </div>
+        <div id="resource_use_school"></div>
+      </div>
+      <div class="role-school row row4-resource-total-school echart no-margin">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源贡献量排名</div>
+        <div id="resource_contribution_school"></div>
+      </div>
+    </div>
+    <div class="footer cf">
+  <p>技术运营支持：明博教育科技股份有限公司&nbsp;&nbsp;&nbsp;&nbsp; 客户服务热线：400-898-5166</p>
+  <p>Copyright&copy; mainbojiaoyu.cn All rights reserved&nbsp;&nbsp;&nbsp;&nbsp;鄂 ICP 备 0235635 号 -2</p>
+</div>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires-4aa88d7e5f.js"
+        data-main="../../customModule/statistics/js/resource_total-a66b5ddc4f.js"></script>
+</body>
+</html>

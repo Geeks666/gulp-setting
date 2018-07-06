@@ -1,0 +1,9 @@
+
+.mainbo_footer{background-color: #ededed;padding:20px 0;font-size:12px;color: #383838;}
+.mainbo_footer ul:after{content:"";display:block;clear:both;}
+.mainbo_footer ul{width:1200px;margin:0 auto;overflow: hidden;}
+.mainbo_footer li{float:left;width:25%;height:100px;border-left:1px solid #cbcbcb;margin-left:-1px;padding-top: 30px;}
+.mainbo_footer img{width:66px;height:67px;margin:0 auto;display:block;margin-top: -15px;}
+.mainbo_footer p{text-indent:30px;line-height:24px;white-space: nowrap;}
+.mainbo_footer .main_last_msg p{text-indent:0px;text-align:center;line-height:60px;}
+.mainbo_footer li:nth-child(3) p{text-indent: 0px;text-align: center;}

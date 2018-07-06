@@ -1,0 +1,58 @@
+<script type="text/html" id="loginMessage">
+  {{if data.code == "login_error" }}
+  <a id="mainbo-login" class="loginButton">登录</a>
+  {{else}} {{if data.data.userType == 1 }}
+  <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+  {{/if}}
+  <!--<div class="message-warn"><a href="javascript:;" class="link">消息-->
+  <!--</a><i></i></div>-->
+  <div class="noread_wrapper">
+    <div class="h_msg message-warn">
+      <span></span>
+    </div>
+    <span></span>
+  </div>
+  <div class="login_user">
+    <div class="login_username">
+      {{data.data.userInfo.name}}
+      <span class="arrow"></span>
+    </div>
+    {{if data.data.userType == 1 }} {{if (data.data.account != "admin" && data.data.account != "test")}}
+    <ul class="admin_bg">
+      <li>
+        <a href="{{data.userJumpHref.spaceManager}}">机构空间</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+      </li>
+      <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{else}}
+    <ul class="admin_sm">
+      <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{/if}} {{else}}
+    <ul class="person_bg">
+      <li>
+        <a href="{{data.userJumpHref.mySpace}}">我的空间</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.personCenter}}">个人中心</a>
+      </li>
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{/if}}
+  </div>
+  {{/if}}
+</script>

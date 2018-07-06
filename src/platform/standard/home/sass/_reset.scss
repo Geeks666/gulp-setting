@@ -1,0 +1,38 @@
+body,div,ol,ul,li,p,form,h1,h2,h3,h4,h5,h6,input,dl,dt,dd,table,tr,td,th,select,option,iframe,img{margin:0;padding:0;}
+ul,li,ol{list-style:none;}
+img,table,tr,td,th{border:none;}
+img,input{vertical-align:middle;}
+textarea{outline:none;}
+.clear {clear: both;padding: 0px;margin: 0px;height: 0px;}
+a {text-decoration: none;outline:none;}
+table{border-collapse:collapse;table-layout:fixed;border-spacing:0;}
+table td{empty-cells:show;}
+body{
+  font-family: "Microsoft YaHei"!important;
+}
+body,li,ul{ margin: 0; padding: 0; word-wrap: break-word;}
+
+/*---公共样式---*/
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,input,textarea,th,td{
+  margin: 0;
+  padding: 0;
+}
+em{
+  font-style:normal;
+}
+a:hover{
+  text-decoration: none;
+}
+
+body,button,input,select,textarea{
+  font-family:"微软雅黑";
+}
+
+.clearFix{
+  zoom:1;
+}
+.clearFix:after{
+  content: "";
+  display: block;
+  clear: both;
+}

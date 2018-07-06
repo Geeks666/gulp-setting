@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../statistics/css/main.css">
+</head>
+<body data-module="resource">
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'resource'}) %>
+    <div class="content">
+      <%- include('view/_resource_top.ejs', {currentPage : 'detail'}) %>
+      <div class="row echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">资源统计明细</div>
+        <div class="wrapTable clearfix">
+          <div class="wrapTableTop">
+            <div class="wrapTableTopExport">
+              <span></span>
+              <strong>导出数据</strong>
+            </div>
+            <div class="dataWrap">
+              <input placeholder="请输入日期" class="laydate-icon" id="date">
+              <input type="button" value="确定" class="dateConfirmBtn dateResBtn">
+            </div>
+          </div>
+          <div class="tableWrap clearfix" id="spaceTableRes">
+            <table>
+              <thead>
+              <tr>
+                <th style="width:94px;">时间</th>
+                <th style="width:82px;">区域</th>
+                <th style="width:82px;">资源总量</th>
+                <th style="width:120px;">同步资源总量</th>
+                <th style="width:136px;">教师上传资源总量</th>
+                <th style="width:97px;">资源下载量</th>
+                <th style="width:114px;">资源收藏量</th>
+                <th style="width:114px;">用户数</th>
+                <th style="width:131px;">人均资源拥有量</th>
+              </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <div id="pageTool1Res"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('view/_footer.ejs') %>
+  </div>
+</div>
+<script type="text/javascript" src="../../../../lib/component/laydate/js/laydate.js"></script>
+<script src="../../../../lib/requires/requires.js" data-main="../statistics/js/module_detail.js"></script>
+<script type="text/javascript">
+  laydate.skin('shenlan'); //切换皮肤
+</script>
+</body>
+</html>

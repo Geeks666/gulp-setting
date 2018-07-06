@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main.css">
+</head>
+<body data-module="jy" data-table="activity" data-tableList="_activity_start" data-tableList-school="_activity_join">
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'teaching'}) %>
+    <div class="content contentP">
+      <%- include('view/_teaching_top.ejs', {currentPage : 'activity'}) %>
+      <div class="row echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="role-city echart-title">区域活动发起情况一览</div>
+        <div class="role-county echart-title">活动发起情况一览</div>
+        <div class="role-school echart-title">活动参与情况一览</div>
+        <div class="wrapTable clearfix">
+          <div class="wrapTableTop">
+            <div class="role-city wrapTableTopExport" style="margin-left: 68px;">
+              <span></span>
+              <strong>导出数据</strong>
+            </div>
+            <div class="role-county wrapTableTopExport" style="margin-left: 35px;">
+              <span></span>
+              <strong>导出数据</strong>
+            </div>
+            <div class="role-school wrapTableTopExport" style="margin-left: 35px;">
+              <span></span>
+              <strong>导出数据</strong>
+            </div>
+            <div class="row">
+              <div class="selectRight" style="right: -20px;">
+                <div class="selectWrap">
+                  <div class="label">统计时段：</div>
+                  <div class="selectTop selectTopAct" data-value="" id="fqList">
+                    <span>全学年</span>
+                    <strong></strong>
+                  </div>
+                  <div class="selectBottom">
+                    <ol>
+                      <li data-value="">全学年</li>
+                      <li data-value="yesterday">昨天</li>
+                      <li data-value="lastseven">最近七天</li>
+                      <li data-value="lastthirty">最近30天</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="role-city activityFqTable" id="activityFqTableCity">
+            <table>
+              <thead>
+              <tr>
+                <th style="width:15%;">区域</th>
+                <th style="width:10%;">活动总数</th>
+                <th style="width:15%;">
+                  <span>教学研讨</span>
+                  <span>（活动数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>在线观课</span>
+                  <span>（活动数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>专家指导</span>
+                  <span>（活动数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>课堂评价</span>
+                  <span>（活动数）</span>
+                </th>
+                <th style="width:15%;border-right:0;">
+                  <span>校际教研</span>
+                  <span>（活动数）</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody id="activityFqTableCity1">
+              </tbody>
+            </table>
+          </div>
+          <div class="role-county activityFqTable" id="activityFqTableCounty">
+            <table>
+              <thead>
+              <tr>
+                <th style="width:15%;">学科</th>
+                <th style="width:10%;">活动总数</th>
+                <th style="width:15%;">
+                  <span>教学研讨</span>
+                  <span>（活动数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>在线观课</span>
+                  <span>（活动数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>专家指导</span>
+                  <span>（活动数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>课堂评价</span>
+                  <span>（活动数）</span>
+                </th>
+                <th style="width:15%;border-right:0;">
+                  <span>校际教研</span>
+                  <span>（活动数）</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody id="activityFqTableCounty1">
+              </tbody>
+            </table>
+          </div>
+          <div class="role-school activityFqTable" id="activityFqTableSchool">
+            <table>
+              <thead>
+              <tr>
+                <th style="width:25%;">姓名</th>
+                <th style="width:15%;">
+                  <span>教学研讨</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>在线观课</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>专家指导</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;">
+                  <span>课堂评价</span>
+                  <span>（参与数）</span>
+                </th>
+                <th style="width:15%;border-right:0;">
+                  <span>校际教研</span>
+                  <span>（参与数）</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody id="activityFqTableSchool1">
+              </tbody>
+            </table>
+          </div>
+          <div id="pageTool1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js"
+        data-main="../../customModule/statistics/js/activity_fq.js"></script>
+</body>
+</html>

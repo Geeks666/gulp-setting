@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="renderer" content="webkit|ie-stand"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta http-equiv="Expires" content="0"><title>教研</title><link href="../../../lib/jquery/css/jquery-27fca2fa0a.fullPage.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="../../../lib/layer/skin/layer-03c29ce29a.css"><link href="../home/css/teaching_research-547e2cd34d.css" rel="stylesheet"></head><body><link rel="stylesheet" href="../../../public/header/css/header-306a9b3fa0.css"><div id="mainbo-top-nav" class="mainbo-top-nav"><div class="mainbo-top-nav-box"><div class="logo"><img src="" alt=""></div><ul class="nav" id="nav"></ul><script type="text/html" id="navList">{{each navList}}
+      <li>
+        <a class="{{$value.class}}{{$index == 0 ? ' t-active ' : ''}}" href="{{$value.url}}" {{
+           $value.newOpen ? 'target=_blank' : ''}}>{{$value.name}}</a>
+      </li>
+      {{/each}}</script><div class="mainbo-search" id="login_message"></div><script type="text/html" id="loginMessage">{{if data.code !='success' }}
+        <a {{ 0 == 4 ? 'href=#' : '' }} id="mainbo-login" class="loginButton">登录</a>
+      {{else}}
+      {{if data.data.userType == 1 }}
+      <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+      {{/if}}
+      <!--<div class="message-warn"><a href="javascript:;" class="link">消息-->
+        <!--</a><i></i></div>-->
+      <div class="noread_wrapper">
+        <div class="h_msg message-warn">
+          <span></span>
+        </div>
+        <span></span>
+      </div>
+      <div class="login_user">
+        <div class="login_username">
+          {{data.data.userInfo.name}}<span class="arrow"></span>
+        </div>
+        {{if data.data.userType == 1 }}
+        {{if (data.data.account != "admin" && data.data.account != "test")}}
+        <ul class="admin_bg">
+          <li><a href="{{data.userJumpHref.spaceManager}}">机构空间</a></li>
+          <li><a href="{{data.userJumpHref.myApp}}">我的应用</a></li>
+          <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{else}}
+        <ul class="admin_sm">
+          <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{/if}}
+        {{else}}
+        <ul class="person_bg">
+          {{if 0 == 4}}
+            {{if data.data.userRole=='3002' & data.data.userType =='200' || data.data.userRole=='3003'}}
+              <li class="data-href" data-href="../background/index.html" data-target="_blank"><a href="#"  style=""  >管理入口</a></li>
+            {{/if}}
+            <li class="data-href" data-href="../protected/my_works.html" ><a href="#">我的作品</a></li>
+          {{/if}}
+          <li><a href="{{data.userJumpHref.mySpace}}">我的空间</a></li>
+          <li><a href="{{data.userJumpHref.myApp}}">我的应用</a></li>
+          <li><a href="{{data.userJumpHref.personCenter}}">个人中心</a></li>
+          <li><a class="logout" href="javascript:void(0)">退出</a></li>
+        </ul>
+        {{/if}}
+      </div>
+      {{/if}}</script></div><script type="text/html" id="navList">{{each navList}}
+  <li>
+    <a class="{{$value.class}}{{$index == 3 ? 't-active' : ''}}" href="{{$value.url}}" {{ $value.newOpen ?
+      'target=_blank' : ''}}>{{$value.name}}</a>
+  </li>
+  {{/each}}</script><script type="text/html" id="loginMessage">{{if data.code == "login_error" }}
+  <a id="mainbo-login" class="loginButton">登录</a>
+  {{else}} {{if data.data.userType == 1 }}
+  <a href="{{data.userJumpHref.adminManager}}" target="_blank">后台管理</a>
+  {{/if}}
+  <!--<div class="message-warn"><a href="javascript:;" class="link">消息-->
+  <!--</a><i></i></div>-->
+  <div class="noread_wrapper">
+    <div class="h_msg message-warn">
+      <span></span>
+    </div>
+    <span></span>
+  </div>
+  <div class="login_user">
+    <div class="login_username">
+      {{data.data.userInfo.name}}
+      <span class="arrow"></span>
+    </div>
+    {{if data.data.userType == 1 }} {{if (data.data.account != "admin" && data.data.account != "test")}}
+    <ul class="admin_bg">
+      <li>
+        <a href="{{data.userJumpHref.spaceManager}}">机构空间</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+      </li>
+      <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{else}}
+    <ul class="admin_sm">
+      <!--<li><a href="{{data.userJumpHref.managerCenter}}">管理中心</a></li>-->
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{/if}} {{else}}
+    <ul class="person_bg">
+      <li>
+        <a href="{{data.userJumpHref.mySpace}}">我的空间</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.myApp}}">我的应用</a>
+      </li>
+      <li>
+        <a href="{{data.userJumpHref.personCenter}}">个人中心</a>
+      </li>
+      <li>
+        <a class="logout" href="javascript:void(0)">退出</a>
+      </li>
+    </ul>
+    {{/if}}
+  </div>
+  {{/if}}</script></div><div id="fullpage" class="content"><ul id="menu"><li data-menuanchor="page1" class="active"><a href="#page1"></a></li><li data-menuanchor="page2"><a href="#page2"></a></li></ul><div class="section2 section"><div class="banner"><img class="pic" src="./images/banner2.png" alt=""> <a href="javascript:;" id="areaTeachResearch" type="qyjy_appId" kindcode="2"><img class="button" src="./images/button2.png"></a></div></div><div class="section1 section"><div class="banner"><img class="pic" src="./images/banner1.png" alt=""> <a href="javascript:;" id="teachResearch" type="teachingresearch_appId" kindcode="2"><img class="button" src="./images/button1.png"></a></div></div></div><script src="../../../lib/requires/requires-4aa88d7e5f.js" data-main="../home/js/teaching_research-a304bd4678.js"></script></body></html>

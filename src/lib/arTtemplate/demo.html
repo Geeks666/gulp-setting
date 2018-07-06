@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.abc{background: red;}
+	</style>
+	<script src="./template.js"></script>
+	
+	<script>
+		window.onload = function(){
+			var data = {
+			    title: '标签',
+			    list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他'],
+				options:[{activitys:['sddd','借鸡生蛋']},{activitys:['sddd','借鸡生蛋']}]
+			};
+			var html = template('test', data);
+			console.log(html)
+			document.getElementById('content').innerHTML = html;
+			}
+	</script>
+</head>
+<body>
+	<div id="content"></div>
+	<script id="test" type="text/html">
+		<h1 class="abc">{{title}}</h1>
+		{{each options as value i}}
+		{{if i == 0}}
+		<div>我是第一个才显示</div>
+		{{/if}}
+		<div>
+			{{i}}
+			{{each value.activitys as v j}}
+			<div>{{v}}{{title}}</div>
+			{{/each}}
+		</div>
+		{{/each}}
+
+		<ul>
+		    {{each list as value i}}
+		        <li>索引 {{i}} ：{{value}}
+		        </li>
+		    {{/each}}
+		</ul>
+	</script>
+</body>
+</html>

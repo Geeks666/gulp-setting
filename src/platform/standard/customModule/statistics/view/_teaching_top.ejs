@@ -1,0 +1,70 @@
+<div class="row row1 row1-teaching row1-app">
+  <div class="item-wrap" data-href="teaching_overview.html">
+    <div class="item <%- currentPage === 'overview' ? 'active' : '' %>">
+      <span class="icon icon-overview"></span>
+      教研总览
+    </div>
+  </div>
+  <div class="item-wrap areatotal" data-href="teaching_activity_statistics.html">
+    <div class="item <%- currentPage === 'activity' ? 'active' : '' %>">
+      <span class="icon icon-activity"></span>
+      区域教研活动统计
+    </div>
+  </div>
+  <div class="item-wrap schooltotal" data-href="teaching_situation_statistics.html">
+    <div class="item <%- currentPage === 'situation' ? 'active' : '' %>">
+      <span class="icon icon-situation"></span>
+      学校教研情况统计
+    </div>
+  </div>
+</div>
+<div class="divider row1-user-type" style="margin: 0;"></div>
+<div class="row row1 rowSelect">
+  <div class="selectWrap" id="schoolYear">
+    <div class="label">学年：</div>
+    <div class="selectTop selectTopAct" data-value="">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom">
+      <ol></ol>
+    </div>
+  </div>
+  <div class="selectWrap" id="studySection">
+    <div class="label">学段：</div>
+    <div class="selectTop selectTopAct" data-value="">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom" >
+      <ol></ol>
+    </div>
+  </div>
+  <div class="selectWrap" id="subject">
+    <div class="label">学科：</div>
+    <div class="selectTop selectTopAct">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom">
+      <ol>
+        <li data-value="">全部</li>
+      </ol>
+    </div>
+  </div>
+  <div class="role-school selectWrap" id="grade">
+    <div class="label">年级：</div>
+    <div class="selectTop selectTopAct">
+      <span></span>
+      <strong></strong>
+    </div>
+    <div class="selectBottom">
+      <ol>
+        <li data-value="">全部</li>
+      </ol>
+    </div>
+  </div>
+  <div class="selectWrap">
+    <input type="button" value="搜索" class="dateConfirmBtn searchBtn" id="searchBtn">
+  </div>
+</div>

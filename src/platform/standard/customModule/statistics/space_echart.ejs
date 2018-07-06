@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../statistics/css/main.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'space'}) %>
+    <div class="content">
+      <%- include('view/_space_top.ejs', {currentPage : 'echart'}) %>
+      <div class="row row1-space-echart space-border" id="get_space_count">
+        <div class="space-left">
+          <div class="personal-space-open">
+            <dl>
+              <dd>个人空间开通数</dd>
+              <dt class="personal_space"></dt>
+            </dl>
+          </div>
+          <div class="group-space-open">
+            <dl>
+              <dd>群组空间开通数</dd>
+              <dt class="group_space"></dt>
+            </dl>
+          </div>
+        </div>
+        <div class="space-right">
+          <div class="space-right-top">
+            <dl>
+              <dd>学生空间数</dd>
+              <dt class="student_space"></dt>
+            </dl>
+            <dl>
+              <dd>家长空间数</dd>
+              <dt class="parent_space"></dt>
+            </dl>
+            <dl>
+              <dd>教师空间数</dd>
+              <dt class="teacher_space"></dt>
+            </dl>
+            <dl class="role-city role-county">
+              <dd>教育局职工空间数</dd>
+              <dt class="teaching_space"></dt>
+            </dl>
+          </div>
+          <div class="space-right-bottom">
+            <dl class="role-city role-county">
+              <dd>教育局空间</dd>
+              <dt class="education_space"></dt>
+            </dl>
+            <dl>
+              <dd>学校空间</dd>
+              <dt class="school_space"></dt>
+            </dl>
+            <dl>
+              <dd>班级空间</dd>
+              <dt class="class_space"></dt>
+            </dl>
+            <dl>
+              <dd>学科空间</dd>
+              <dt class="subject_space"></dt>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="row row2-space-echrat echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">个人空间使用情况统计</div>
+        <div class="space-personal-echrat item-tab">
+          <div class="role-city role-county space_personal-classify">
+            <div class="radio" data-value="space_personal_use@person@usertype">
+              <div class="item-wrap active" data-value="space_personal_region@person@area">
+                <span class="icon icon-radio"></span>
+                <span class="item">按地域分布</span>
+              </div>
+              <div class="item-wrap" data-value="space_personal_use@person@usertype">
+                <span class="icon icon-radio"></span>
+                <span class="item">按用户类型</span>
+              </div>
+            </div>
+          </div>
+          <!--地域分布-->
+          <div id="space_personal_region" class="space"></div>
+          <!--用户类型-->
+          <div class="space clearfix" id="space_personal_use" style="display: none">
+            <div class="space_personal_use_c">
+              <div id="space_personal_user_open"></div>
+            </div>
+            <div class="divider"></div>
+            <div class="space_personal_use_c">
+              <div id="space_personal_user_use"></div>
+            </div>
+            <div class="divider"></div>
+            <div class="space_personal_use_c">
+              <div id="space_personal_user_visit"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row row2-space-echrat echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">个人空间使用趋势分析</div>
+        <div class="space-personal-trend-echrat">
+          <div class="space_personal-trend">
+            <div class="dataWrap personal-trend">
+              <input placeholder="请输入日期" readonly class="laydate-icon" id="date_start">
+              <input placeholder="请输入日期" readonly class="laydate-icon" id="date_end">
+              <input type="button" value="确定" class="dateConfirmBtn personTrenddateBtn">
+            </div>
+          </div>
+          <div id="space_personal_trend"></div>
+        </div>
+      </div>
+      <div class="role-city cole-county row row2-space-echrat echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">群组空间使用情况统计</div>
+        <div class="space-personal-echrat item-tab">
+          <div class="space_personal-classify">
+            <div class="radio" data-value="group_num_count@group@">
+              <div class="item-wrap active" data-value="group_num_count@group@">
+                <span class="icon icon-radio"></span>
+                <span class="item">数量统计</span>
+              </div>
+              <div class="item-wrap" data-value="group_ratio_analysis@group@">
+                <span class="icon icon-radio"></span>
+                <span class="item">占比分析</span>
+              </div>
+            </div>
+          </div>
+          <!--数量统计-->
+          <div id="group_num_count" class="space"></div>
+          <!--占比分析-->
+          <div class="space clearfix" id="group_ratio_analysis" style="display: none">
+            <div class="group_ratio_count">
+              <div id="space_group_user_open"></div>
+            </div>
+            <div class="divider"></div>
+            <div class="group_ratio_count">
+              <div id="space_group_user_visit"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row row2-space-echrat echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">群组空间使用趋势分析</div>
+        <div class="space-personal-trend-echrat">
+          <div class="space_personal-trend">
+            <div class="dataWrap personal-trend">
+              <input placeholder="请输入日期" readonly class="laydate-icon" id="group_date_start">
+              <input placeholder="请输入日期" readonly class="laydate-icon" id="group_date_end">
+              <input type="button" value="确定" class="dateConfirmBtn groupTrenddateBtn">
+            </div>
+          </div>
+          <div id="space_group_trend"></div>
+        </div>
+      </div>
+    </div>
+    <%- include('view/_footer.ejs') %>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js" data-main="../statistics/js/space_echart.js"></script>
+<script type="text/javascript" src="../../../../lib/component/laydate/js/laydate.js"></script>
+<script>
+  laydate.skin('shenlan');
+</script>
+</body>
+</html>

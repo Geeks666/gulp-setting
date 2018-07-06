@@ -1,0 +1,230 @@
+body, html {
+  height: 100%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  display: none;
+}
+
+.mask .login_tab {
+  width: 360px;
+  height: 330px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  position: absolute;
+  /*left: calc(50% - 180px);
+  top: calc(50% - 165px);*/
+  z-index: 2222;
+  display: none;
+}
+
+.mask .login_tab .login_top {
+  width: 100%;
+  height: 49px;
+  border-bottom: 1px solid #dfe5e9;
+  position: relative;
+}
+
+.mask .login_tab .login_top .title {
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  line-height: 49px;
+  font-size: 16px;
+  color: #666666;
+  font-weight: bold;
+}
+
+.mask .login_tab .login_top .close {
+  width: 18px;
+  height: 18px;
+  background: url("../images/xiangzhuang_icon.png") no-repeat -158px -80px;
+  position: absolute;
+  right: 19px;
+  top: 17px;
+  cursor: pointer;
+}
+
+.mask .login_tab .login_top .close:hover {
+  background-position: -240px -80px;
+}
+
+.mask .login_tab .login_content {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.mask .login_tab .login_content #user {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  text-indent: 10px;
+  margin-bottom: 20px;
+}
+
+.mask .login_tab .login_content #psw {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  text-indent: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.mask .login_tab .login_content .rember {
+  height: 50px;
+  position: relative;
+}
+
+.mask .login_tab .login_content .rember .icon {
+  width: 14px;
+  height: 14px;
+  background: url("../images/xiangzhuang_icon.png") no-repeat;
+  background-position: -320px -80px;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+
+.mask .login_tab .login_content .rember .text {
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.mask .login_tab .login_content .rember .tips {
+  position: absolute;
+  top: 27px;
+  left: 0;
+  display: none;
+  color: red;
+  font-size: 12px;
+}
+
+.mask .login_tab .login_content .button {
+  width: 300px;
+  height: 44px;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #067ed4;
+  text-align: center;
+  line-height: 44px;
+}
+
+.mask .pop {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  border-radius: 5px;
+  /*left: calc(50% - 100px);
+  top: calc(50% - 50px);*/
+  background-color: #ffffff;
+  z-index: 2222;
+  display: none;
+  line-height: 100px;
+  text-align: center;
+}
+
+#_xiaozhuang_header {
+  width: 100%;
+  height: 100px;
+  background-color: #067ed4;
+}
+
+#_xiaozhuang_header .nav {
+  width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#_xiaozhuang_header .nav .text {
+  position: relative;
+}
+
+#_xiaozhuang_header .nav #logo-pic-area{
+  float: left;
+  width: 100px;
+  height: 100%;
+
+}
+#_xiaozhuang_header .nav #logo-pic-area .logo-pic{
+  width: 66px;
+  height:66px;
+  display: inline-block;
+  margin-top: 16px;
+}
+
+#_xiaozhuang_header .nav .logo {
+  background: url("../images/xiaozhuang_logo.png") no-repeat;
+  width: 652px;
+  height: 44px;
+  margin-top: 30px;
+}
+
+#_xiaozhuang_header .nav .name {
+  text-align: right;
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 55px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+#_xiaozhuang_header .nav .bg {
+  width: 12px;
+  height: 7px;
+  background: url("../images/xiangzhuang_icon.png") no-repeat;
+  background-position: -480px 0;
+  position: absolute;
+  top: 65px;
+  right: 10px;
+  display: none;
+}
+
+#_xiaozhuang_header .nav .option {
+  width: 114px;
+  height: 104px;
+  background: url("../images/xiangzhuang_icon.png");
+  background-position: 0 -3px;
+  overflow: hidden;
+  margin-top: 5px;
+  right: 3px;
+  position: absolute;
+  font-size: 16px;
+  display: none;
+}
+
+#_xiaozhuang_header .nav .option div {
+  text-align: center;
+}
+
+#_xiaozhuang_header .nav .option .person {
+  margin-top: 23px;
+}
+
+#_xiaozhuang_header .nav .option .person:hover {
+  color: #067ed4;
+}
+
+#_xiaozhuang_header .nav .option .exit {
+  margin-top: 20px;
+}
+
+#_xiaozhuang_header .nav .option .exit:hover {
+  color: #067ed4;
+}
+

@@ -1,0 +1,67 @@
+<div class="banner"></div>
+<div class="teachingWrap">
+  <div class="teaching">
+    <div class="teachingLeft">
+      <h3><span>资源分享</span> </h3>
+      <ul>
+        <li ><a href="javascript:void(0);" type="" class="liact">全部</a></li>
+        <li><a href="javascript:void(0);" type="1229">教案</a></li>
+        <li><a href="javascript:void(0);" type="1230">课件</a></li>
+        <li><a href="javascript:void(0);" type="1231">学案</a></li>
+        <li><a href="javascript:void(0);" type="1458">作业/习题</a></li>
+        <li><a href="javascript:void(0);" type="1542">素材</a></li>
+        <li><a href="javascript:void(0);" type="1505">其他</a></li>
+      </ul>
+      <div class="teachingAchievements">
+        <ol id="resourceShare">
+        </ol>
+        <script id="resourceShare_" type="text/html">
+          {{each data}}
+            <li>
+              <img src="{{$value.pic}}" alt="">
+              <span>[{{$value.resTypeFirstName}}]</span>
+              <strong resId="{{$value.resId}}">{{$value.title}}</strong>
+              <b>{{$value.shareTime}}</b>
+              <u>{{$value.uploaderName}}</u>
+            </li>
+          {{/each}}
+        </script>
+      </div>
+    </div>
+    <div class="teachingRight">
+      <h3><span>资源动态</span></h3>
+      <div class="dyn-list-box">
+        <ul class="dyn-list" id="dynamic_list">
+        </ul>
+        <script id="dynamic_list_" type="text/html">
+            {{each data}}
+            <li class="dyn-li">
+              <div class="time">{{$value.shareTime}}</div>
+              <div class="dyn-li-innerbox">
+                <a class="member-pic" target="_blank">
+                  <img src="{{$value.pic}}" alt="" >
+                </a>
+                <div>
+                  <a class="dyn-name" target="_blank">
+                    {{$value.name}}
+                  </a>
+                  <p class="message clearFix">
+                    {{$value.title}}
+                  </p>
+                </div>
+              </div>
+            </li>
+            {{/each}}
+          </script>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tAStatistics">
+  <div class="statistics">
+    <h3>平台资源统计</h3>
+    <div id="teaAchSta">
+
+    </div>
+  </div>
+</div>

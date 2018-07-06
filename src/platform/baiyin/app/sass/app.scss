@@ -1,0 +1,55 @@
+@import "../../home/sass/_reset";
+@import "../../home/sass/common";
+#app{
+  /*padding: 28px;*/
+  overflow: hidden;
+}
+#app .appList{
+  width: 1023px;
+}
+#app .list{
+  float: left;
+  width: 216px;
+  height: 88px;
+  padding:10px 0 0 100px;
+  margin: 0 23px 20px 0;
+  border:1px solid #e5e5e5;
+  position: relative;
+  line-height: 30px;
+  background: #fff;
+  border-radius: 4px;
+}
+#app .list:hover {
+  box-shadow: 0 0 8px #949494;
+}
+#app .appPic{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top:21px;
+  left:21px;
+}
+#app .type{
+  position: absolute;
+  top:0;
+  right:20px;
+  color: #808080;
+}
+#app .praise{
+  color: #fca102;
+}
+#app .zan{
+  float: left;
+  width:14px;
+  heigth:15px;
+  background: red;
+}
+.icon-close-small{
+  vertical-align: top;
+  width: 10px;
+  height:10px;
+  background: url("../../persCenter/images/close.png") 0px 0px no-repeat;
+  &:hover{
+    background: url("../../persCenter/images/close_active.png") 0px 0px no-repeat;
+  }
+}

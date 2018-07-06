@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'resource'}) %>
+    <div class="content">
+      <%- include('view/_resource_top.ejs', {currentPage : 'total'}) %>
+      <div class="row row2-resource-total echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源统计</div>
+        <div id="resource_wrap">
+          <div class="label">资源总量：<span id="resTotal"></span></div>
+          <div id="resource"></div>
+          <div class="title">
+            <div class="title-item title1">同步教学资源量：<span class="count" id="syncResourceTotal"></span></div>
+            <div class="title-item title2">教师上传资源量：<span class="count" id="ugcResourceTotal"></span></div>
+            <div class="title-item title3">教材覆盖率：<span class="count" id="publisherCoverageRate"></span></div>
+            <div class="title-item title4">学科覆盖率：<span class="count" id="subjectCoverageRate"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="role-city role-county row row3-resource-total echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源总量统计</div>
+        <div class="radio" data-value="subject" id="radio_resource">
+          <div class="item-wrap active" data-value="subject">
+            <span class="icon icon-radio"></span>
+            <span class="item">按学科统计</span>
+          </div>
+          <div class="item-wrap" data-value="publisher">
+            <span class="icon icon-radio"></span>
+            <span class="item">按出版社统计</span>
+          </div>
+        </div>
+        <div class="selectWrap">
+          <div class="label">学段：</div>
+          <div class="selectTop selectTopAct" data-value="140" id="select_resource">
+            <span>小学</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="140">小学</li>
+              <li data-value="141">初中</li>
+              <li data-value="142">高中</li>
+            </ol>
+          </div>
+        </div>
+        <div id="resource_total"></div>
+      </div>
+      <div class="role-school row row3-resource-total-school echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源总量统计</div>
+        <div class="radio" id="radio_resource_school" data-value="all">
+          <div class="item-wrap active" data-value="all">
+            <span class="icon icon-radio"></span>
+            <span class="item">全部资源</span>
+          </div>
+          <div class="item-wrap" data-value="sync">
+            <span class="icon icon-radio"></span>
+            <span class="item">同步教学资源</span>
+          </div>
+          <div class="item-wrap" data-value="ugc">
+            <span class="icon icon-radio"></span>
+            <span class="item">教师上传资源</span>
+          </div>
+        </div>
+        <ul class="tab ulli-wrap" data-value="subject" id="tab_resource_school">
+          <li class="ulli liAct" data-value="subject">学科统计</li>
+          <li class="ulli" data-value="publisher">出版社统计</li>
+        </ul>
+        <div class="selectWrap">
+          <div class="label">学段：</div>
+          <div class="selectTop selectTopAct" data-value="140" id="select_resource_school">
+            <span>小学</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="140">小学</li>
+              <li data-value="141">初中</li>
+              <li data-value="142">高中</li>
+            </ol>
+          </div>
+        </div>
+        <div id="resource_total_school"></div>
+      </div>
+      <div class="row row3-resource-total echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源使用趋势</div>
+        <div class="role-school radio" id="radio_resource_trand_school" data-value="all">
+          <div class="item-wrap active" data-value="all">
+            <span class="icon icon-radio"></span>
+            <span class="item">全部资源</span>
+          </div>
+          <div class="item-wrap" data-value="sync">
+            <span class="icon icon-radio"></span>
+            <span class="item">同步教学资源</span>
+          </div>
+          <div class="item-wrap" data-value="ugc">
+            <span class="icon icon-radio"></span>
+            <span class="item">教师上传资源</span>
+          </div>
+        </div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-value="yesterday" id="select_resource_trand">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <!--<li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>-->
+            </ol>
+          </div>
+        </div>
+        <div id="resource_trand"></div>
+      </div>
+      <div class="role-city role-county row row3-resource-total echart no-margin">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源使用情况统计</div>
+        <div id="resource_use"></div>
+      </div>
+      <div class="role-school row row4-resource-total-school echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源使用排名</div>
+        <div class="radio" data-value="collect" id="radio_resource_rank_school">
+          <div class="item-wrap active" data-value="collect">
+            <span class="icon icon-radio"></span>
+            <span class="item">收藏量</span>
+          </div>
+          <div class="item-wrap" data-value="download">
+            <span class="icon icon-radio"></span>
+            <span class="item">下载量</span>
+          </div>
+        </div>
+        <div id="resource_use_school"></div>
+      </div>
+      <div class="role-school row row4-resource-total-school echart no-margin">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台资源贡献量排名</div>
+        <div id="resource_contribution_school"></div>
+      </div>
+    </div>
+    <%- include('view/_footer.ejs') %>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js"
+        data-main="../../customModule/statistics/js/resource_total.js"></script>
+</body>
+</html>

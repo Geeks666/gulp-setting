@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控系统</title>
+  <link rel="stylesheet" href="../../customModule/statistics/css/main.css">
+  <link rel="stylesheet" href="../../customModule/statistics/css/dataWall.css">
+</head>
+<body>
+<div class="bg-gradient">
+  <%- include('view/_header.ejs') %>
+  <div class="wrap">
+    <%- include('view/_sidebar.ejs', {currentPage : 'index'}) %>
+    <div class="content">
+      <div class="row row1-index">
+        <div class="item">
+          <span class="icon icon-user-circle"></span>
+          <div class="text">
+            <span class="title">区域用户总数</span>
+            <span class="count" id="total"></span>
+            <!--<span class="sup"></span>-->
+          </div>
+        </div>
+        <div class="item">
+          <span class="icon icon-yesterday"></span>
+          <div class="text">
+            <span class="title">平台昨日使用用户数</span>
+            <span class="count" id="yesterday"></span>
+            <!--<span class="sup" id="yesterdayratio"></span>-->
+          </div>
+        </div>
+        <div class="item">
+          <span class="icon icon-lastseven"></span>
+          <div class="text">
+            <span class="title">过去7天使用平台用户数</span>
+            <span class="count" id="lastseven"></span>
+            <!--<span class="sup" id="lastsevenratio"></span>-->
+          </div>
+        </div>
+        <div class="item">
+          <span class="icon icon-lastthirty"></span>
+          <div class="text">
+            <span class="title">过去30天平台使用用户数</span>
+            <span class="count" id="lastthirty"></span>
+            <!--<span class="sup " id="lastthirtyratio"></span>-->
+          </div>
+        </div>
+      </div>
+
+      <%- include('view/_earth.ejs') %>
+      <div class="row row3-index echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">平台使用趋势统计</div>
+        <div class="selectWrap">
+          <div class="label">统计时段：</div>
+          <div class="selectTop selectTopAct" data-value="yesterday">
+            <span>昨天</span>
+            <strong></strong>
+          </div>
+          <div class="selectBottom">
+            <ol>
+              <li data-value="yesterday">昨天</li>
+              <!--<li data-value="lastseven">最近七天</li>
+              <li data-value="lastthirty">最近30天</li>-->
+            </ol>
+          </div>
+        </div>
+        <div id="platform_trend"></div>
+      </div>
+      <div class="row row3-index-county echart">
+        <div class="echart-mark-top-right"></div>
+        <div class="echart-title">区域用户统计</div>
+        <div class="label label1">平台覆盖范围</div>
+        <div class="label label2">平台使用用户</div>
+        <div class="label label3">区域用户数排名</div>
+        <div class="cover-county left">
+          <div class="cover-label">教育局</div>
+          <div class="cover-val" id="c_bureauOfEducation">&nbsp;</div>
+          <div class="cover-label">学校</div>
+          <div class="cover-val" id="c_school">&nbsp;</div>
+          <div class="cover-label">教师</div>
+          <div class="cover-val" id="c_teacher">&nbsp;</div>
+          <div class="cover-label">学生</div>
+          <div class="cover-val" id="c_student">&nbsp;</div>
+          <div class="cover-label">家长</div>
+          <div class="cover-val" id="c_parent">&nbsp;</div>
+        </div>
+        <div class="use-county left">
+          <div class="use-label">教师</div>
+          <div class="mark" id="use_c_teacher">&nbsp;</div>
+          <div class="use-chart use-chart1"></div>
+          <div class="use-label">学生</div>
+          <div class="mark" id="use_c_student">&nbsp;</div>
+          <div class="use-chart use-chart2"></div>
+          <div class="use-label">家长</div>
+          <div class="mark" id="use_c_parent">&nbsp;</div>
+          <div class="use-chart use-chart3"></div>
+        </div>
+        <div class="divider left"></div>
+        <div class="rank-county table-page left tableWrapIndex" id="table_county">
+          <table id="rank_county"></table>
+          <div id="pageTool"></div>
+        </div>
+      </div>
+    </div>
+    <%- include('view/_footer.ejs') %>
+  </div>
+</div>
+<script src="../../../../lib/requires/requires.js" data-main="../../customModule/statistics/js/index.js"></script>
+</body>
+</html>
